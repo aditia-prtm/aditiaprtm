@@ -1,12 +1,12 @@
 import { useRef, useState, FormEvent } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Mail, Github, Linkedin, Twitter, Send, MapPin, ArrowUpRight } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram, Send, MapPin, ArrowUpRight } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 const socials = [
   { icon: Github, label: 'GitHub', href: personalInfo.social.github, color: '#ffffff' },
   { icon: Linkedin, label: 'LinkedIn', href: personalInfo.social.linkedin, color: '#0A66C2' },
-  { icon: Twitter, label: 'Twitter', href: personalInfo.social.twitter, color: '#1DA1F2' },
+  { icon: Instagram, label: 'Instagram', href: personalInfo.social.instagram, color: '#1DA1F2' },
 ];
 
 export default function Contact() {

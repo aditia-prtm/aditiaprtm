@@ -11,11 +11,11 @@ export const personalInfo = {
     "Open Source Contributor",
     "Performance Engineer",
   ],
-  bio: `I architect and build digital experiences that live at the intersection of engineering rigour and design craft. With 6+ years shipping production software, I've led teams across fintech startups and growth-stage companies — always optimising for both pixel-perfect interfaces and sub-50ms server responses.`,
+  bio: `(I want to lie) I architect and build digital experiences that live at the intersection of engineering rigour and design craft. With 6+ years shipping production software, I've led teams across fintech startups and growth-stage companies — always optimising for both pixel-perfect interfaces and sub-50ms server responses.`,
   bio2: `Currently exploring the edges of AI-native UX and WebGL creative coding. When I'm not shipping features, you'll find me contributing to open-source, writing on my blog, or sketching generative-art experiments.`,
   location: "Palembang, Indonesia",
   availability: "Open to opportunities",
-  email: "alex@riveradev.io",
+  email: "mhdaditiapratama268@gmail.com",
   resume: "#",
   social: {
     github: "https://github.com/aditia-prtm",

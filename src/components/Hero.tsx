@@ -91,7 +91,7 @@ export default function Hero() {
       {/* Main content with parallax */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-12"
+        className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-6 sm:pt-12"
       >
         <motion.div variants={container} initial="hidden" animate="show">
 
@@ -113,7 +113,7 @@ export default function Hero() {
           </motion.h1>
 
           {/* Typing effect tagline */}
-          <motion.div variants={item} className="h-10 flex items-center justify-center mb-6">
+          <motion.div variants={item} className="h-10 flex items-center justify-center mb-6 md:mb-10">
             <span className="text-xl sm:text-2xl lg:text-3xl font-semibold dark:text-gray-300 text-gray-600">
               {typedText}
               <span className="typing-cursor" />
@@ -123,7 +123,7 @@ export default function Hero() {
           {/* Bio */}
           <motion.p
             variants={item}
-            className="max-w-2xl mx-auto text-base sm:text-lg dark:text-gray-400 text-gray-500 leading-relaxed mb-10"
+            className="max-w-2xl mx-auto text-sm sm:text-lg dark:text-gray-400 text-gray-500 leading-relaxed mb-6"
           >
             Building elegant, high-performance digital experiences at the intersection of
             engineering rigour and design craft.{' '}
@@ -131,7 +131,7 @@ export default function Hero() {
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-4 mb-12">
+          <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-4 mb-5 mb-12">
             <motion.a
               href="#projects"
               whileHover={{ scale: 1.04 }}

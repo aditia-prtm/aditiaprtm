@@ -71,7 +71,8 @@ export default function About() {
                 {/* Placeholder avatar – replace with real image */}
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-600/30 to-cyan-600/30" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-8xl select-none">👨‍💻</span>
+                  {/* <span className="text-8xl select-none">👨‍💻</span> */}
+                  <img src="public/nigga.png" alt="adit's picture" />
                 </div>
               </div>
 
@@ -82,8 +83,8 @@ export default function About() {
                 className="absolute -bottom-4 -right-4 px-4 py-2 rounded-2xl dark:bg-dark-800 bg-white dark:border-white/10 border-black/8 border shadow-xl dark:shadow-black/40 shadow-black/10"
               >
                 <div className="flex items-center gap-2">
-                  <Star size={13} className="text-amber-400 fill-amber-400" />
-                  <span className="text-xs font-semibold dark:text-white text-gray-800">6+ Years</span>
+                  {/* <Star size={13} className="text-amber-400 fill-amber-400" /> */}
+                  <span className="text-xs font-semibold dark:text-white text-gray-800">(I have no picture more 🥲)</span>
                 </div>
               </motion.div>
 
@@ -93,17 +94,18 @@ export default function About() {
                 className="absolute -top-4 -left-4 px-4 py-2 rounded-2xl dark:bg-dark-800 bg-white dark:border-white/10 border-black/8 border shadow-xl dark:shadow-black/40 shadow-black/10"
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-sm">🚀</span>
-                  <span className="text-xs font-semibold dark:text-white text-gray-800">Ship fast</span>
+                  <span className="text-sm">✌️</span>
+                  <span className="text-xs font-semibold dark:text-white text-gray-800">This is me btw</span>
+                  <span className="text-sm">🥀</span>
                 </div>
               </motion.div>
             </div>
 
             {/* Stat grid */}
             <div className="grid grid-cols-3 gap-3 w-full max-w-xs">
-              <StatCard value="50+" label="Projects shipped" icon={Coffee} />
-              <StatCard value="6+" label="Years exp." icon={Calendar} />
-              <StatCard value="14" label="Countries worked" icon={MapPin} />
+              <StatCard value="0" label="Projects shipped" icon={Coffee} />
+              <StatCard value="0" label="Years exp." icon={Calendar} />
+              <StatCard value="0" label="Countries worked" icon={MapPin} />
             </div>
           </motion.div>
 
