@@ -18,7 +18,7 @@ function TimelineItem({ exp, index, isInView }: {
     >
       {/* Content card */}
       <div className={`flex-1 ${isLeft ? 'lg:text-right' : 'lg:text-left'} text-left`}>
-        <div className="group relative p-6 rounded-2xl dark:bg-zinc-950 bg-white border dark:border-white/6 border-black/6 dark:hover:border-white/12 hover:border-black/10 transition-all duration-300 hover:shadow-lg dark:hover:shadow-black/30">
+        <div className="group relative p-6 rounded-2xl dark:bg-zinc-950 bg-white border dark:border-white/5 border-black/6 dark:hover:border-white/25 hover:border-black/10 transition-all duration-300 hover:shadow-lg dark:hover:shadow-black/30">
 
           {/* Accent line */}
           <div
@@ -29,7 +29,7 @@ function TimelineItem({ exp, index, isInView }: {
           {/* Role & company */}
           <div className="mb-3">
             <h3 className="font-bold dark:text-white text-gray-900 text-base mb-0.5">{exp.role}</h3>
-            <div className="flex items-center gap-2 text-sm" style={{ color: exp.color }}>
+            <div className={`flex items-center gap-2 text-sm ${isLeft ? 'justify-end' : 'justify-start'} justify-start`} style={{ color: exp.color }}>
               <Briefcase size={12} />
               <span className="font-semibold">{exp.company}</span>
               <span className="dark:text-gray-600 text-gray-400">·</span>
