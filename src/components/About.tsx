@@ -72,7 +72,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-600/30 to-cyan-600/30" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   {/* <span className="text-8xl select-none">👨‍💻</span> */}
-                  <img src="public/nigga.png" alt="adit's picture" />
+                  <img src="/nigga.png" alt="adit's picture" />
                 </div>
               </div>
 
