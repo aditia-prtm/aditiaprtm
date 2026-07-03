@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Github, Linkedin, Instagram, Dribbble, ArrowDown, Download} from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail, ArrowDown, Download} from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 
@@ -50,7 +50,7 @@ const socialLinks = [
   { icon: Github, href: personalInfo.social.github, label: 'GitHub' },
   { icon: Linkedin, href: personalInfo.social.linkedin, label: 'LinkedIn' },
   { icon: Instagram, href: personalInfo.social.instagram, label: 'Twitter' },
-  { icon: Dribbble, href: personalInfo.social.dribbble, label: 'Dribbble' },
+  { icon: Mail, href: personalInfo.social.email, label: 'Email' },
 ];
 
 export default function Hero() {
@@ -125,9 +125,8 @@ export default function Hero() {
             variants={item}
             className="max-w-2xl mx-auto text-sm sm:text-lg dark:text-gray-400 text-gray-500 leading-relaxed mb-6"
           >
-            Building elegant, high-performance digital experiences at the intersection of
-            engineering rigour and design craft.{' '}
-            <span className="dark:text-gray-300 text-gray-600 font-medium">6+ years in production.</span>
+            An Undergraduate Computer Science Student at{' '}
+            <span className="text-yellow-500 font-medium">Sriwijaya University.</span>
           </motion.p>
 
           {/* CTA Buttons */}

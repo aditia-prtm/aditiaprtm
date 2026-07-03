@@ -3,17 +3,15 @@
 
 export const personalInfo = {
   name: "Aditia Pratama",
-  title: "Full Stack Developer",
+  title: "Junior Frontend Developer",
   taglines: [
-    "Full Stack Developer",
-    "Creative Technologist",
-    "UI/UX Enthusiast",
-    "Open Source Contributor",
-    "Performance Engineer",
+    "Sriwijaya University student",
+    "Junior Frontend Developer", 
+    
   ],
-  bio: `(I want to lie) I architect and build digital experiences that live at the intersection of engineering rigour and design craft. With 6+ years shipping production software, I've led teams across fintech startups and growth-stage companies — always optimising for both pixel-perfect interfaces and sub-50ms server responses.`,
-  bio2: `Currently exploring the edges of AI-native UX and WebGL creative coding. When I'm not shipping features, you'll find me contributing to open-source, writing on my blog, or sketching generative-art experiments.`,
-  location: "Palembang, Indonesia",
+  bio: `I am an Computer Science (Informatics Engineering) student with a passion for software development, especially in full-stack web development. I enjoy turning ideas into real products by building responsive, scalable, and user-friendly applications. I continuously improve my skills by learning modern technologies, working on personal projects, and exploring new tools that can make development more efficient.`,
+  bio2: `My goal is to become a software engineer who creates impactful digital products while constantly growing as a developer. I believe that consistency, curiosity, and problem-solving are the keys to building great software. Outside of coding, I enjoy competitive programming, learning new technologies, and challenging myself through projects that expand both my technical and creative abilities.`,
+  location: "Ogan Komering Ilir, Indonesia",
   availability: "Open for Freelance",
   email: "mhdaditiapratama268@gmail.com",
   resume: "#",
@@ -21,13 +19,12 @@ export const personalInfo = {
     github: "https://github.com/aditia-prtm",
     linkedin: "https://linkedin.com/in/m-aditia-putra-pratama-a3b0bb376/",
     instagram: "https://instagram.com/adtxprtm_",
-    dribbble: "https://dribbble.com",
+    email: "mailto:mhdaditiapratama268@gmail.com",
   },
   funFacts: [
     "☕  Powered by specialty coffee",
-    "🎸  Plays guitar (badly, but enthusiastically)",
-    "🌍  Shipped features from 14 countries",
-    "🔭  Amateur astrophotographer",
+    "⚽  Enjoying watching and playing football",
+    "🎞️  I like watching movies",
   ],
 };
 
@@ -193,10 +190,10 @@ export const experiences = [
   },
   {
     id: 3,
-    role: "Frontend Developer",
-    company: "Pixel & Code Studio",
-    period: "2019 – 2020",
-    type: "Full-time",
+    role: "HMIF UNSRI - PTI Division",
+    company: "Sriwijaya University",
+    period: "2025 - 2026",
+    type: "",
     description:
       "Joined as a junior developer at a boutique agency. Built 20+ client websites, developed an internal React template system, and gained experience working directly with clients on UX feedback cycles.",
     highlights: [
@@ -209,17 +206,17 @@ export const experiences = [
   },
   {
     id: 4,
-    role: "Freelance Developer",
-    company: "Self-employed",
-    period: "2017 – 2019",
-    type: "Freelance",
+    role: "National Olympiad (OSN) Team",
+    company: "SMA Negeri 1 Jejawi",
+    period: "2023 - 2024",
+    type: "",
     description:
       "Started freelancing during university, delivering e-commerce sites, landing pages, and custom WordPress themes. Built the foundation of my full-stack skills and client communication.",
     highlights: [
-      "30+ freelance projects",
-      "E-commerce & WordPress builds",
-      "Self-taught React and Node.js",
-      "First introduction to DevOps",
+      "Top 7 Province Level 2024 (OSN-P)",
+      "Top 2 Regency Level 2024 (OSN-K)",
+      "Problem Solving and Algorithm",
+      "First introduction to Informatics",
     ],
     color: "#10b981",
   },

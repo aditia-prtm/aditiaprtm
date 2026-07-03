@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { MapPin, Calendar, Coffee, Star } from 'lucide-react';
+import { MapPin, Calendar, Coffee} from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 // ─── Stat card ────────────────────────────────────────────────────
