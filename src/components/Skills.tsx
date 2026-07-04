@@ -32,8 +32,8 @@ import { IconType } from 'react-icons';
 // };
 
 // ─── Category card ─────────────────────────────────────────────────
-function TechStackCard({label, icon : Icon, isInView, delay }: {
-  label : string; icon : IconType; isInView: boolean; delay: number;
+function TechStackCard({ icon : Icon, isInView, delay }: {
+  icon : IconType; isInView: boolean; delay: number;
 }) {
   const [hovered, setHovered] = useState(false);
 
@@ -100,7 +100,7 @@ export default function Skills() {
         {/* Grid */}
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-5 w-full">
           {techStack.map((cat, i) => (
-            <TechStackCard key={cat.id} icon={cat.icon} label={cat.label} isInView={isInView} delay={i * 0.1} />
+            <TechStackCard key={cat.id} icon={cat.icon} isInView={isInView} delay={i * 0.1} />
           ))}
         </div>
 
