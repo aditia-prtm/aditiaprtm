@@ -59,7 +59,7 @@ export default function Contact() {
             Let's <span className="gradient-text">work together</span>
           </h2>
           <p className="max-w-md mx-auto dark:text-gray-400 text-gray-500 text-base">
-            Whether it's a full-time role, a freelance engagement, or just a good conversation about tech — my inbox is open.
+            Whether it's a freelance engagement, or just a good conversation about tech — my inbox is open.
           </p>
         </motion.div>
 
@@ -99,10 +99,10 @@ export default function Contact() {
             <div className="p-6 rounded-2xl dark:bg-emerald-500/5 bg-emerald-50 dark:border-emerald-500/15 border-emerald-100 border">
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Available for work</span>
+                <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">{personalInfo.availability}</span>
               </div>
               <p className="text-xs dark:text-gray-400 text-gray-500 leading-relaxed">
-                Currently open to full-time roles and select freelance projects. Looking for teams that care about craft.
+                Currently open for freelance roles. Ready to help build your next modern web application using React, Next.js, and Tailwind CSS
               </p>
             </div>
 
@@ -168,7 +168,7 @@ export default function Contact() {
                         value={form.name}
                         onChange={handleChange}
                         required
-                        placeholder="Jane Smith"
+                        placeholder="John Doe"
                         className="px-4 py-3 rounded-xl text-sm dark:bg-white/5 bg-black/3 dark:border-white/8 border-black/8 border dark:text-white text-gray-900 dark:placeholder-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all"
                       />
                     </div>
@@ -184,7 +184,7 @@ export default function Contact() {
                         value={form.email}
                         onChange={handleChange}
                         required
-                        placeholder="jane@company.io"
+                        placeholder="johndoe@company.io"
                         className="px-4 py-3 rounded-xl text-sm dark:bg-white/5 bg-black/3 dark:border-white/8 border-black/8 border dark:text-white text-gray-900 dark:placeholder-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all"
                       />
                     </div>

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { MapPin, Calendar, Coffee} from 'lucide-react';
+import { MapPin, Calendar, Coffee, Brain} from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 // ─── Stat card ────────────────────────────────────────────────────
@@ -103,9 +103,9 @@ export default function About() {
 
             {/* Stat grid */}
             <div className="grid grid-cols-3 gap-3 w-full max-w-xs">
-              <StatCard value="0" label="Projects shipped" icon={Coffee} />
-              <StatCard value="0" label="Years exp." icon={Calendar} />
-              <StatCard value="0" label="Countries worked" icon={MapPin} />
+              <StatCard value="2" label="Project Shipped" icon={Coffee} />
+              <StatCard value="4" label="Month in Webdev" icon={Calendar} />
+              <StatCard value="∞" label="Curiosity for learning" icon={Brain} />
             </div>
           </motion.div>
 

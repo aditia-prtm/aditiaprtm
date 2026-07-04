@@ -112,7 +112,7 @@ export default function Experience() {
             The <span className="gradient-text">journey</span> so far
           </h2>
           <p className="max-w-md mx-auto dark:text-gray-400 text-gray-500 text-base">
-            From writing my first for-loop to leading engineering teams at funded startups.
+            Places where I’ve grown, learned with awesome people, and built cool stuff.
           </p>
         </motion.div>
 

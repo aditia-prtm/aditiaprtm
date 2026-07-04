@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ExternalLink, Github, X, ArrowUpRight, BarChart2 } from 'lucide-react';
-import { projects } from '../data/portfolio';
+import { personalInfo, projects } from '../data/portfolio';
 
 type Project = (typeof projects)[0];
 
@@ -317,7 +317,7 @@ export default function Projects() {
           className="flex justify-center mt-10"
         >
           <a
-            href="https://github.com"
+            href={personalInfo.social.github}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium dark:text-gray-400 text-gray-500 dark:hover:text-white hover:text-gray-900 transition-colors group"

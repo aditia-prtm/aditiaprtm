@@ -130,7 +130,7 @@ export default function Hero() {
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-4 mb-5 mb-12">
+          <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-4 mb-5">
             <motion.a
               href="#projects"
               whileHover={{ scale: 1.04 }}
