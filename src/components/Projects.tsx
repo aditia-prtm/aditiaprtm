@@ -52,7 +52,8 @@ function TiltCard({ project, onClick }: { project: Project; onClick: () => void 
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
               className="text-6xl opacity-80"
             >
-              {project.id === 1 ? '📈' : project.id === 2 ? '🧩' : project.id === 3 ? '🎨' : '✍️'}
+              {/* {project.id === 1 ? '📈' : project.id === 2 ? '🧩' : project.id === 3 ? '🎨' : '✍️'} */}
+              <p className='font-black'>Soon</p>
             </motion.div>
           </div>
 
@@ -174,7 +175,8 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             <div className="absolute inset-0 bg-grid opacity-30" />
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="text-8xl opacity-80">
-                {project.id === 1 ? '📈' : project.id === 2 ? '🧩' : project.id === 3 ? '🎨' : '✍️'}
+                {/* {project.id === 1 ? '📈' : project.id === 2 ? '🧩' : project.id === 3 ? '🎨' : '✍️'} */}
+                <p className='font-black'>Soon</p>
               </span>
             </div>
           </div>
@@ -252,7 +254,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-500 hover:opacity-90 transition-opacity"
+                className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#FFD166] via-[#F5A623] to-[#FF4D6D] hover:opacity-90 transition-opacity"
               >
                 <ExternalLink size={16} /> Live Demo
               </a>
@@ -291,7 +293,7 @@ export default function Projects() {
             Things I've <span className="gradient-text">shipped</span>
           </h2>
           <p className="max-w-xl mx-auto dark:text-gray-400 text-gray-500 text-base">
-            A selection of projects from the last few years. Click any card to read the full story.
+            Projects I've build so far
           </p>
         </motion.div>
 

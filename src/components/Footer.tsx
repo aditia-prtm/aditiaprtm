@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Zap, Heart } from 'lucide-react';
+import { Zap } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 export default function Footer() {
@@ -20,7 +20,7 @@ export default function Footer() {
             onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="flex items-center gap-2 group"
           >
-            <div className="w-7 h-7 flex items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-cyan-500">
+            <div className="w-7 h-7 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#FFD166] via-[#F5A623] to-[#FF4D6D]">
               <Zap size={13} className="text-white" strokeWidth={2.5} />
             </div>
             <span className="font-bold text-sm dark:text-white text-gray-900">
@@ -32,9 +32,7 @@ export default function Footer() {
           <p className="text-xs dark:text-gray-600 text-gray-400 flex items-center gap-1.5">
             © {year} {personalInfo.name}
             <span className="dark:text-gray-700 text-gray-300">·</span>
-            Built with
-            <Heart size={11} className="text-rose-500 fill-rose-500 mx-0.5" />
-            and strong coffee
+            Personal Portfolio
           </p>
 
           {/* Back to top */}

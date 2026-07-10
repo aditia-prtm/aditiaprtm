@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { techStack } from '../data/portfolio';
+import { techStack, tools } from '../data/portfolio';
 import { IconType } from 'react-icons';
 
 // ─── Category colour map ──────────────────────────────────────────
@@ -32,8 +32,16 @@ import { IconType } from 'react-icons';
 // };
 
 // ─── Category card ─────────────────────────────────────────────────
-function TechStackCard({ icon : Icon, isInView, delay }: {
-  icon : IconType; isInView: boolean; delay: number;
+function TechStackCard({
+  label,
+  icon: Icon,
+  isInView,
+  delay,
+}: {
+  label: string;
+  icon: IconType;
+  isInView: boolean;
+  delay: number;
 }) {
   const [hovered, setHovered] = useState(false);
 
@@ -45,23 +53,45 @@ function TechStackCard({ icon : Icon, isInView, delay }: {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       whileHover={{ y: -6 }}
-
-      // p-2 from p-6
-      className={`relative p-2 rounded-2xl 
-                bg-white dark:bg-zinc-900 
-                border border-black/6 dark:border-white/10 
-                transition-shadow duration-300 group ${
-                  hovered ? `shadow-black` : 'shadow-none'
-                }`}
+      className="relative p-3 rounded-2xl 
+                 bg-white dark:bg-zinc-900 
+                 border border-black/6 dark:border-white/10 cursor-pointer
+                 transition-shadow duration-300 group shadow-none hover:shadow-black"
+      layout // penting untuk smooth height transition
     >
-      {/* Subtle gradient overlay on hover */}
+      {/* Gradient overlay */}
       <motion.div
         initial={false}
         animate={{ opacity: hovered ? 1 : 0 }}
         className="absolute inset-0 rounded-2xl bg-gradient-brand-subtle pointer-events-none"
       />
-      <div className="relative flex justify-center items-center">
-        <Icon size={40} />
+
+      <div className="flex flex-col items-center">
+        {/* Icon Container */}
+        <motion.div
+          layout
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="flex items-center justify-center"
+        >
+          <Icon size={48} />
+        </motion.div>
+
+        {/* Label */}
+        <motion.p
+          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+          animate={{
+            opacity: hovered ? 1 : 0,
+            height: hovered ? 'auto' : 0,
+            marginTop: hovered ? 16 : 0,
+          }}
+          transition={{
+            duration: 0.35,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="text-center text-[12px] md:text-sm font-mono text-zinc-600 dark:text-zinc-400 overflow-hidden"
+        >
+          {label}
+        </motion.p>
       </div>
     </motion.div>
   );
@@ -77,7 +107,7 @@ export default function Skills() {
       {/* Background glow */}
       <div className="absolute top-1/2 right-0 w-96 h-96 -translate-y-1/2 glow-orb dark:bg-cyan-600/6 bg-cyan-400/4 pointer-events-none" />
 
-      <div className="flex flex-col items-center   max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="flex flex-col items-center max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}
         <motion.div
@@ -100,7 +130,7 @@ export default function Skills() {
         {/* Grid */}
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-5 w-full">
           {techStack.map((cat, i) => (
-            <TechStackCard key={cat.id} icon={cat.icon} isInView={isInView} delay={i * 0.1} />
+            <TechStackCard key={cat.id} label={cat.label} icon={cat.icon} isInView={isInView} delay={i * 0.1} />
           ))}
         </div>
 
@@ -111,7 +141,7 @@ export default function Skills() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-10 flex flex-wrap justify-center gap-2"
         >
-          {['Stack & Queue','Dynamic Programming', 'DFS/BFS', 'Graph and Tree Algorithm', 'Segment/Fenwick Tree'].map(tech => (
+          {tools.map(tech => (
             <span
               key={tech}
               className="px-3 py-1 text-xs font-mono dark:bg-white/4 bg-black/4 dark:border-white/6 border-black/6 border rounded-full dark:text-gray-400 text-gray-500"

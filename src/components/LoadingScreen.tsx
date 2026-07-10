@@ -32,7 +32,7 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
             />
 
             {/* Logo box */}
-            <div className="relative w-24 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center shadow-2xl shadow-violet-500/30">
+            <div className="relative w-24 h-16 rounded-2xl bg-gradient-to-br from-[#FFD166] via-[#F5A623] to-[#FF4D6D] flex items-center justify-center shadow-2xl shadow-violet-500/30">
               <span className="text-2xl font-black text-white">ADTX</span>
             </div>
           </motion.div>

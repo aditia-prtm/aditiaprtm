@@ -77,13 +77,13 @@ export default function Contact() {
             <div className="p-6 rounded-2xl dark:bg-zinc-950 bg-white dark:border-white/6 border-black/6 border">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-xl dark:bg-violet-500/15 bg-violet-50 flex items-center justify-center">
-                  <Mail size={18} className="text-violet-500" />
+                  <Mail size={18} className="text-[#F5A623]" />
                 </div>
                 <div>
                   <p className="text-xs dark:text-gray-500 text-gray-400 mb-0.5">Email me at</p>
                   <a
                     href={`mailto:${personalInfo.email}`}
-                    className="text-sm font-medium dark:text-white text-gray-900 dark:hover:text-violet-400 hover:text-violet-600 transition-colors"
+                    className="text-sm font-medium dark:text-white text-gray-900 hover:text-[#F5A623] transition-colors"
                   >
                     {personalInfo.email}
                   </a>
@@ -102,7 +102,7 @@ export default function Contact() {
                 <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">{personalInfo.availability}</span>
               </div>
               <p className="text-xs dark:text-gray-400 text-gray-500 leading-relaxed">
-                Currently open for freelance roles. Ready to help build your next modern web application using React, Next.js, and Tailwind CSS
+                Currently open for freelance roles. Ready to help build your next modern web application using React/Next.js, and Tailwind CSS
               </p>
             </div>
 
@@ -122,10 +122,10 @@ export default function Contact() {
                     className="flex items-center justify-between px-4 py-3 rounded-xl dark:bg-white/4 bg-black/3 dark:border-white/5 border-black/5 border dark:hover:bg-white/8 hover:bg-black/6 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
-                      <Icon size={16} className="dark:text-gray-400 text-gray-500 group-hover:text-violet-500 dark:group-hover:text-violet-400 transition-colors" />
+                      <Icon size={16} className="dark:text-gray-400 text-gray-500 group-hover:text-[#F5A623] transition-colors" />
                       <span className="text-sm font-medium dark:text-gray-300 text-gray-700">{label}</span>
                     </div>
-                    <ArrowUpRight size={13} className="dark:text-gray-600 text-gray-400 group-hover:dark:text-violet-400 group-hover:text-violet-500 transition-colors" />
+                    <ArrowUpRight size={13} className="dark:text-gray-600 text-gray-400 group-hover:text-[#F5A623] transition-colors" />
                   </motion.a>
                 ))}
               </div>
@@ -212,7 +212,7 @@ export default function Contact() {
                     disabled={status === 'sending'}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="relative flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 hover:opacity-90 transition-opacity shadow-lg shadow-violet-500/20 disabled:opacity-70"
+                    className="relative flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#FFD166] via-[#F5A623] to-[#FF4D6D] hover:opacity-90 transition-opacity shadow-lg shadow-orange-500/20 disabled:opacity-70"
                   >
                     {status === 'sending' ? (
                       <>

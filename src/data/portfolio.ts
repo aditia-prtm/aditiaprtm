@@ -1,5 +1,5 @@
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaPython, FaGitAlt, FaGithub} from "react-icons/fa6";
-import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiVercel, SiTypescript } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaPython} from "react-icons/fa6";
+import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiTypescript, SiMysql, SiPostgresql, SiSupabase, SiC} from "react-icons/si";
 
 // ─── Portfolio Data ───────────────────────────────────────────────
 // Central data file – edit here to customise the portfolio
@@ -49,55 +49,68 @@ export const techStack = [
     icon : FaJs
   },
   {
-    id : 13, 
+    id : 4,
     label : "TypeScript", 
     icon : SiTypescript
   },
   {
-    id : 4,
+    id : 5,
     label : "TailwindCSS", 
     icon : SiTailwindcss, 
   }, 
   {
-    id : 5,
+    id : 6,
     label : "ReactJS", 
     icon : FaReact, 
   }, 
   {
-    id : 6, 
+    id : 7, 
     label : "NextJS", 
     icon : SiNextdotjs
   },
   {
-    id : 7, 
+    id : 8, 
     label : "Java", 
     icon : FaJava
   },
   {
-    id : 8, 
+    id : 9, 
     label : "Python", 
     icon : FaPython
   },
   {
-    id : 9, 
+    id : 10, 
     label : "C++", 
     icon : SiCplusplus
   },
   {
-    id : 10, 
-    label : "Git", 
-    icon : FaGitAlt
-  }, 
-  {
     id : 11, 
-    label : "Github", 
-    icon : FaGithub
-  }, 
+    label : "C", 
+    icon : SiC
+  },
   {
     id : 12, 
-    label : "Vercel", 
-    icon : SiVercel
-  }, 
+    label : "MySQL", 
+    icon : SiMysql
+  },
+  {
+    id : 13, 
+    label : "PostgreSQL", 
+    icon : SiPostgresql
+  },
+  {
+    id : 14, 
+    label : "Supabase", 
+    icon : SiSupabase
+  }
+];
+
+export const tools = [
+  "Git",
+  "Github", 
+  "Vercel",
+  "Visual Studio Code", 
+  "Figma"
 ];
 
 // ─── Projects ─────────────────────────────────────────────────────
@@ -113,7 +126,7 @@ export const projects = [
     tags: ["HTML"],
     category: "Empty",
     color: "#8b5cf6",
-    gradient: "from-violet-600 to-blue-600",
+    gradient: "from-[#FFD166] via-[#F5A623] to-[#FF4D6D]",
     image: null,
     liveUrl: "#",
     githubUrl: "#",

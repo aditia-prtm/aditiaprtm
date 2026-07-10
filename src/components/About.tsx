@@ -61,15 +61,15 @@ export default function About() {
         >
 
           {/* Left – avatar & stats */}
-          <motion.div variants={fadeUp} className="flex flex-col items-center lg:items-start gap-8">
+          <motion.div variants={fadeUp} className="flex flex-col justify-center items-center lg:items-start gap-8">
 
             {/* Avatar with gradient border */}
             <div className="relative group">
               {/* Gradient ring */}
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-violet-500 via-blue-500 to-cyan-500 opacity-80 blur-sm group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-3xl overflow-hidden dark:bg-dark-800 bg-gray-100">
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#F5A623] to-[#FF4D6D] opacity-80 blur-sm group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-3xl overflow-hidden dark:bg-dark-800 bg-gray-100">
                 {/* Placeholder avatar – replace with real image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-600/30 to-cyan-600/30" />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-900/30 to-cyan-violet/30" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   {/* <span className="text-8xl select-none">👨‍💻</span> */}
                   <img src="/nigga.png" alt="adit's picture" />

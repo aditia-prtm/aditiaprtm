@@ -15,7 +15,9 @@
   --color-text: #0f0f1a;
   --color-text-muted: #6b7280;
   --transition-theme: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
-  --gradient-brand: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #22d3ee 100%);
+  /* --gradient-brand: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #22d3ee 100%); */
+    --gradient-brand: linear-gradient(135deg, #F5A623 0%, #FF4D6D 100%);
+
   /* --gradient-brand: linear-gradient(135deg, #FF512F 0%, #F09819 50%, #FFDD00 100%); */
 }
 
@@ -57,11 +59,11 @@ body {
   background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #8b5cf6, #22d3ee);
+  background: linear-gradient(180deg,#FFD166, #FF4D6D);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #7c3aed, #06b6d4);
+  background: linear-gradient(180deg,#ffd16672, #ff4d6e7d);
 }
 
 /* ─── Selection ──────────────────────────────────────────────────── */
@@ -106,7 +108,8 @@ body {
 .typing-cursor::after {
   content: '|';
   animation: blink 1s ease-in-out infinite;
-  color: #8b5cf6;
+  /* color: #8b5cf6; */
+  color : #f57e23
 }
 
 @keyframes blink {

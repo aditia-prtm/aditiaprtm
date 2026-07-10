@@ -83,9 +83,9 @@ export default function Hero() {
       <GridBackground />
 
       {/* Floating code badges */}
-      <FloatingBadge text="React.js ⚛️" className="top-32 left-12" delay={1.2} />
-      <FloatingBadge text="TypeScript 🔷" className="top-48 right-16" delay={1.4} />
-      <FloatingBadge text="const dev = true;" className="bottom-48 left-16" delay={1.6} />
+      <FloatingBadge text="React.js" className="top-32 left-12" delay={1.2} />
+      <FloatingBadge text="TypeScript" className="top-48 right-16" delay={1.4} />
+      <FloatingBadge text="const futureDev = true;" className="bottom-48 left-16" delay={1.6} />
       <FloatingBadge text="{ open: 'source' }" className="bottom-56 right-12" delay={1.8} />
 
       {/* Main content with parallax */}
@@ -136,7 +136,7 @@ export default function Hero() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               onClick={e => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }); }}
-              className="group relative px-7 py-3.5 rounded-2xl font-semibold text-white bg-gradient-to-r from-violet-600 via-blue-600 to-cyan-500 shadow-lg shadow-violet-500/20 hover:shadow-violet-500/40 transition-shadow overflow-hidden"
+              className="group relative px-7 py-3.5 rounded-2xl font-semibold text-white bg-gradient-to-br from-[#FFD166] via-[#F5A623] to-[#FF4D6D] transition-shadow overflow-hidden"
             >
               <span className="relative z-10">View My Work</span>
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
