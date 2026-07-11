@@ -47,14 +47,16 @@ function TiltCard({ project, onClick }: { project: Project; onClick: () => void 
           <div className="absolute inset-0 bg-grid opacity-30" />
           {/* Placeholder content */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div
+            {/* <motion.div
               animate={{ scale: [1, 1.05, 1], rotate: [0, 2, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              className="text-6xl opacity-80"
-            >
-              {/* {project.id === 1 ? '📈' : project.id === 2 ? '🧩' : project.id === 3 ? '🎨' : '✍️'} */}
-              <p className='font-black'>Soon</p>
-            </motion.div>
+              className="text-6xl opacity-90"
+              >
+            </motion.div> */}
+
+              {project.id === 1 ? (
+                <img src="projects-pict/BookVault.png" alt="" className='z-10' />
+              ) : '📈'}
           </div>
 
           {/* Hover overlay */}
@@ -174,10 +176,13 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden flex-shrink-0`}>
             <div className="absolute inset-0 bg-grid opacity-30" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-8xl opacity-80">
-                {/* {project.id === 1 ? '📈' : project.id === 2 ? '🧩' : project.id === 3 ? '🎨' : '✍️'} */}
-                <p className='font-black'>Soon</p>
-              </span>
+              {/* <span className="text-8xl opacity-80"> */}
+                {/* <p className='font-black'>Soon</p> */}
+              {/* </span> */}
+
+              {project.id === 1 ? (
+                <img src="projects-pict/BookVault.png" alt="" className='z-10' />
+              ) : '📈'}
             </div>
           </div>
 

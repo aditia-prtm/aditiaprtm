@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Moon, Sun, Menu, X, Zap } from 'lucide-react';
+import { Moon, Sun, Menu, X, User } from 'lucide-react';
 import { navLinks } from '../data/portfolio';
 
 interface NavbarProps {
@@ -67,7 +67,7 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
             >
               <div className="relative w-8 h-8 flex items-center justify-center">
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-bl from-[#FFD166] via-[#F5A623] to-[#FF4D6D] opacity-90 group-hover:opacity-100 transition-opacity" />
-                <Zap size={15} className="relative text-white" strokeWidth={2.5} />
+                <User size={15} className="relative text-white" strokeWidth={2.5} />
               </div>
               <span className="font-bold text-base tracking-tight dark:text-white text-gray-900">
                 aditia<span className="gradient-text">prtm</span>
@@ -223,7 +223,7 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
                 <a
                   href="#contact"
                   onClick={e => { e.preventDefault(); handleNavClick('#contact'); }}
-                  className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500"
+                  className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-white rounded-xl bg-gradient-to-r from-[#FFD166] via-[#F5A623] to-[#FF4D6D]"
                 >
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
                   Hire Me

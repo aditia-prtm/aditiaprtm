@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { Zap } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
+import { User } from 'lucide-react';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -21,7 +21,7 @@ export default function Footer() {
             className="flex items-center gap-2 group"
           >
             <div className="w-7 h-7 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#FFD166] via-[#F5A623] to-[#FF4D6D]">
-              <Zap size={13} className="text-white" strokeWidth={2.5} />
+              <User size={13} className="text-white" strokeWidth={2.5} />
             </div>
             <span className="font-bold text-sm dark:text-white text-gray-900">
               aditia<span className="gradient-text">prtm</span>
