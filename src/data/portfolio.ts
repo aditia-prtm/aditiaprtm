@@ -117,21 +117,37 @@ export const tools = [
 export const projects = [
   {
     id: 1,
-    title: "Empty Project",
-    subtitle: "Here We Go Soon",
+    title: "Book Vault",
+    subtitle: "Library Management",
     description:
-      "Lorem Ipsum Dolor Si Amet",
+      "Modern dark book management system.",
     longDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    tags: ["HTML"],
-    category: "Empty",
+      "A personal book management system built with Next.js, TypeScript, Tailwind CSS v4, and Framer Motion. Features full CRUD operations, real-time search, status filtering, multi-criteria sorting, and a collection statistics dashboard — all managed with React useState, no additional state library required. This project will use Supabase soon.",
+    tags: ["Next.js", "TailwindCSS"],
+    category: "Mini Project",
     color: "#8b5cf6",
     gradient: "from-[#FFD166] via-[#F5A623] to-[#FF4D6D]",
-    image: null,
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: true,
-    metrics: ["50k events/s", "70% bandwidth ↓", "< 16ms render"],
+    image: "BookVault.png",
+    liveUrl: "https://book-vault-phi.vercel.app/",
+    githubUrl: "https://github.com/aditia-prtm/BookVault",
+    featured: false,
+  },
+  {
+    id: 2,
+    title: "Tic-Tac-Toe",
+    subtitle: "Play a Game vs Computer",
+    description:
+      "My first-ever toy project while learning basic HTML.",
+    longDescription:
+      "A simple web-based Tic-Tac-Toe game. Built entirely with Vanilla JS, it focuses on core looping logic and HTML element manipulation. The game includes a computer opponent that utilizes Math.random() to place its marks.",
+    tags: ["HTML", "CSS", "Javascript"],
+    category: "Toy Project",
+    color: "#8b5cf6",
+    gradient: "from-[#FFD166] via-[#F5A623] to-[#FF4D6D]",
+    image: "tic-tac-toe.png",
+    liveUrl: "https://aditia-prtm.github.io/tic-tac-toe/",
+    githubUrl: "https://github.com/aditia-prtm/tic-tac-toe",
+    featured: false,
   },
   // {
   //   id: 2,

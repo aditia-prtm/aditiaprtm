@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { ExternalLink, Github, X, ArrowUpRight, BarChart2 } from 'lucide-react';
+import { ExternalLink, Github, X, ArrowUpRight } from 'lucide-react';
 import { personalInfo, projects } from '../data/portfolio';
 
 type Project = (typeof projects)[0];
@@ -47,16 +47,14 @@ function TiltCard({ project, onClick }: { project: Project; onClick: () => void 
           <div className="absolute inset-0 bg-grid opacity-30" />
           {/* Placeholder content */}
           <div className="absolute inset-0 flex items-center justify-center">
-            {/* <motion.div
-              animate={{ scale: [1, 1.05, 1], rotate: [0, 2, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              className="text-6xl opacity-90"
-              >
-            </motion.div> */}
-
-              {project.id === 1 ? (
-                <img src="projects-pict/BookVault.png" alt="" className='z-10' />
-              ) : '📈'}
+              {project.image ? (
+                <img 
+                  src={`projects-pict/${project.image}`} 
+                  alt="BookVault.png"
+                />
+              ) : (
+                <span className='text-8xl'>🌐</span>
+              )}
           </div>
 
           {/* Hover overlay */}
@@ -95,16 +93,6 @@ function TiltCard({ project, onClick }: { project: Project; onClick: () => void 
           <p className="text-sm dark:text-gray-400 text-gray-500 leading-relaxed line-clamp-2 mb-4">
             {project.description}
           </p>
-
-          {/* Metrics */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.metrics.map(m => (
-              <div key={m} className="flex items-center gap-1.5 text-xs dark:bg-white/6 bg-black/4 px-2.5 py-1 rounded-full dark:text-gray-300 text-gray-600">
-                <BarChart2 size={10} className="opacity-60" />
-                {m}
-              </div>
-            ))}
-          </div>
 
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5 mb-5">
@@ -176,13 +164,14 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden flex-shrink-0`}>
             <div className="absolute inset-0 bg-grid opacity-30" />
             <div className="absolute inset-0 flex items-center justify-center">
-              {/* <span className="text-8xl opacity-80"> */}
-                {/* <p className='font-black'>Soon</p> */}
-              {/* </span> */}
-
-              {project.id === 1 ? (
-                <img src="projects-pict/BookVault.png" alt="" className='z-10' />
-              ) : '📈'}
+              {project.image ? (
+                <img 
+                  src={`projects-pict/${project.image}`} 
+                  alt="BookVault.png"
+                />
+              ) : (
+                <span className='text-8xl'>🌐</span>
+              )}
             </div>
           </div>
 
@@ -212,16 +201,6 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                   Featured
                 </span>
               )}
-            </div>
-
-            {/* Metrics */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              {project.metrics.map(m => (
-                <div key={m} className="flex items-center gap-1.5 text-sm dark:bg-white/6 bg-black/4 px-3 py-1.5 rounded-full dark:text-gray-300 text-gray-600 font-medium">
-                  <BarChart2 size={12} className="opacity-60" />
-                  {m}
-                </div>
-              ))}
             </div>
 
             {/* Long description */}
