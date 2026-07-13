@@ -43,15 +43,14 @@ function TechStackCard({
   isInView: boolean;
   delay: number;
 }) {
-  const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onClick={() => setClicked(!clicked)}
       whileHover={{ y: -6 }}
       className="relative p-3 rounded-2xl 
                  bg-white dark:bg-zinc-900 
@@ -62,7 +61,7 @@ function TechStackCard({
       {/* Gradient overlay */}
       <motion.div
         initial={false}
-        animate={{ opacity: hovered ? 1 : 0 }}
+        animate={{ opacity: clicked ? 1 : 0 }}
         className="absolute inset-0 rounded-2xl bg-gradient-brand-subtle pointer-events-none"
       />
 
@@ -80,9 +79,9 @@ function TechStackCard({
         <motion.p
           initial={{ opacity: 0, height: 0, marginTop: 0 }}
           animate={{
-            opacity: hovered ? 1 : 0,
-            height: hovered ? 'auto' : 0,
-            marginTop: hovered ? 16 : 0,
+            opacity: clicked ? 1 : 0,
+            height: clicked ? 'auto' : 0,
+            marginTop: clicked ? 16 : 0,
           }}
           transition={{
             duration: 0.35,
