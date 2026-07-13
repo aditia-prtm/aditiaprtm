@@ -149,60 +149,7 @@ export const projects = [
     githubUrl: "https://github.com/aditia-prtm/tic-tac-toe",
     featured: false,
   },
-  // {
-  //   id: 2,
-  //   title: "Aura CMS",
-  //   subtitle: "Headless content platform",
-  //   description:
-  //     "A developer-first headless CMS with a visual block editor, real-time collaboration, and a GraphQL API. Deployed on 1,200+ marketing sites generating $4M ARR.",
-  //   longDescription:
-  //     "Aura was built to solve the frustration of inflexible CMS tooling. The block editor uses a custom JSON schema that compiles to optimised HTML, keeping Lighthouse scores above 95 across all client sites. Real-time collaboration is powered by CRDTs (Yjs), enabling conflict-free multi-author editing.\n\nThe platform includes a visual workflow builder for content approval, a media CDN with automatic WebP conversion, and a plugin marketplace.",
-  //   tags: ["Next.js", "Yjs", "GraphQL", "Postgres", "Node.js", "AWS"],
-  //   category: "SaaS",
-  //   color: "#06b6d4",
-  //   gradient: "from-cyan-500 to-blue-500",
-  //   image: null,
-  //   liveUrl: "#",
-  //   githubUrl: "#",
-  //   featured: true,
-  //   metrics: ["1,200+ sites", "$4M ARR", ">95 Lighthouse"],
-  // },
-  // {
-  //   id: 3,
-  //   title: "Luminary UI",
-  //   subtitle: "Open-source design system",
-  //   description:
-  //     "A fully accessible, themeable React component library with 80+ components, Storybook documentation, and automated visual regression testing via Chromatic.",
-  //   longDescription:
-  //     "Luminary began as an internal design system and was open-sourced after the team realised other companies faced the same accessibility gaps in popular libraries. Every component meets WCAG 2.1 AA, is keyboard navigable, and is tested with VoiceOver and NVDA.\n\nThe token system is powered by CSS custom properties and supports unlimited themes with a single JSON file. CI runs visual regression checks on every PR, catching pixel-level regressions before they reach production.",
-  //   tags: ["React", "TypeScript", "Storybook", "Radix UI", "CSS Variables"],
-  //   category: "Open Source",
-  //   color: "#10b981",
-  //   gradient: "from-emerald-500 to-cyan-500",
-  //   image: null,
-  //   liveUrl: "#",
-  //   githubUrl: "#",
-  //   featured: false,
-  //   metrics: ["80+ components", "WCAG 2.1 AA", "4.2k ⭐ GitHub"],
-  // },
-  // {
-  //   id: 4,
-  //   title: "Chronicle",
-  //   subtitle: "AI-powered writing assistant",
-  //   description:
-  //     "A writing tool that uses Claude to provide contextual suggestions, tone analysis, and SEO optimisation in real time — integrated directly into the editor.",
-  //   longDescription:
-  //     "Chronicle integrates LLM capabilities directly into a ProseMirror editor. The AI sidebar analyses the current document context and provides structured suggestions without interrupting writing flow. A background worker handles embedding generation for semantic search across the user's document library.\n\nBuilt with the Vercel AI SDK and streamed responses to keep suggestion latency under 300ms on median hardware.",
-  //   tags: ["Next.js", "Anthropic API", "ProseMirror", "Postgres", "Vercel"],
-  //   category: "AI / Productivity",
-  //   color: "#f59e0b",
-  //   gradient: "from-amber-500 to-orange-500",
-  //   image: null,
-  //   liveUrl: "#",
-  //   githubUrl: "#",
-  //   featured: false,
-  //   metrics: ["<300ms latency", "Semantic search", "Streaming UI"],
-  // },
+  
 ];
 
 // ─── Experience ───────────────────────────────────────────────────
