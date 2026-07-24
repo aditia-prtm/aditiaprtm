@@ -1,50 +1,59 @@
 import { motion } from 'framer-motion';
-import { personalInfo } from '../data/portfolio';
-import { User } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 export default function Footer() {
-  const year = new Date().getFullYear();
 
   return (
-    <footer className="relative py-10 border-t dark:border-white/5 border-black/5 overflow-hidden">
-      {/* Gradient top border */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+    <footer className="relative py-8 border-t border-zinc-200 dark:border-white/8 overflow-hidden bg-white dark:bg-[#0A0A0F]">
+      {/* Subtle top gradient line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gradient-to-r from-transparent via-violet-500/60 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-
-          {/* Logo */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+          
+          {/* Left: Brand */}
           <motion.a
             href="#"
-            whileHover={{ scale: 1.03 }}
-            onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="flex items-center gap-2 group"
+            whileHover={{ scale: 1.02 }}
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center gap-3 group"
           >
-            <div className="w-7 h-7 flex items-center justify-center rounded-lg bg-gradient-to-br from-[#FFD166] via-[#F5A623] to-[#FF4D6D]">
-              <User size={13} className="text-white" strokeWidth={2.5} />
+            <div className="w-8 h-8 flex items-center justify-center rounded-2xl">
+              <img src="/favicon.jpg" alt="adtx.png" className='rounded-lg'/>
             </div>
-            <span className="font-bold text-sm dark:text-white text-gray-900">
-              aditia<span className="gradient-text">prtm</span>
-            </span>
+            <div>
+              <span className="font-bold text-xl tracking-tighter text-zinc-900 dark:text-white">
+                aditia<span className="bg-gradient-to-r from-violet-600 to-[#71a801] bg-clip-text text-transparent">prtm</span>
+              </span>
+              <p className="font-mono text-[10px] text-zinc-500 dark:text-zinc-500 -mt-0.5">CS STUDENT • FUTURE FULLSTACK DEV</p>
+            </div>
           </motion.a>
-
-          {/* Copy */}
-          <p className="text-xs dark:text-gray-600 text-gray-400 flex items-center gap-1.5">
-            © {year} {personalInfo.name}
-            <span className="dark:text-gray-700 text-gray-300">·</span>
-            Personal Portfolio
+          <p className="font-mono text-[10px] text-zinc-400 dark:text-zinc-600 tracking-widest">
+            © M. Aditia Putra Pratama - Portfolio - 2026
           </p>
 
-          {/* Back to top */}
-          <motion.button
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-xs font-medium dark:text-gray-500 text-gray-400 dark:hover:text-white hover:text-gray-900 transition-colors"
-          >
-            Back to top ↑
-          </motion.button>
+          {/* Right: Copyright + Back to top */}
+          <div className="flex flex-col items-center lg:items-end gap-3">
+            {/* <p className="text-xs text-zinc-500 dark:text-zinc-500 text-center lg:text-right">
+              © {year} {personalInfo.name}. All rights reserved.
+            </p> */}
+
+            <motion.button
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="group flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-500 
+                hover:text-zinc-900 dark:hover:text-white transition-colors"
+            >
+              Back to top
+              <ArrowUp size={14} className="group-hover:-translate-y-0.5 transition-transform" />
+            </motion.button>
+          </div>
         </div>
+
       </div>
     </footer>
   );

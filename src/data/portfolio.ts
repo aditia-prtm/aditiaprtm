@@ -134,6 +134,23 @@ export const projects = [
   },
   {
     id: 2,
+    title: "FlashNote",
+    subtitle: "A Simple Note-App Web",
+    description:
+      "My first project with database integration.",
+    longDescription:
+    "A minimalist notes app built with Next.js and Supabase. Create, edit, and delete personal notes with a clean dark UI.",
+    tags: ["Next.js", "TailwindCSS", "Supabase"],
+    category: "Mini Project",
+    color: "#8b5cf6",
+    gradient: "from-[#FFD166] via-[#F5A623] to-[#FF4D6D]",
+    image: "FlashNote.png",
+    liveUrl: "https://flash-note-two.vercel.app/",
+    githubUrl: "https://github.com/aditia-prtm/FlashNote",
+    featured: false,
+  },
+  {
+    id: 3,
     title: "Tic-Tac-Toe",
     subtitle: "Play a Game vs Computer",
     description:
@@ -190,9 +207,9 @@ export const experiences = [
 
 // ─── Nav Links ────────────────────────────────────────────────────
 export const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about", icon: "User" },
+  { label: "Skills", href: "#skills", icon: "Code2" },
+  { label: "Projects", href: "#projects", icon: "Folder" },
+  { label: "Experience", href: "#experience", icon: "Briefcase" },
+  { label: "Contact", href: "#contact", icon: "Phone" },
 ];

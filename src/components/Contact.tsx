@@ -1,29 +1,86 @@
+// Contact.tsx — upgraded to match Hero.tsx design system
+
 import { useRef, useState, FormEvent } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Mail, Github, Linkedin, Instagram, Send, MapPin, ArrowUpRight } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
+// ─── Noise overlay ────────────────────────────────────────────────
+function NoiseOverlay() {
+  return (
+    <svg
+      className="absolute inset-0 w-full h-full opacity-[0.025] dark:opacity-[0.035] pointer-events-none z-0"
+      aria-hidden
+    >
+      <filter id="noise-contact">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noise-contact)" />
+    </svg>
+  );
+}
+
+// ─── Labeled rule ─────────────────────────────────────────────────
+function LabeledRule({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-zinc-500 dark:text-zinc-500">
+        {label}
+      </span>
+      <div className="flex-1 h-px bg-zinc-200 dark:bg-white/6" />
+    </div>
+  );
+}
+
+// ─── Input field ──────────────────────────────────────────────────
+function Field({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex flex-col gap-2">
+      <label className="font-mono text-[10px] tracking-[0.2em] uppercase text-zinc-500 dark:text-zinc-500">
+        {label}
+      </label>
+      {children}
+    </div>
+  );
+}
+
+const inputClass = `
+  px-4 py-3 rounded-xl text-sm transition-all
+  border border-zinc-200 bg-zinc-50
+  text-zinc-900 placeholder-zinc-400
+  focus:outline-none focus:ring-2 focus:ring-violet-500/40 focus:border-violet-400
+  dark:border-white/8 dark:bg-transparent
+  dark:text-white dark:placeholder-zinc-600
+  dark:focus:ring-[#C8FF57]/20 dark:focus:border-[#71a801]
+`;
+
 const socials = [
-  { icon: Github, label: 'GitHub', href: personalInfo.social.github, color: '#ffffff' },
-  { icon: Linkedin, label: 'LinkedIn', href: personalInfo.social.linkedin, color: '#0A66C2' },
-  { icon: Instagram, label: 'Instagram', href: personalInfo.social.instagram, color: '#1DA1F2' },
+  { icon: Github,    label: 'GitHub',    href: personalInfo.social.github    },
+  { icon: Linkedin,  label: 'LinkedIn',  href: personalInfo.social.linkedin  },
+  { icon: Instagram, label: 'Instagram', href: personalInfo.social.instagram },
 ];
 
+// ─── Main component ────────────────────────────────────────────────
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-8%' });
+  const isInView   = useInView(sectionRef, { once: true, margin: '-8%' });
 
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm]     = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    // Simulate send (wire up to your backend / Formspree / EmailJS)
     setTimeout(() => setStatus('sent'), 1500);
   };
 
@@ -31,86 +88,170 @@ export default function Contact() {
     hidden: {},
     show: { transition: { staggerChildren: 0.1 } },
   };
-
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+    show:   { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-28 lg:py-36 relative overflow-hidden">
-      {/* Background glows */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 glow-orb dark:bg-violet-600/10 bg-violet-400/6 pointer-events-none" />
-      <div className="absolute top-1/4 left-0 w-72 h-72 glow-orb dark:bg-cyan-600/8 bg-cyan-400/4 pointer-events-none" />
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="relative py-28 lg:py-36 overflow-hidden bg-white dark:bg-[#0A0A0F]"
+    >
+      <NoiseOverlay />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      {/* Background gradient pools */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="dark:hidden" style={{
+          position: 'absolute', bottom: '-10%', right: '-8%',
+          width: 580, height: 580, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 65%)',
+        }} />
+        <div className="dark:hidden" style={{
+          position: 'absolute', top: '15%', left: '-5%',
+          width: 380, height: 380, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(22,163,74,0.04) 0%, transparent 65%)',
+        }} />
+        <div className="hidden dark:block" style={{
+          position: 'absolute', bottom: '-10%', right: '-8%',
+          width: 640, height: 640, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(107,63,255,0.11) 0%, transparent 65%)',
+        }} />
+        <div className="hidden dark:block" style={{
+          position: 'absolute', top: '10%', left: '-8%',
+          width: 420, height: 420, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(200,255,87,0.06) 0%, transparent 65%)',
+        }} />
+        <div className="hidden dark:block" style={{
+          position: 'absolute', top: '50%', right: '30%',
+          width: 260, height: 260, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(97,218,251,0.04) 0%, transparent 65%)',
+        }} />
+      </div>
 
-        {/* Header */}
+      <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-16">
+
+        {/* ── Section header ── */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16 lg:mb-20"
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-14 lg:mb-18"
         >
-          <span className="font-mono text-sm text-violet-500 dark:text-violet-400 mb-3 block tracking-widest uppercase">
-            05. contact
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold dark:text-white text-gray-900 mb-4">
-            Let's <span className="gradient-text">work together</span>
-          </h2>
-          <p className="max-w-md mx-auto dark:text-gray-400 text-gray-500 text-base">
-            Whether it's a freelance engagement, or just a good conversation about tech — my inbox is open.
-          </p>
+          <div className="mb-6">
+            <LabeledRule label="05 · contact" />
+          </div>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
+            <h2
+              className="font-black leading-[0.9] tracking-tighter text-zinc-900 dark:text-white"
+              style={{
+                fontSize: 'clamp(2.6rem, 5vw, 3.75rem)',
+                fontFamily: "'Space Grotesk','Inter',sans-serif",
+              }}
+            >
+              Let's{' '}
+              <span
+                style={{
+                  background: 'linear-gradient(90deg, #7c3aed 0%, #16a34a 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                work together
+              </span>
+            </h2>
+            <p className="max-w-xs text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 sm:text-right">
+              Freelance, collaboration, or just a good chat about tech — my inbox is open.
+            </p>
+          </div>
         </motion.div>
 
+        {/* ── Two-column layout ── */}
         <motion.div
           variants={container}
           initial="hidden"
           animate={isInView ? 'show' : 'hidden'}
-          className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12"
+          className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10 items-start"
         >
 
-          {/* Left panel – info */}
-          <motion.div variants={fadeUp} className="lg:col-span-2 flex flex-col gap-6">
+          {/* ── LEFT PANEL — info ── */}
+          <motion.div variants={fadeUp} className="lg:col-span-2 flex flex-col gap-4">
 
-            {/* Email card */}
-            <div className="p-6 rounded-2xl dark:bg-zinc-950 bg-white dark:border-white/6 border-black/6 border">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl dark:bg-violet-500/15 bg-violet-50 flex items-center justify-center">
-                  <Mail size={18} className="text-[#F5A623]" />
+            {/* Email card — macOS style */}
+            <div className="rounded-2xl overflow-hidden
+              border border-zinc-200 bg-zinc-50
+              dark:border-white/8 dark:bg-transparent"
+            >
+              {/* macOS dots */}
+              <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-zinc-200 dark:border-white/6">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-red-400 dark:bg-red-500/70" />
+                  <div className="w-2 h-2 rounded-full bg-yellow-400 dark:bg-yellow-500/70" />
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 dark:bg-emerald-500/70" />
                 </div>
-                <div>
-                  <p className="text-xs dark:text-gray-500 text-gray-400 mb-0.5">Email me at</p>
-                  <a
-                    href={`mailto:${personalInfo.email}`}
-                    className="text-sm font-medium dark:text-white text-gray-900 hover:text-[#F5A623] transition-colors"
-                  >
-                    {personalInfo.email}
-                  </a>
-                </div>
+                <span className="font-mono text-[10px] text-zinc-400 dark:text-zinc-500 tracking-widest">
+                  contact_info.json
+                </span>
               </div>
-              <div className="flex items-center gap-2 text-xs dark:text-gray-500 text-gray-400">
-                <MapPin size={12} />
-                {personalInfo.location} · Typically replies within 24h
+
+              <div className="p-5 flex flex-col gap-4">
+                {/* Email row */}
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0
+                    border border-violet-200 bg-violet-50
+                    dark:border-violet-500/20 dark:bg-violet-500/10"
+                  >
+                    <Mail size={15} strokeWidth={1.7} className="text-violet-500 dark:text-violet-400" />
+                  </div>
+                  <div>
+                    <p className="font-mono text-[10px] tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-0.5">
+                      email me at
+                    </p>
+                    <a
+                      href={`mailto:${personalInfo.email}`}
+                      className="text-sm font-semibold text-zinc-800 dark:text-zinc-100
+                        hover:text-violet-600 dark:hover:text-[#C8FF57] transition-colors"
+                    >
+                      {personalInfo.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="h-px bg-zinc-200 dark:bg-white/6" />
+
+                {/* Location + reply time */}
+                <div className="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
+                  <MapPin size={12} strokeWidth={1.7} className="text-zinc-400 dark:text-zinc-500 flex-shrink-0" />
+                  <span>{personalInfo.location}</span>
+                  <span className="text-zinc-300 dark:text-white/15">·</span>
+                  <span>Typically replies within 24h</span>
+                </div>
               </div>
             </div>
 
-            {/* Availability */}
-            <div className="p-6 rounded-2xl dark:bg-emerald-500/5 bg-emerald-50 dark:border-emerald-500/15 border-emerald-100 border">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">{personalInfo.availability}</span>
+            {/* Availability card */}
+            <div className="flex items-start gap-3 p-5 rounded-2xl
+              border border-emerald-200 bg-emerald-50
+              dark:border-emerald-500/15 dark:bg-emerald-500/[0.04]"
+            >
+              <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse flex-shrink-0 mt-1.5" />
+              <div>
+                <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400 mb-1">
+                  {personalInfo.availability}
+                </p>
+                <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+                  Open for freelance projects. Ready to help build modern web apps using React, Next.js, and Tailwind CSS.
+                </p>
               </div>
-              <p className="text-xs dark:text-gray-400 text-gray-500 leading-relaxed">
-                Currently open for freelance roles. Ready to help build your next modern web application using React/Next.js, and Tailwind CSS
-              </p>
             </div>
 
             {/* Social links */}
             <div>
-              <p className="text-xs font-mono dark:text-gray-600 text-gray-400 uppercase tracking-widest mb-4">
-                Find me online
-              </p>
+              <div className="mb-4">
+                <LabeledRule label="find me online" />
+              </div>
               <div className="flex flex-col gap-2">
                 {socials.map(({ icon: Icon, label, href }) => (
                   <motion.a
@@ -119,119 +260,157 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ x: 4 }}
-                    className="flex items-center justify-between px-4 py-3 rounded-xl dark:bg-white/4 bg-black/3 dark:border-white/5 border-black/5 border dark:hover:bg-white/8 hover:bg-black/6 transition-colors group"
+                    transition={{ duration: 0.2 }}
+                    className="flex items-center justify-between px-4 py-3 rounded-xl group
+                      border border-zinc-200 bg-zinc-50 text-zinc-600
+                      hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700
+                      dark:border-white/8 dark:bg-transparent dark:text-zinc-400
+                      dark:hover:border-[#71a801]/50 dark:hover:bg-[#70a80112] dark:hover:text-[#C8FF57]
+                      transition-colors duration-200"
                   >
                     <div className="flex items-center gap-3">
-                      <Icon size={16} className="dark:text-gray-400 text-gray-500 group-hover:text-[#F5A623] transition-colors" />
-                      <span className="text-sm font-medium dark:text-gray-300 text-gray-700">{label}</span>
+                      <Icon size={15} strokeWidth={1.7} />
+                      <span className="text-sm font-medium">{label}</span>
                     </div>
-                    <ArrowUpRight size={13} className="dark:text-gray-600 text-gray-400 group-hover:text-[#F5A623] transition-colors" />
+                    <ArrowUpRight
+                      size={13}
+                      strokeWidth={2}
+                      className="text-zinc-400 dark:text-zinc-600
+                        group-hover:text-violet-500 dark:group-hover:text-[#C8FF57]
+                        transition-colors duration-200"
+                    />
                   </motion.a>
                 ))}
               </div>
             </div>
           </motion.div>
 
-          {/* Right panel – form */}
+          {/* ── RIGHT PANEL — form ── */}
           <motion.div variants={fadeUp} className="lg:col-span-3">
-            <div className="p-6 sm:p-8 rounded-2xl dark:bg-zinc-950 bg-white dark:border-white/6 border-black/6 border">
+            <div className="rounded-2xl overflow-hidden
+              border border-zinc-200 bg-zinc-50
+              dark:border-white/8 dark:bg-transparent"
+            >
+              {/* macOS dots header */}
+              <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-zinc-200 dark:border-white/6">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-red-400 dark:bg-red-500/70" />
+                  <div className="w-2 h-2 rounded-full bg-yellow-400 dark:bg-yellow-500/70" />
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 dark:bg-emerald-500/70" />
+                </div>
+                <span className="font-mono text-[10px] text-zinc-400 dark:text-zinc-500 tracking-widest">
+                  new_message.tsx
+                </span>
+              </div>
 
-              {status === 'sent' ? (
-                <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  className="flex flex-col items-center justify-center gap-4 py-12 text-center"
-                >
-                  <div className="text-5xl">🎉</div>
-                  <h3 className="text-xl font-bold dark:text-white text-gray-900">Message sent!</h3>
-                  <p className="dark:text-gray-400 text-gray-500 text-sm">
-                    Thanks for reaching out. I'll get back to you within 24 hours.
-                  </p>
-                  <button
-                    onClick={() => { setStatus('idle'); setForm({ name: '', email: '', message: '' }); }}
-                    className="mt-2 px-6 py-2.5 rounded-xl text-sm font-medium dark:bg-white/8 bg-black/5 dark:text-white text-gray-800 dark:hover:bg-white/14 hover:bg-black/10 transition-colors"
+              <div className="p-6 sm:p-8">
+                {status === 'sent' ? (
+                  <motion.div
+                    initial={{ scale: 0.88, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex flex-col items-center justify-center gap-5 py-14 text-center"
                   >
-                    Send another
-                  </button>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    {/* Name */}
-                    <div className="flex flex-col gap-2">
-                      <label className="text-xs font-medium dark:text-gray-400 text-gray-500 uppercase tracking-wide">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={form.name}
-                        onChange={handleChange}
-                        required
-                        placeholder="John Doe"
-                        className="px-4 py-3 rounded-xl text-sm dark:bg-white/5 bg-black/3 dark:border-white/8 border-black/8 border dark:text-white text-gray-900 dark:placeholder-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all"
-                      />
+                    <motion.div
+                      animate={{ rotate: [0, 14, -8, 14, 0] }}
+                      transition={{ duration: 0.7, delay: 0.2 }}
+                      className="text-5xl select-none"
+                    >
+                      🎉
+                    </motion.div>
+                    <div>
+                      <h3
+                        className="font-black tracking-tight text-zinc-900 dark:text-white mb-2"
+                        style={{
+                          fontSize: 'clamp(1.25rem, 3vw, 1.5rem)',
+                          fontFamily: "'Space Grotesk','Inter',sans-serif",
+                        }}
+                      >
+                        Message sent!
+                      </h3>
+                      <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                        Thanks for reaching out. I'll get back to you within 24 hours.
+                      </p>
                     </div>
-
-                    {/* Email */}
-                    <div className="flex flex-col gap-2">
-                      <label className="text-xs font-medium dark:text-gray-400 text-gray-500 uppercase tracking-wide">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={form.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="johndoe@company.io"
-                        className="px-4 py-3 rounded-xl text-sm dark:bg-white/5 bg-black/3 dark:border-white/8 border-black/8 border dark:text-white text-gray-900 dark:placeholder-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Message */}
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs font-medium dark:text-gray-400 text-gray-500 uppercase tracking-wide">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      value={form.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      placeholder="Tell me about your project, role, or just say hi..."
-                      className="px-4 py-3 rounded-xl text-sm dark:bg-white/5 bg-black/3 dark:border-white/8 border-black/8 border dark:text-white text-gray-900 dark:placeholder-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all resize-none"
-                    />
-                  </div>
-
-                  {/* Submit */}
-                  <motion.button
-                    type="submit"
-                    disabled={status === 'sending'}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="relative flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#FFD166] via-[#F5A623] to-[#FF4D6D] hover:opacity-90 transition-opacity shadow-lg shadow-orange-500/20 disabled:opacity-70"
-                  >
-                    {status === 'sending' ? (
-                      <>
-                        <motion.div
-                          animate={{ rotate: 360 }}
-                          transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
-                          className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
+                    <motion.button
+                      onClick={() => { setStatus('idle'); setForm({ name: '', email: '', message: '' }); }}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.96 }}
+                      className="mt-1 px-6 py-3 rounded-2xl font-semibold text-sm transition-colors
+                        border border-zinc-200 bg-zinc-100 text-zinc-900 hover:border-violet-400 hover:text-violet-700
+                        dark:border-white/10 dark:bg-transparent dark:hover:bg-[#70a80116] dark:text-[#71a801] dark:hover:border-[#71a801]"
+                    >
+                      Send another
+                    </motion.button>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <Field label="Name">
+                        <input
+                          type="text"
+                          name="name"
+                          value={form.name}
+                          onChange={handleChange}
+                          required
+                          placeholder="John Doe"
+                          className={inputClass}
                         />
-                        Sending…
-                      </>
-                    ) : (
-                      <>
-                        <Send size={15} />
-                        Send Message
-                      </>
-                    )}
-                  </motion.button>
-                </form>
-              )}
+                      </Field>
+                      <Field label="Email">
+                        <input
+                          type="email"
+                          name="email"
+                          value={form.email}
+                          onChange={handleChange}
+                          required
+                          placeholder="john@company.io"
+                          className={inputClass}
+                        />
+                      </Field>
+                    </div>
+
+                    <Field label="Message">
+                      <textarea
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
+                        required
+                        rows={6}
+                        placeholder="Tell me about your project, role, or just say hi..."
+                        className={`${inputClass} resize-none`}
+                      />
+                    </Field>
+
+                    {/* Submit button — primary style dari Hero */}
+                    <motion.button
+                      type="submit"
+                      disabled={status === 'sending'}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.97 }}
+                      className="flex items-center justify-center gap-2 py-3.5 rounded-2xl font-semibold text-sm transition-colors disabled:opacity-60
+                        bg-[#71a801] text-white hover:bg-[#5e8d01]
+                        dark:bg-[#C8FF57] dark:text-[#0A0A0F] dark:hover:bg-[#d4ff6e]"
+                    >
+                      {status === 'sending' ? (
+                        <>
+                          <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ repeat: Infinity, duration: 0.9, ease: 'linear' }}
+                            className="w-4 h-4 border-2 border-current/30 border-t-current rounded-full"
+                          />
+                          Sending…
+                        </>
+                      ) : (
+                        <>
+                          <Send size={14} strokeWidth={2} />
+                          Send Message
+                        </>
+                      )}
+                    </motion.button>
+                  </form>
+                )}
+              </div>
             </div>
           </motion.div>
 

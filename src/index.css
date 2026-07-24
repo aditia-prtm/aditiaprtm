@@ -59,11 +59,11 @@ body {
   background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg,#FFD166, #FF4D6D);
+  background: linear-gradient(150deg,#70a80118, #71a801);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg,#ffd16672, #ff4d6e7d);
+  background: linear-gradient(150deg,#70a80118, #70a80198);
 }
 
 /* ─── Selection ──────────────────────────────────────────────────── */
