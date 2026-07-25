@@ -32,7 +32,7 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
             />
 
             {/* Logo box */}
-            <img src="/favicon.jpg" alt="adtx" className='h-14 w-14 md:h-20 md:w-20' />
+            <img src="/favicon.jpg" alt="adtx" className='rounded-full h-14 w-14 md:h-20 md:w-20' />
           </motion.div>
 
           {/* Name */}
