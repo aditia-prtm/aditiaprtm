@@ -198,7 +198,7 @@ export default function Skills() {
         >
           {/* Eyebrow — LabeledRule style */}
           <div className="mb-6">
-            <LabeledRule label="02 · skills" />
+            <LabeledRule label="01 · skills" />
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">

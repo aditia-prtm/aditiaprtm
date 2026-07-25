@@ -8,7 +8,6 @@ import { useDarkMode } from './hooks/useDarkMode';
 import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
@@ -49,7 +48,6 @@ export default function App() {
           <Hero />
 
           {/* 2 – About: bio, avatar, stats */}
-          <About />
 
           {/* 3 – Skills: tech stack grid with progress bars */}
           <Skills />

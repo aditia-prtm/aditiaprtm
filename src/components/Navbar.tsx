@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
-import { User, Code2, Folder, Briefcase, Phone } from 'lucide-react';
+import { Home, Code2, Folder, Briefcase, Phone } from 'lucide-react';
 import { navLinks } from '../data/portfolio';
 
 interface NavbarProps {
@@ -10,7 +10,7 @@ interface NavbarProps {
 }
 
 const iconMap: Record<string, React.ComponentType<any>> = {
-  User,
+  Home,
   Code2,
   Folder,
   Briefcase,
@@ -53,7 +53,7 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
           }`}
       >
         {/* Logo mark */}
-        <motion.a
+        {/* <motion.a
           href="#"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.95 }}
@@ -65,7 +65,7 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
             bg-transparent">
             <img src="/favicon.jpg" alt="" className=' rounded-lg'/>
           </div>
-        </motion.a>
+        </motion.a> */}
 
         {/* Nav links */}
         <div className="flex items-center gap-0.5">

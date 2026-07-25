@@ -207,7 +207,7 @@ export const experiences = [
 
 // ─── Nav Links ────────────────────────────────────────────────────
 export const navLinks = [
-  { label: "About", href: "#about", icon: "User" },
+  { label: "Home", href: "#hero", icon: "Home" },
   { label: "Skills", href: "#skills", icon: "Code2" },
   { label: "Projects", href: "#projects", icon: "Folder" },
   { label: "Experience", href: "#experience", icon: "Briefcase" },
