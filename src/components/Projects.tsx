@@ -400,7 +400,7 @@ export default function Projects() {
           className="mb-14 lg:mb-18"
         >
           <div className="mb-6">
-            <LabeledRule label="03 · projects" />
+            <LabeledRule label="02 · projects" />
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
             <h2

@@ -140,7 +140,7 @@ export default function Contact() {
           className="mb-14 lg:mb-18"
         >
           <div className="mb-6">
-            <LabeledRule label="05 · contact" />
+            <LabeledRule label="04 · contact" />
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
             <h2

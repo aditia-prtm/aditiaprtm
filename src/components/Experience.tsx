@@ -314,7 +314,7 @@ export default function Experience() {
           className="mb-14 lg:mb-18"
         >
           <div className="mb-6">
-            <LabeledRule label="04 · experience" />
+            <LabeledRule label="03 · experience" />
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
             <h2
