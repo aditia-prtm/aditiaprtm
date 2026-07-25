@@ -92,8 +92,7 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
                   <motion.span
                     layoutId="nav-pill"
                     className="absolute inset-0 rounded-xl
-                      bg-zinc-100 border border-zinc-200
-                      dark:bg-[#70a80118] dark:border-[#71a801]"
+                    border bg-[#70a80118] border-[#71a801]"
                     transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                   />
                 )}
