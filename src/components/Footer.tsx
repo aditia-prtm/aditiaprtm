@@ -19,16 +19,10 @@ export default function Footer() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-3 group"
+            className="hidden lg:flex items-center gap-3 group"
           >
             <div className="w-8 h-8 flex items-center justify-center rounded-2xl">
               <img src="/favicon.jpg" alt="adtx.png" className='rounded-lg'/>
-            </div>
-            <div>
-              <span className="font-bold text-xl tracking-tighter text-zinc-900 dark:text-white">
-                aditia<span className="bg-gradient-to-r from-violet-600 to-[#71a801] bg-clip-text text-transparent">prtm</span>
-              </span>
-              <p className="font-mono text-[10px] text-zinc-500 dark:text-zinc-500 -mt-0.5">CS STUDENT • FUTURE FULLSTACK DEV</p>
             </div>
           </motion.a>
           <p className="font-mono text-[10px] text-zinc-400 dark:text-zinc-600 tracking-widest">
