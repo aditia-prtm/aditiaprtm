@@ -196,7 +196,7 @@ export const experiences = [
       "Selected for the OSN team at senior high school, focusing on competitive programming. I explored advanced concepts like Dynamic Programming, Graph Algorithms, and Segment Trees to solve complex problems while competing directly against top students.",
     highlights: [
       "Top 7 at Province Level 2024 (OSN-P)",
-      "Top 2 at Regency Level 2024 (OSN-K)",
+      "2nd Winner at Competitive Programming SRIFOTON 2025",
       "Problem Solving and Algorithm",
       "First introduction to Informatics",
     ],

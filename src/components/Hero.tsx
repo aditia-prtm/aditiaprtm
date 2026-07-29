@@ -247,8 +247,8 @@ export default function Hero() {
             {/* Name */}
             <motion.h1
               variants={item}
-              className="font-black leading-[0.87] tracking-tighter mb-6 text-zinc-900 dark:text-white"
-              style={{ fontSize: 'clamp(4rem, 7vw, 5rem)', fontFamily: "'Space Grotesk','Inter',sans-serif" }}
+              className="flex font-black leading-[0.87] tracking-tighter mb-6 text-zinc-900 dark:text-white gap-2"
+              style={{ fontSize: "clamp(2.7rem, 6vw, 4.2rem)", fontFamily: "'Space Grotesk','Inter',sans-serif" }}
             >
               <span className="block overflow-hidden">
                 <motion.span
