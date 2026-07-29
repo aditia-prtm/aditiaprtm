@@ -135,7 +135,7 @@ const techStack = [
   { name: 'React',      lightColor: '#0ea5e9', darkColor: '#61DAFB' },
   { name: 'TypeScript', lightColor: '#2563eb', darkColor: '#3178C6' },
   { name: 'Next.js',    lightColor: '#18181b', darkColor: '#FFFFFF' },
-  { name: 'Tailwind',   lightColor: '#0284c7', darkColor: '#38BDF8' },
+  { name: 'TailwindCSS',   lightColor: '#0284c7', darkColor: '#38BDF8' },
 ];
 
 const skillCards = [
@@ -241,7 +241,7 @@ export default function Hero() {
 
             {/* Eyebrow */}
             <motion.div variants={item} className="mb-7">
-              <LabeledRule label={`CS Student · ${personalInfo.location}`} />
+              <LabeledRule label={`Informatics Student · ${personalInfo.location}`} />
             </motion.div>
 
             {/* Name */}
@@ -291,7 +291,7 @@ export default function Hero() {
               variants={item}
               className="text-sm sm:text-base leading-relaxed mb-8 max-w-md text-zinc-500 dark:text-zinc-400"
             >
-              Undergraduate Computer Science student at{' '}
+              Undergraduate Informatics Engineering student at{' '}
               <span className="font-semibold text-yellow-600 dark:text-yellow-500">Sriwijaya University</span>
               {' '}.  Passionate about building impactful, human-centered software.
             </motion.p>

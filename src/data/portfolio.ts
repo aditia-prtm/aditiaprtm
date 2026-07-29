@@ -10,7 +10,6 @@ export const personalInfo = {
   taglines: [
     "Sriwijaya University student",
     "Junior Frontend Developer", 
-    
   ],
   bio: `I am an Computer Science (Informatics Engineering) student with a passion for software development, especially in full-stack web development. I enjoy turning ideas into real products by building responsive, scalable, and user-friendly applications. I continuously improve my skills by learning modern technologies, working on personal projects, and exploring new tools that can make development more efficient.`,
   bio2: `My goal is to become a software engineer who creates impactful digital products while constantly growing as a developer. I believe that consistency, curiosity, and problem-solving are the keys to building great software. Outside of coding, I enjoy competitive programming, learning new technologies, and challenging myself through projects that expand both my technical and creative abilities.`,
@@ -117,23 +116,6 @@ export const tools = [
 export const projects = [
   {
     id: 1,
-    title: "Book Vault",
-    subtitle: "Library Management",
-    description:
-      "Modern dark book management system.",
-    longDescription:
-      "A personal book management system built with Next.js, TypeScript, Tailwind CSS v4, and Framer Motion. Features full CRUD operations, real-time search, status filtering, multi-criteria sorting, and a collection statistics dashboard — all managed with React useState, no additional state library required. This project will use Supabase soon.",
-    tags: ["Next.js", "TailwindCSS"],
-    category: "Mini Project",
-    color: "#8b5cf6",
-    gradient: "from-[#FFD166] via-[#F5A623] to-[#FF4D6D]",
-    image: "BookVault.png",
-    liveUrl: "https://book-vault-phi.vercel.app/",
-    githubUrl: "https://github.com/aditia-prtm/BookVault",
-    featured: false,
-  },
-  {
-    id: 2,
     title: "FlashNote",
     subtitle: "A Simple Note-App Web",
     description:
@@ -147,6 +129,23 @@ export const projects = [
     image: "FlashNote.png",
     liveUrl: "https://flash-note-two.vercel.app/",
     githubUrl: "https://github.com/aditia-prtm/FlashNote",
+    featured: false,
+  },
+  {
+    id: 2,
+    title: "Book Vault",
+    subtitle: "Library Management",
+    description:
+      "Modern dark book management system.",
+    longDescription:
+      "A personal book management system built with Next.js, TypeScript, Tailwind CSS v4, and Framer Motion. Features full CRUD operations, real-time search, status filtering, multi-criteria sorting, and a collection statistics dashboard — all managed with React useState, no additional state library required. This project will use Supabase soon.",
+    tags: ["Next.js", "TailwindCSS"],
+    category: "Mini Project",
+    color: "#8b5cf6",
+    gradient: "from-[#FFD166] via-[#F5A623] to-[#FF4D6D]",
+    image: "BookVault.png",
+    liveUrl: "https://book-vault-phi.vercel.app/",
+    githubUrl: "https://github.com/aditia-prtm/BookVault",
     featured: false,
   },
   {
@@ -196,8 +195,8 @@ export const experiences = [
     description:
       "Selected for the OSN team at senior high school, focusing on competitive programming. I explored advanced concepts like Dynamic Programming, Graph Algorithms, and Segment Trees to solve complex problems while competing directly against top students.",
     highlights: [
-      "Top 7 Province Level 2024 (OSN-P)",
-      "Top 2 Regency Level 2024 (OSN-K)",
+      "Top 7 at Province Level 2024 (OSN-P)",
+      "Top 2 at Regency Level 2024 (OSN-K)",
       "Problem Solving and Algorithm",
       "First introduction to Informatics",
     ],
