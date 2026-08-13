@@ -2,7 +2,7 @@
 
 import { useRef, useState, FormEvent } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Mail, Github, Linkedin, Instagram, Send, ArrowUpRight } from 'lucide-react';
+import { Github, Linkedin, Instagram, Send, ArrowUpRight } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 // ─── Labeled rule (identik dengan eyebrow di Hero) ────────────────
@@ -212,7 +212,7 @@ export default function Contact() {
             <div className="border border-zinc-200 bg-zinc-50 dark:border-[#1f1f1f] dark:bg-[#0e0e0e]">
               <FileHeader label="CONTACT.FILE" />
 
-              {infoRows.map(({ key, val, href, accent }, i) => (
+              {infoRows.map(({ key, val, href}, i) => (
                 <motion.div
                   key={key}
                   initial={{ opacity: 0, x: -10 }}
