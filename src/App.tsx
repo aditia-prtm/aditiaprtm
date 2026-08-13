@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import Lenis from 'lenis';
 
 // ─── Hooks ────────────────────────────────────────────────────────
 import { useDarkMode } from './hooks/useDarkMode';
 
 // ─── Components ───────────────────────────────────────────────────
-import LoadingScreen from './components/LoadingScreen';
+import LoadingScreen from './pages/LoadingScreen';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
+import Hero from './sections/Hero';
+import Skills from './sections/Skills';
+import Projects from './sections/Projects';
+import Experience from './sections/Experience';
+import Contact from './sections/Contact';
 import Footer from './components/Footer';
 
 /**
@@ -25,8 +26,24 @@ export default function App() {
 
   // Simulate asset / font loading delay
   useEffect(() => {
-    const timeout = setTimeout(() => setIsLoading(false), 1800);
+    const timeout = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
   }, []);
 
   return (

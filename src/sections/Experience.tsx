@@ -3,47 +3,30 @@ import { motion, useInView } from 'framer-motion';
 import { Briefcase, Calendar, ChevronRight, TrendingUp, Award, MapPin } from 'lucide-react';
 import { experiences } from '../data/portfolio';
 
-// ─── Noise overlay ────────────────────────────────────────────────
-function NoiseOverlay() {
-  return (
-    <svg
-      className="absolute inset-0 w-full h-full opacity-[0.025] dark:opacity-[0.035] pointer-events-none z-0"
-      aria-hidden
-    >
-      <filter id="noise-exp">
-        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
-        <feColorMatrix type="saturate" values="0" />
-      </filter>
-      <rect width="100%" height="100%" filter="url(#noise-exp)" />
-    </svg>
-  );
-}
-
-// ─── Labeled rule ─────────────────────────────────────────────────
+// ─── Labeled rule (identik dengan eyebrow di Hero) ────────────────
 function LabeledRule({ label }: { label: string }) {
   return (
-    <div className="flex items-center gap-3">
-      <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-zinc-500 dark:text-zinc-500">
+    <div className="flex items-center gap-4">
+      <span className="w-8 h-px bg-[#b8860b] dark:bg-[#d4af37] flex-shrink-0" />
+      <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#888]">
         {label}
       </span>
-      <div className="flex-1 h-px bg-zinc-200 dark:bg-white/6" />
+      <div className="flex-1 h-px bg-zinc-200 dark:bg-[#1f1f1f]" />
     </div>
   );
 }
 
-// ─── Right panel: stat card ───────────────────────────────────────
+// ─── Right panel: stat card (mirrors Hero's Stat) ─────────────────
 function StatCard({
   icon: Icon,
   value,
   label,
-  accent,
   delay,
   isInView,
 }: {
   icon: React.ElementType;
   value: string;
   label: string;
-  accent: string;
   delay: number;
   isInView: boolean;
 }) {
@@ -52,25 +35,19 @@ function StatCard({
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -3 }}
-      className="flex flex-col gap-3 p-5 rounded-2xl cursor-default transition-colors
-        border border-zinc-200 bg-zinc-50 hover:border-zinc-300
-        dark:border-white/8 dark:bg-white/[0.02] dark:hover:border-white/14 dark:hover:bg-white/[0.04]"
+      className="flex flex-col gap-3 p-5 cursor-default transition-colors
+        border border-zinc-200 bg-zinc-50 hover:border-[#b8860b]/40
+        dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:hover:border-[#d4af37]/30"
     >
-      <div
-        className="w-9 h-9 rounded-xl flex items-center justify-center"
-        style={{
-          background: `color-mix(in srgb, ${accent} 12%, transparent)`,
-          border: `1px solid color-mix(in srgb, ${accent} 22%, transparent)`,
-        }}
-      >
-        <Icon size={16} strokeWidth={1.7} style={{ color: accent }} />
-      </div>
+      <Icon size={15} strokeWidth={1.6} className="text-[#b8860b] dark:text-[#d4af37]" />
       <div>
-        <p className="font-black text-2xl leading-none tracking-tight text-zinc-900 dark:text-white mb-1">
+        <p
+          className="font-black text-2xl leading-none tracking-tight text-zinc-900 dark:text-[#f0ede6] mb-1.5"
+          style={{ fontFamily: "'Playfair Display', serif" }}
+        >
           {value}
         </p>
-        <p className="font-mono text-[10px] tracking-widest uppercase text-zinc-500 dark:text-zinc-500">
+        <p className="font-mono text-[9px] tracking-[0.18em] uppercase text-zinc-500 dark:text-[#777]">
           {label}
         </p>
       </div>
@@ -94,38 +71,35 @@ function HighlightCard({
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.65, delay, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ x: -3 }}
-      className="flex items-start gap-3.5 p-4 rounded-xl cursor-default transition-colors
-        border border-zinc-200 bg-zinc-50 hover:border-zinc-300
-        dark:border-white/6 dark:bg-transparent dark:hover:border-white/12 dark:hover:bg-white/[0.02]"
+      className="flex items-start gap-3.5 p-4 cursor-default transition-colors
+        border border-zinc-200 bg-zinc-50 hover:border-[#b8860b]/40
+        dark:border-[#1f1f1f] dark:bg-transparent dark:hover:border-[#d4af37]/30 dark:hover:bg-[#0e0e0e]"
     >
-      {/* Color dot */}
       <div
-        className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-        style={{
-          background: `color-mix(in srgb, ${exp.color} 14%, transparent)`,
-          border: `1px solid color-mix(in srgb, ${exp.color} 24%, transparent)`,
-        }}
+        className="w-8 h-8 flex items-center justify-center flex-shrink-0 mt-0.5
+          border border-[#b8860b]/25 bg-[#b8860b]/8
+          dark:border-[#d4af37]/25 dark:bg-[#d4af37]/8"
       >
-        <Briefcase size={13} strokeWidth={1.8} style={{ color: exp.color }} />
+        <Briefcase size={13} strokeWidth={1.8} className="text-[#b8860b] dark:text-[#d4af37]" />
       </div>
       <div className="min-w-0">
-        <p className="text-sm font-bold text-zinc-900 dark:text-white leading-tight truncate">
+        <p className="text-sm font-bold text-zinc-900 dark:text-[#f0ede6] leading-tight truncate">
           {exp.role}
         </p>
         <div className="flex items-center gap-1.5 mt-0.5">
-          <span className="text-xs font-semibold" style={{ color: exp.color }}>
+          <span className="text-xs font-semibold text-[#b8860b] dark:text-[#d4af37]">
             {exp.company}
           </span>
-          <span className="text-zinc-300 dark:text-white/15 text-xs">·</span>
-          <span className="font-mono text-[10px] text-zinc-400 dark:text-zinc-500 uppercase tracking-wide">
+          <span className="text-zinc-300 dark:text-[#333] text-xs">·</span>
+          <span className="font-mono text-[9px] text-zinc-400 dark:text-[#666] uppercase tracking-wide">
             {exp.period.split(' ')[0]}
           </span>
         </div>
         {/* Top highlight bullet */}
         {exp.highlights?.[0] && (
           <div className="flex items-start gap-1.5 mt-2">
-            <ChevronRight size={11} strokeWidth={2.2} className="flex-shrink-0 mt-0.5" style={{ color: exp.color }} />
-            <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-2">
+            <ChevronRight size={11} strokeWidth={2.2} className="flex-shrink-0 mt-0.5 text-[#b8860b] dark:text-[#d4af37]" />
+            <p className="text-[11px] text-zinc-500 dark:text-[#888] leading-relaxed line-clamp-2">
               {exp.highlights[0]}
             </p>
           </div>
@@ -160,12 +134,12 @@ function TimelineItem({
           initial={{ scale: 0 }}
           animate={isInView ? { scale: 1 } : {}}
           transition={{ delay: index * 0.13 + 0.25, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0
+          className="relative z-10 w-9 h-9 flex items-center justify-center flex-shrink-0
             border border-zinc-200 bg-white
-            dark:border-white/10 dark:bg-[#0A0A0F]"
-          style={{ boxShadow: `0 0 0 3px color-mix(in srgb, ${exp.color} 18%, transparent)` }}
+            dark:border-[#1f1f1f] dark:bg-[#080808]"
+          style={{ boxShadow: '0 0 0 3px rgba(184,134,11,0.1)' }}
         >
-          <Briefcase size={14} strokeWidth={1.7} style={{ color: exp.color }} />
+          <Briefcase size={14} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
         </motion.div>
 
         {!isLast && (
@@ -174,7 +148,7 @@ function TimelineItem({
             animate={isInView ? { scaleY: 1 } : {}}
             transition={{ delay: index * 0.13 + 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             style={{ transformOrigin: 'top' }}
-            className="flex-1 w-px mt-2 bg-zinc-200 dark:bg-white/8"
+            className="flex-1 w-px mt-2 bg-zinc-200 dark:bg-[#1f1f1f]"
           />
         )}
       </div>
@@ -184,37 +158,37 @@ function TimelineItem({
         <motion.div
           whileHover={{ x: 3 }}
           transition={{ duration: 0.25 }}
-          className="relative p-5 rounded-2xl cursor-default transition-colors duration-200
-            border border-zinc-200 bg-zinc-50 hover:border-zinc-300
-            dark:border-white/8 dark:bg-transparent dark:hover:border-white/14 dark:hover:bg-white/[0.02]"
+          className="relative p-5 cursor-default transition-colors duration-200
+            border border-zinc-200 bg-zinc-50 hover:border-[#b8860b]/40
+            dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:hover:border-[#d4af37]/30 dark:hover:bg-[#0e0e0e]"
         >
           {/* Accent top bar */}
           <div
-            className="absolute top-0 left-5 right-5 h-px rounded-full opacity-60"
-            style={{ background: `linear-gradient(90deg, ${exp.color}, transparent)` }}
+            className="absolute top-0 left-5 right-5 h-px opacity-70"
+            style={{ background: 'linear-gradient(90deg, #b8860b, transparent)' }}
           />
 
           {/* Role + company */}
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
             <div>
               <h3
-                className="font-black tracking-tight text-zinc-900 dark:text-white leading-tight"
+                className="font-black tracking-[-0.01em] text-zinc-900 dark:text-[#f0ede6] leading-tight"
                 style={{
-                  fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
-                  fontFamily: "'Space Grotesk','Inter',sans-serif",
+                  fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
+                  fontFamily: "'Playfair Display', serif",
                 }}
               >
                 {exp.role}
               </h3>
-              <div className="flex items-center gap-2 mt-0.5">
-                <Briefcase size={11} strokeWidth={1.7} style={{ color: exp.color }} />
-                <span className="text-sm font-semibold" style={{ color: exp.color }}>
+              <div className="flex items-center gap-2 mt-1">
+                <Briefcase size={11} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
+                <span className="text-sm font-semibold text-[#b8860b] dark:text-[#d4af37]">
                   {exp.company}
                 </span>
                 {exp.type && (
                   <>
-                    <span className="text-zinc-300 dark:text-white/15">·</span>
-                    <span className="font-mono text-[10px] tracking-wide text-zinc-400 dark:text-zinc-500 uppercase">
+                    <span className="text-zinc-300 dark:text-[#333]">·</span>
+                    <span className="font-mono text-[9px] tracking-wide text-zinc-400 dark:text-[#666] uppercase">
                       {exp.type}
                     </span>
                   </>
@@ -223,27 +197,27 @@ function TimelineItem({
             </div>
 
             {/* Period badge */}
-            <div className="flex items-center gap-1.5 flex-shrink-0 px-3 py-1.5 rounded-lg self-start
+            <div className="flex items-center gap-1.5 flex-shrink-0 px-3 py-1.5 self-start
               border border-zinc-200 bg-white
-              dark:border-white/8 dark:bg-transparent"
+              dark:border-[#1f1f1f] dark:bg-transparent"
             >
-              <Calendar size={11} strokeWidth={1.7} className="text-zinc-400 dark:text-zinc-500" />
-              <span className="font-mono text-[10px] tracking-widest text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
+              <Calendar size={11} strokeWidth={1.7} className="text-zinc-400 dark:text-[#666]" />
+              <span className="font-mono text-[9px] tracking-widest text-zinc-500 dark:text-[#888] whitespace-nowrap">
                 {exp.period}
               </span>
             </div>
           </div>
 
-          <div className="h-px bg-zinc-200 dark:bg-white/6 mb-4" />
+          <div className="h-px bg-zinc-200 dark:bg-[#1f1f1f] mb-4" />
 
-          <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 mb-4">
+          <p className="text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a] mb-4">
             {exp.description}
           </p>
 
           <div className="flex flex-col gap-1.5">
             {exp.highlights.map((h: string) => (
-              <div key={h} className="flex items-start gap-2 text-xs text-zinc-500 dark:text-zinc-400">
-                <ChevronRight size={12} strokeWidth={2.2} className="flex-shrink-0 mt-0.5" style={{ color: exp.color }} />
+              <div key={h} className="flex items-start gap-2 text-xs text-zinc-500 dark:text-[#8a8a8a]">
+                <ChevronRight size={12} strokeWidth={2.2} className="flex-shrink-0 mt-0.5 text-[#b8860b] dark:text-[#d4af37]" />
                 {h}
               </div>
             ))}
@@ -260,51 +234,81 @@ export default function Experience() {
   const isInView   = useInView(sectionRef, { once: true, margin: '-5%' });
 
   // Derived stats from experiences data
-  const totalYears   = experiences.length > 0 ? `${experiences.length}+` : '—';
-  const totalRoles   = `${experiences.length}`;
+  const totalYears      = experiences.length > 0 ? `${experiences.length}+` : '—';
+  const totalRoles      = `${experiences.length}`;
   const totalHighlights = experiences.reduce((acc: number, e) => acc + (e.highlights?.length ?? 0), 0);
-  const uniqueTypes  = [...new Set(experiences.map((e) => e.type))].length;
+  const uniqueTypes     = [...new Set(experiences.map((e) => e.type))].length;
 
   const stats = [
-    { icon: TrendingUp, value: totalYears,              label: 'Experiences',   accent: '#7c3aed', darkAccent: '#6B3FFF' },
-    { icon: Briefcase,  value: totalRoles,              label: 'Roles held',    accent: '#16a34a', darkAccent: '#C8FF57' },
-    { icon: Award,      value: `${totalHighlights}+`,   label: 'Achievements',  accent: '#0284c7', darkAccent: '#61DAFB' },
-    { icon: MapPin,     value: `${uniqueTypes}`,         label: 'Work types',    accent: '#d97706', darkAccent: '#FFD166' },
+    { icon: TrendingUp, value: totalYears,            label: 'Experiences'  },
+    { icon: Briefcase,  value: totalRoles,            label: 'Roles held'   },
+    { icon: Award,      value: `${totalHighlights}+`, label: 'Achievements' },
+    { icon: MapPin,     value: `${uniqueTypes}`,      label: 'Work types'   },
   ];
 
   return (
     <section
       id="experience"
       ref={sectionRef}
-      className="relative py-28 lg:py-36 overflow-hidden bg-white dark:bg-[#0A0A0F]"
+      className="relative py-14 lg:py-20 overflow-hidden bg-white dark:bg-[#080808]"
     >
-      <NoiseOverlay />
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@300;400&display=swap');
 
-      {/* Background gradient pools */}
+        .experience-grid-bg {
+          background-image:
+            linear-gradient(to right, #00000008 1px, transparent 1px),
+            linear-gradient(to bottom, #00000008 1px, transparent 1px);
+          background-size: 72px 72px;
+        }
+        .dark .experience-grid-bg {
+          background-image:
+            linear-gradient(to right, #ffffff05 1px, transparent 1px),
+            linear-gradient(to bottom, #ffffff05 1px, transparent 1px);
+          background-size: 72px 72px;
+        }
+        .experience-gold-text {
+          background: linear-gradient(135deg, #b8860b 0%, #d4a017 50%, #9a7209 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .dark .experience-gold-text {
+          background: linear-gradient(135deg, #d4af37 0%, #f5e177 50%, #c9a227 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+      `}</style>
+
+      {/* Background grid — same rhythm as Hero */}
+      <div className="absolute inset-0 experience-grid-bg pointer-events-none" />
+
+      {/* Background gradient pools — warm gold, mirrors Hero */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="dark:hidden" style={{
           position: 'absolute', bottom: '5%', left: '-8%',
           width: 520, height: 520, borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, rgba(184,134,11,0.04) 0%, transparent 65%)',
         }} />
         <div className="dark:hidden" style={{
           position: 'absolute', top: '10%', right: '-5%',
           width: 360, height: 360, borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(22,163,74,0.04) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, rgba(184,134,11,0.03) 0%, transparent 65%)',
         }} />
         <div className="hidden dark:block" style={{
           position: 'absolute', bottom: '0%', left: '-10%',
           width: 580, height: 580, borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(107,63,255,0.1) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 65%)',
         }} />
         <div className="hidden dark:block" style={{
           position: 'absolute', top: '5%', right: '-8%',
           width: 380, height: 380, borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(200,255,87,0.06) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, rgba(212,175,55,0.04) 0%, transparent 65%)',
         }} />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-16">
+      <div className="relative z-10 max-w-[1300px] mx-auto px-8 md:px-16">
 
         {/* ── Section header ── */}
         <motion.div
@@ -313,31 +317,23 @@ export default function Experience() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mb-14 lg:mb-18"
         >
-          <div className="mb-6">
-            <LabeledRule label="03 · experience" />
+          <div className="mb-8">
+            <LabeledRule label="03 · Experience" />
           </div>
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <h2
-              className="font-black leading-[0.9] tracking-tighter text-zinc-900 dark:text-white"
+              className="font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"
               style={{
                 fontSize: 'clamp(2.6rem, 5vw, 3.75rem)',
-                fontFamily: "'Space Grotesk','Inter',sans-serif",
+                fontFamily: "'Playfair Display', serif",
               }}
             >
-              The{' '}
-              <span
-                style={{
-                  background: 'linear-gradient(90deg, #7c3aed 0%, #16a34a 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                journey
-              </span>
-              {' '}so far
+              The <span className="experience-gold-text">journey</span> so far
             </h2>
-            <p className="max-w-xs text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 sm:text-right">
+            <p
+              className="max-w-xs text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a] sm:text-right"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
               Places where I've grown, learned with awesome people, and built cool stuff.
             </p>
           </div>
@@ -370,7 +366,6 @@ export default function Experience() {
                   icon={s.icon}
                   value={s.value}
                   label={s.label}
-                  accent={s.accent}
                   delay={0.3 + i * 0.1}
                   isInView={isInView}
                 />
@@ -383,7 +378,7 @@ export default function Experience() {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.75 }}
             >
-              <LabeledRule label="career snapshot" />
+              <LabeledRule label="Career snapshot" />
             </motion.div>
 
             {/* Highlight cards — one per experience */}
@@ -403,20 +398,20 @@ export default function Experience() {
               initial={{ opacity: 0, y: 14 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.95 }}
-              className="flex items-center gap-3 px-4 py-3 rounded-xl
-                bg-violet-50 border border-violet-200
-                dark:bg-white/[0.02] dark:border-violet-500/18"
+              className="flex items-center gap-3 px-4 py-3
+                bg-[#b8860b]/[0.05] border border-[#b8860b]/20
+                dark:bg-[#d4af37]/[0.04] dark:border-[#d4af37]/18"
             >
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
                 className="w-4 h-4 rounded-full flex-shrink-0
-                  border-[1.5px] border-violet-300 border-t-violet-600
-                  dark:border-violet-500/60 dark:border-t-[#C8FF57]"
+                  border-[1.5px] border-[#b8860b]/30 border-t-[#b8860b]
+                  dark:border-[#d4af37]/30 dark:border-t-[#d4af37]"
               />
-              <span className="font-mono text-[10px] leading-relaxed text-zinc-500 dark:text-zinc-400">
+              <span className="font-mono text-[10px] leading-relaxed text-zinc-500 dark:text-[#8a8a8a]">
                 Open to:{' '}
-                <span className="text-violet-600 dark:text-[#C8FF57]">
+                <span className="text-[#b8860b] dark:text-[#d4af37]">
                   Internships · Freelance · Collab
                 </span>
               </span>

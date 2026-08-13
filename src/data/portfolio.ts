@@ -1,5 +1,5 @@
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaPython} from "react-icons/fa6";
-import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiTypescript, SiMysql, SiPostgresql, SiSupabase, SiC} from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiTypescript, SiC} from "react-icons/si";
 
 // ─── Portfolio Data ───────────────────────────────────────────────
 // Central data file – edit here to customise the portfolio
@@ -87,21 +87,6 @@ export const techStack = [
     label : "C", 
     icon : SiC
   },
-  {
-    id : 12, 
-    label : "MySQL", 
-    icon : SiMysql
-  },
-  {
-    id : 13, 
-    label : "PostgreSQL", 
-    icon : SiPostgresql
-  },
-  {
-    id : 14, 
-    label : "Supabase", 
-    icon : SiSupabase
-  }
 ];
 
 export const tools = [
@@ -133,23 +118,6 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Book Vault",
-    subtitle: "Library Management",
-    description:
-      "Modern dark book management system.",
-    longDescription:
-      "A personal book management system built with Next.js, TypeScript, Tailwind CSS v4, and Framer Motion. Features full CRUD operations, real-time search, status filtering, multi-criteria sorting, and a collection statistics dashboard — all managed with React useState, no additional state library required. This project will use Supabase soon.",
-    tags: ["Next.js", "TailwindCSS"],
-    category: "Mini Project",
-    color: "#8b5cf6",
-    gradient: "from-[#FFD166] via-[#F5A623] to-[#FF4D6D]",
-    image: "BookVault.png",
-    liveUrl: "https://book-vault-phi.vercel.app/",
-    githubUrl: "https://github.com/aditia-prtm/BookVault",
-    featured: false,
-  },
-  {
-    id: 3,
     title: "Tic-Tac-Toe",
     subtitle: "Play a Game vs Computer",
     description:

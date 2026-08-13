@@ -42,31 +42,21 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
 
   return (
     <div className="fixed top-5 left-0 right-0 z-50 flex justify-center pointer-events-none px-4">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+      `}</style>
+
       <motion.nav
         initial={{ y: -72, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-        className={`pointer-events-auto flex items-center gap-1 px-3 py-2 rounded-3xl transition-all duration-500
+        className={`pointer-events-auto flex items-center gap-1 px-3 py-2 rounded-2xl transition-all duration-500
           ${scrolled
-            ? 'border border-zinc-200/80 bg-white/80 backdrop-blur-xl shadow-lg shadow-black/[0.06] dark:border-white/10 dark:bg-[#0A0A0F]/80 dark:shadow-black/40'
-            : 'border border-zinc-200/60 bg-white/60 backdrop-blur-md dark:border-white/8 dark:bg-[#0A0A0F]/60'
+            ? 'border border-zinc-200/80 bg-white/80 backdrop-blur-xl shadow-lg shadow-black/[0.06] dark:border-[#1f1f1f] dark:bg-[#0a0a0a]/85 dark:shadow-black/40'
+            : 'border border-zinc-200/60 bg-white/60 backdrop-blur-md dark:border-[#1a1a1a] dark:bg-[#0a0a0a]/60'
           }`}
+        style={{ fontFamily: "'JetBrains Mono', monospace" }}
       >
-        {/* Logo mark */}
-        {/* <motion.a
-          href="#"
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          className="flex items-center gap-2 pr-3 mr-1 border-r border-zinc-200 dark:border-white/8"
-          aria-label="Back to top"
-        >
-          <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0
-            bg-transparent">
-            <img src="/favicon.jpg" alt="" className=' rounded-lg'/>
-          </div>
-        </motion.a> */}
-
         {/* Nav links */}
         <div className="flex items-center gap-0.5">
           {navLinks.map(link => {
@@ -79,11 +69,11 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
                 className={`
-                  group relative px-3.5 py-1.5 rounded-xl text-[13px] font-medium
+                  group relative px-3.5 py-1.5 rounded-xl text-[11px] font-medium tracking-[0.08em]
                   transition-colors duration-200
                   ${isActive
-                    ? 'text-zinc-900 dark:text-white'
-                    : 'text-zinc-400 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                    ? 'text-[#b8860b] dark:text-[#d4af37]'
+                    : 'text-zinc-500 dark:text-[#666] hover:text-zinc-900 dark:hover:text-[#eee]'
                   }
                 `}
               >
@@ -92,37 +82,45 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
                   <motion.span
                     layoutId="nav-pill"
                     className="absolute inset-0 rounded-xl
-                    border bg-[#70a80118] border-[#71a801]"
+                    border bg-[#b8860b]/8 border-[#b8860b]/30 dark:bg-[#d4af37]/10 dark:border-[#d4af37]/30"
                     transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                   />
                 )}
 
                 {/* Hover background */}
                 {!isActive && (
-                  <span 
+                  <span
                     className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-200
-                      bg-zinc-100 
-                      dark:bg-[#70a80118] dark:border-[#71a801]" 
+                      bg-zinc-100
+                      dark:bg-white/[0.04]"
                   />
                 )}
 
                 {/* Icon + Label */}
-                <span className="relative flex flex-col items-center gap-0.5">
+                <span className="relative flex flex-col items-center gap-1">
                   {IconComponent && (
-                    <IconComponent size={15} strokeWidth={2} className="text-current" />
+                    <IconComponent size={15} strokeWidth={1.75} className="text-current" />
                   )}
-                  <span className="hidden md:block leading-none">
+                  <span className="hidden md:block leading-none uppercase text-[9px] tracking-[0.16em]">
                     {link.label}
                   </span>
                 </span>
+
+                {/* Active dot — echoes CaseFile status dot */}
+                {isActive && (
+                  <motion.span
+                    className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#b8860b] dark:bg-[#d4af37]"
+                    animate={{ opacity: [1, 0.3, 1] }}
+                    transition={{ duration: 2.2, repeat: Infinity }}
+                  />
+                )}
               </button>
             );
           })}
         </div>
 
         {/* Divider */}
-        <div className="w-px h-5 bg-zinc-200 dark:bg-white/8 mx-1" />
-
+        <div className="w-px h-5 bg-zinc-200 dark:bg-[#1f1f1f] mx-1.5" />
         {/* Theme toggle */}
         <motion.button
           whileHover={{ scale: 1.08 }}
@@ -130,8 +128,8 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
           onClick={onToggleDark}
           aria-label="Toggle theme"
           className="w-8 h-8 flex items-center justify-center rounded-xl transition-colors duration-200
-            text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100
-            dark:text-zinc-400 dark:hover:text-white dark:hover:bg-[#70a80118]"
+            text-zinc-500 hover:text-[#b8860b] hover:bg-zinc-100
+            dark:text-[#666] dark:hover:text-[#d4af37] dark:hover:bg-white/[0.04]"
         >
           <AnimatePresence mode="wait" initial={false}>
             {isDark ? (
@@ -142,7 +140,7 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
                 exit={{   rotate: 90,  opacity: 0, scale: 0.6 }}
                 transition={{ duration: 0.22 }}
               >
-                <Sun size={15} strokeWidth={2} />
+                <Sun size={15} strokeWidth={1.75} />
               </motion.div>
             ) : (
               <motion.div
@@ -152,7 +150,7 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
                 exit={{   rotate: -90, opacity: 0, scale: 0.6 }}
                 transition={{ duration: 0.22 }}
               >
-                <Moon size={15} strokeWidth={2} />
+                <Moon size={15} strokeWidth={1.75} />
               </motion.div>
             )}
           </AnimatePresence>

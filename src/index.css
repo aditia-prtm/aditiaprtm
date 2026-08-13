@@ -59,16 +59,16 @@ body {
   background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(150deg,#70a80118, #71a801);
+  background: linear-gradient(150deg,#70a80118, #b8860b);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(150deg,#70a80118, #70a80198);
+  background: linear-gradient(150deg,#70a80118, #fac43a);
 }
 
 /* ─── Selection ──────────────────────────────────────────────────── */
 ::selection {
-  background: rgba(139, 92, 246, 0.3);
+  background: rgba(155, 119, 12, 0.508);
   color: #f0f0f5;
 }
 
