@@ -1,9 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { personalInfo } from '../../data/portfolio';
 
 interface LoadingScreenProps {
   isLoading: boolean;
 }
 
+/**
+ * LoadingScreen
+ * Elegant initial loading overlay with animated gold ring, logo, progress bar, and status indicator.
+ */
 export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
   return (
     <AnimatePresence>
@@ -14,34 +19,24 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="fixed inset-0 z-[200] bg-white dark:bg-[#080808] flex flex-col items-center justify-center gap-8 overflow-hidden"
         >
-          <style>{`
-            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@300;400&display=swap');
-
-            .loading-grid-bg {
-              background-image:
-                linear-gradient(to right, #00000008 1px, transparent 1px),
-                linear-gradient(to bottom, #00000008 1px, transparent 1px);
-              background-size: 72px 72px;
-            }
-            .dark .loading-grid-bg {
-              background-image:
-                linear-gradient(to right, #ffffff05 1px, transparent 1px),
-                linear-gradient(to bottom, #ffffff05 1px, transparent 1px);
-              background-size: 72px 72px;
-            }
-          `}</style>
-
-          {/* Background grid — same rhythm as Hero */}
-          <div className="absolute inset-0 loading-grid-bg pointer-events-none" />
+          {/* Background grid */}
+          <div className="absolute inset-0 section-grid-bg pointer-events-none" />
 
           {/* Soft gold pool */}
-          <div className="absolute pointer-events-none" style={{
-            top: '30%', left: '50%', width: 500, height: 500,
-            transform: 'translate(-50%, -50%)', borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(184,134,11,0.05) 0%, transparent 70%)',
-          }} />
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              top: '30%',
+              left: '50%',
+              width: 500,
+              height: 500,
+              transform: 'translate(-50%, -50%)',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(184,134,11,0.05) 0%, transparent 70%)',
+            }}
+          />
 
-          {/* Corner tag — mirrors CaseFile header */}
+          {/* Corner tag */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -49,7 +44,10 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
             className="absolute top-8 left-1/2 -translate-x-1/2 flex items-center gap-2"
           >
             <span className="w-6 h-px bg-[#b8860b] dark:bg-[#d4af37]" />
-            <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-400 dark:text-[#555]">
+            <span
+              className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-400 dark:text-[#555]"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
               LOADING...
             </span>
             <span className="w-6 h-px bg-[#b8860b] dark:bg-[#d4af37]" />
@@ -68,7 +66,8 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
               transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
               className="absolute -inset-4 rounded-full border border-[#b8860b]/20 dark:border-[#d4af37]/20"
               style={{
-                background: 'conic-gradient(from 0deg, transparent 0deg, rgba(184,134,11,0.45) 60deg, transparent 120deg)',
+                background:
+                  'conic-gradient(from 0deg, transparent 0deg, rgba(184,134,11,0.45) 60deg, transparent 120deg)',
               }}
             />
 
@@ -76,8 +75,7 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
             <img
               src="/favicon.png"
               alt="adtx"
-              className="rounded-full h-14 w-14 p-2 md:h-20 md:w-20 border border-[#b8860b]/25 dark:border-[#d4af37]/20
-                bg-[#b8860b]/8 dark:bg-[#d4af37]/8"
+              className="rounded-full h-14 w-14 p-2 md:h-20 md:w-20 border border-[#b8860b]/25 dark:border-[#d4af37]/20 bg-[#b8860b]/8 dark:bg-[#d4af37]/8"
             />
           </motion.div>
 
@@ -92,7 +90,7 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
               className="font-bold text-xl text-zinc-900 dark:text-[#f0ede6] mb-1.5"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Aditia Pratama
+              {personalInfo.name}
             </p>
             <p
               className="text-xs text-zinc-500 dark:text-[#666] tracking-[0.15em] uppercase"
@@ -117,7 +115,7 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
             />
           </motion.div>
 
-          {/* Status dot — mirrors CaseFile footer */}
+          {/* Status dot */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -129,7 +127,10 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
               animate={{ opacity: [1, 0.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-400 dark:text-[#555]">
+            <span
+              className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-400 dark:text-[#555]"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
               Loading assets
             </span>
           </motion.div>

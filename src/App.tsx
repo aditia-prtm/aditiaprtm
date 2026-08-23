@@ -5,31 +5,31 @@ import Lenis from 'lenis';
 // ─── Hooks ────────────────────────────────────────────────────────
 import { useDarkMode } from './hooks/useDarkMode';
 
-// ─── Components ───────────────────────────────────────────────────
-import LoadingScreen from './pages/LoadingScreen';
-import Navbar from './components/Navbar';
+// ─── Layout Components ────────────────────────────────────────────
+import { Navbar, Footer, LoadingScreen } from './components/layout';
+
+// ─── Sections ─────────────────────────────────────────────────────
 import Hero from './sections/Hero';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Experience from './sections/Experience';
 import Contact from './sections/Contact';
-import Footer from './components/Footer';
 
 /**
  * App
- * Root component. Manages theme + loading state, then renders the
- * full single-page portfolio layout.
+ * Root component. Manages theme, loading overlay, smooth scrolling with Lenis, and section layout.
  */
 export default function App() {
   const { isDark, toggle } = useDarkMode();
   const [isLoading, setIsLoading] = useState(true);
 
-  // Simulate asset / font loading delay
+  // Simulate initial asset loading delay
   useEffect(() => {
-    const timeout = setTimeout(() => setIsLoading(false), 1000);
+    const timeout = setTimeout(() => setIsLoading(false), 900);
     return () => clearTimeout(timeout);
   }, []);
 
+  // Initialize Lenis smooth scroll
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -48,40 +48,36 @@ export default function App() {
 
   return (
     <>
-      {/* ── Loading screen ────────────────────────────────────────── */}
+      {/* Loading screen overlay */}
       <AnimatePresence>
         {isLoading && <LoadingScreen isLoading={isLoading} />}
       </AnimatePresence>
 
-      {/* ── Main layout ───────────────────────────────────────────── */}
-      <div className="relative min-h-screen dark:bg-dark-950 bg-slate-50 transition-colors duration-400">
-
+      {/* Main layout */}
+      <div className="relative min-h-screen dark:bg-[#080808] bg-white transition-colors duration-400">
         {/* Fixed navigation */}
         <Navbar isDark={isDark} onToggleDark={toggle} />
 
-        {/* Page content */}
+        {/* Page content sections */}
         <main>
           {/* 1 – Hero: full-viewport intro with typing animation */}
           <Hero />
 
-          {/* 2 – About: bio, avatar, stats */}
-
-          {/* 3 – Skills: tech stack grid with progress bars */}
+          {/* 2 – Skills: tech stack grid with tool badges */}
           <Skills />
 
-          {/* 4 – Projects: 3D tilt cards with modal detail view */}
+          {/* 3 – Projects: 3D interactive tilt cards with modal detail view */}
           <Projects />
 
-          {/* 5 – Experience: animated vertical timeline */}
+          {/* 4 – Experience: animated vertical timeline and metrics */}
           <Experience />
 
-          {/* 6 – Contact: form + social links */}
+          {/* 5 – Contact: dossier info card and message form */}
           <Contact />
         </main>
 
         {/* Footer */}
         <Footer />
-
       </div>
     </>
   );

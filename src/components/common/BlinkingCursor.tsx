@@ -1,7 +1,10 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-// ─── Blinking cursor ──────────────────────────────────────────────
-export default function Cursor() {
+/**
+ * BlinkingCursor
+ * Terminal-style gold cursor with smooth fade animation.
+ */
+export default function BlinkingCursor() {
   return (
     <motion.span
       className="inline-block w-[2px] h-[1em] bg-[#b8860b] dark:bg-[#d4af37] align-middle ml-1"

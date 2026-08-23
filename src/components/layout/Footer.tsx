@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowUp, Github, Linkedin, Instagram, Mail, MapPin } from 'lucide-react';
-import { Home, Code2, Folder, Briefcase, Phone } from 'lucide-react';
-import { personalInfo, navLinks } from '../data/portfolio';
+import { ArrowUp, Github, Linkedin, Instagram, Mail, MapPin, Home, Code2, Folder, Briefcase, Phone, LucideIcon } from 'lucide-react';
+import { personalInfo, navLinks } from '../../data/portfolio';
 
-const iconMap: Record<string, React.ComponentType<any>> = {
+const iconMap: Record<string, LucideIcon> = {
   Home,
   Code2,
   Folder,
@@ -12,11 +11,15 @@ const iconMap: Record<string, React.ComponentType<any>> = {
 };
 
 const socials = [
-  { icon: Github,    label: 'GitHub',    href: personalInfo.social.github    },
-  { icon: Linkedin,  label: 'LinkedIn',  href: personalInfo.social.linkedin  },
+  { icon: Github, label: 'GitHub', href: personalInfo.social.github },
+  { icon: Linkedin, label: 'LinkedIn', href: personalInfo.social.linkedin },
   { icon: Instagram, label: 'Instagram', href: personalInfo.social.instagram },
 ];
 
+/**
+ * Footer
+ * Clean footer layout with brand info, availability badge, navigation links, and back-to-top trigger.
+ */
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -26,27 +29,24 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-zinc-200 dark:border-[#1f1f1f] overflow-hidden bg-white dark:bg-[#080808]">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=JetBrains+Mono:wght@300;400&display=swap');
-      `}</style>
-
-      {/* Subtle top gradient line — gold, mirrors Hero's accent */}
+      {/* Subtle top gradient line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gradient-to-r from-transparent via-[#b8860b]/50 dark:via-[#d4af37]/50 to-transparent" />
 
       <div className="max-w-[1300px] mx-auto px-8 md:px-16">
-
-        {/* ── Main grid ── */}
+        {/* Main grid */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
-
           {/* Brand column */}
           <div className="md:col-span-5 flex flex-col gap-4">
             <a
               href="#hero"
-              onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               className="flex items-center gap-3 group w-fit"
             >
               <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-                <img src="/favicon.png" alt="" className="rounded-md" />
+                <img src="/favicon.png" alt="adtx" className="rounded-md" />
               </div>
               <span
                 className="text-lg font-bold text-zinc-900 dark:text-[#f0ede6]"
@@ -56,8 +56,10 @@ export default function Footer() {
               </span>
             </a>
 
-            <p className="text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a] max-w-xs"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+            <p
+              className="text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a] max-w-xs"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
               Undergraduate Informatics Engineering student building clean, human-centered software — one project at a time.
             </p>
 
@@ -67,8 +69,11 @@ export default function Footer() {
                 animate={{ opacity: [1, 0.25, 1] }}
                 transition={{ duration: 2.4, repeat: Infinity }}
               />
-              <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#888]">
-                {personalInfo.availability ?? 'Available for freelance'}
+              <span
+                className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#888]"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                {personalInfo.availability}
               </span>
             </div>
 
@@ -82,11 +87,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   aria-label={label}
                   whileHover={{ y: -2 }}
-                  className="w-8 h-8 flex items-center justify-center border border-zinc-200 text-zinc-500
-                    hover:border-[#b8860b]/50 hover:text-[#b8860b]
-                    dark:border-[#1f1f1f] dark:text-[#666]
-                    dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]
-                    transition-colors duration-200"
+                  className="w-8 h-8 flex items-center justify-center border border-zinc-200 text-zinc-500 hover:border-[#b8860b]/50 hover:text-[#b8860b] dark:border-[#1f1f1f] dark:text-[#666] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37] transition-colors duration-200"
                 >
                   <Icon size={14} strokeWidth={1.7} />
                 </motion.a>
@@ -96,18 +97,21 @@ export default function Footer() {
 
           {/* Navigate column */}
           <div className="md:col-span-3 md:col-start-7 flex flex-col gap-4">
-            <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-400 dark:text-[#555]">
+            <span
+              className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-400 dark:text-[#555]"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
               Navigate
             </span>
             <ul className="flex flex-col gap-2.5">
-              {navLinks.map(link => {
+              {navLinks.map((link) => {
                 const IconComponent = iconMap[link.icon];
                 return (
                   <li key={link.href}>
                     <button
                       onClick={() => handleNavClick(link.href)}
-                      className="flex items-center gap-2.5 text-sm text-zinc-500 dark:text-[#888]
-                        hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
+                      className="flex items-center gap-2.5 text-sm text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
+                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
                     >
                       {IconComponent && <IconComponent size={13} strokeWidth={1.7} />}
                       {link.label}
@@ -120,19 +124,25 @@ export default function Footer() {
 
           {/* Connect column */}
           <div className="md:col-span-3 flex flex-col gap-4">
-            <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-400 dark:text-[#555]">
+            <span
+              className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-400 dark:text-[#555]"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
               Connect
             </span>
             <div className="flex flex-col gap-3">
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="flex items-center gap-2.5 text-sm text-zinc-500 dark:text-[#888]
-                  hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200 break-all"
+                className="flex items-center gap-2.5 text-sm text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200 break-all"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 <Mail size={13} strokeWidth={1.7} className="flex-shrink-0" />
                 {personalInfo.email}
               </a>
-              <span className="flex items-center gap-2.5 text-sm text-zinc-500 dark:text-[#888]">
+              <span
+                className="flex items-center gap-2.5 text-sm text-zinc-500 dark:text-[#888]"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
                 <MapPin size={13} strokeWidth={1.7} className="flex-shrink-0" />
                 {personalInfo.location}
               </span>
@@ -140,13 +150,19 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── Bottom bar ── */}
+        {/* Bottom bar */}
         <div className="py-6 border-t border-zinc-200 dark:border-[#1f1f1f] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-mono text-[10px] text-zinc-400 dark:text-[#555] tracking-widest text-center sm:text-left">
+          <p
+            className="font-mono text-[10px] text-zinc-400 dark:text-[#555] tracking-widest text-center sm:text-left"
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          >
             © {year} {personalInfo.name} — Portfolio
           </p>
 
-          <p className="font-mono text-[10px] text-zinc-400 dark:text-[#555] tracking-widest text-center">
+          <p
+            className="font-mono text-[10px] text-zinc-400 dark:text-[#555] tracking-widest text-center"
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          >
             Built with React · Tailwind CSS · Framer Motion
           </p>
 
@@ -154,14 +170,13 @@ export default function Footer() {
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="group flex items-center gap-1.5 font-mono text-[10px] tracking-widest uppercase text-zinc-500 dark:text-[#888]
-              hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors"
+            className="group flex items-center gap-1.5 font-mono text-[10px] tracking-widest uppercase text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors"
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             Back to top
             <ArrowUp size={13} className="group-hover:-translate-y-0.5 transition-transform" />
           </motion.button>
         </div>
-
       </div>
     </footer>
   );

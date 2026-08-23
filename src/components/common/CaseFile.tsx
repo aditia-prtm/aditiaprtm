@@ -1,14 +1,24 @@
-import { motion } from "framer-motion";
-import { personalInfo } from "../../data/portfolio";
+import { motion } from 'framer-motion';
+import { personalInfo } from '../../data/portfolio';
+import FileHeader from './FileHeader';
 
-// ─── Case file panel ──────────────────────────────────────────────
+interface CaseFileRow {
+  key: string;
+  val: string;
+  accent?: boolean;
+}
+
+/**
+ * CaseFile
+ * Dossier-style identity card showcasing current status, location, university, and stack.
+ */
 export default function CaseFile() {
-  const rows = [
-    { key: 'STATUS',     val: 'Open for freelance',        accent: true  },
-    { key: 'ROLE',       val: 'Fullstack Developer',        accent: false },
-    { key: 'UNIVERSITY', val: 'Sriwijaya University',       accent: false },
-    { key: 'LOCATION',   val: personalInfo.location,        accent: false },
-    { key: 'STACK',      val: 'React · Next.js · Supabase', accent: false },
+  const rows: CaseFileRow[] = [
+    { key: 'STATUS', val: personalInfo.availability, accent: true },
+    { key: 'ROLE', val: personalInfo.title, accent: false },
+    { key: 'UNIVERSITY', val: 'Sriwijaya University', accent: false },
+    { key: 'LOCATION', val: personalInfo.location, accent: false },
+    { key: 'STACK', val: 'React · Next.js · Supabase', accent: false },
   ];
 
   return (
@@ -19,16 +29,7 @@ export default function CaseFile() {
       className="border border-zinc-200 bg-zinc-50 dark:border-[#1f1f1f] dark:bg-[#0e0e0e]"
     >
       {/* File header */}
-      <div className="flex items-center justify-between border-b border-zinc-200 dark:border-[#1f1f1f] px-5 py-3">
-        <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#666]">
-          SUBJECT.FILE
-        </span>
-        <div className="flex gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-zinc-200 dark:bg-[#1f1f1f]" />
-          <span className="w-1.5 h-1.5 rounded-full bg-zinc-200 dark:bg-[#1f1f1f]" />
-          <span className="w-1.5 h-1.5 rounded-full bg-[#b8860b]/50 dark:bg-[#d4af37]/60" />
-        </div>
-      </div>
+      <FileHeader label="SUBJECT.FILE" />
 
       {/* Rows */}
       {rows.map(({ key, val, accent }, i) => (
@@ -42,11 +43,13 @@ export default function CaseFile() {
           <span className="font-mono text-[9px] tracking-[0.22em] text-zinc-500 dark:text-[#666] flex-shrink-0 mt-0.5 w-20">
             {key}
           </span>
-          <span className={`font-mono text-xs leading-relaxed transition-colors ${
-            accent
-              ? 'text-[#b8860b] dark:text-[#d4af37]'
-              : 'text-zinc-600 dark:text-[#9a9a9a] group-hover:text-zinc-800 dark:group-hover:text-[#c8c8c8]'
-          }`}>
+          <span
+            className={`font-mono text-xs leading-relaxed transition-colors ${
+              accent
+                ? 'text-[#b8860b] dark:text-[#d4af37]'
+                : 'text-zinc-600 dark:text-[#9a9a9a] group-hover:text-zinc-800 dark:group-hover:text-[#c8c8c8]'
+            }`}
+          >
             {val}
           </span>
         </motion.div>
