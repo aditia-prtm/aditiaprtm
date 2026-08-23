@@ -102,11 +102,11 @@ export const tools: string[] = [
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'SRIFOTON',
-    subtitle: 'Sriwijaya Informatic Exhibition',
-    description: 'Website for a Annual Event, SRIFOTON',
+    title: 'SRIFOTON 2026',
+    subtitle: 'Sriwijaya Informatics Exhibition',
+    description: 'Official website for SRIFOTON, a national annual informatics exhibition and competition by HMIF Unsri.',
     longDescription:
-      'Sriwijaya Informatics Exhibition (SRIFOTON) is the largest annual event organized by the Informatics Student Association (HMIF) of Sriwijaya University.',
+      'Sriwijaya Informatics Exhibition (SRIFOTON) is the largest annual event organized by the Informatics Student Association (HMIF) of Sriwijaya University. As a national-scale event, it serves as a venue for students across Indonesia to compete, learn, and exchange ideas through competitions, workshops, and related programs.',
     tags: ['Next.js', 'Supabase', 'Google Gemini API', 'Groq API'],
     category: 'Event',
     color: '#8b5cf6',
