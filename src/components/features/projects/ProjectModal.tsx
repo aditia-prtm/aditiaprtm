@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, X } from 'lucide-react';
+import { ExternalLink, Github, Lock, X } from 'lucide-react';
 import { Project } from '../../../types';
 import FileHeader from '../../common/FileHeader';
 import LabeledRule from '../../common/LabeledRule';
@@ -131,16 +131,26 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             {/* Actions */}
             <div className="flex gap-3">
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 py-3 font-mono text-[12px] tracking-[0.1em] uppercase transition-colors border border-zinc-200 bg-zinc-100 text-zinc-800 hover:border-[#b8860b]/50 hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
-              >
-                <Github size={15} strokeWidth={1.8} />
-                View on GitHub
-              </a>
+              {project.githubUrl !== 'private-repository' ? ( 
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 font-mono text-[12px] tracking-[0.1em] uppercase transition-colors border border-zinc-200 bg-zinc-100 text-zinc-800 hover:border-[#b8860b]/50 hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
+                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                  <Github size={15} strokeWidth={1.8} />
+                  View on GitHub
+                </a>
+              ) : (
+                <p
+                  className="flex-1 flex items-center justify-center gap-2 py-3 font-mono text-[12px] tracking-[0.1em] uppercase transition-colors border border-zinc-200 bg-zinc-100 text-zinc-800 hover:border-[#b8860b]/50 hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
+                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                  <Lock size={15} strokeWidth={1.8} />
+                  Private Repository
+                </p>
+              )}
               <a
                 href={project.liveUrl}
                 target="_blank"

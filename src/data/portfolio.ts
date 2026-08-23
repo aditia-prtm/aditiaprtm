@@ -112,8 +112,8 @@ export const projects: Project[] = [
     color: '#8b5cf6',
     gradient: 'from-[#FFD166] via-[#F5A623] to-[#FF4D6D]',
     image: 'Srifoton.png',
-    liveUrl: 'https://flash-note-two.vercel.app/',
-    githubUrl: 'https://github.com/aditia-prtm/FlashNote',
+    liveUrl: 'https://srifoton.hmifunsri.com',
+    githubUrl: 'private-repository',
     featured: true,
   },
   {

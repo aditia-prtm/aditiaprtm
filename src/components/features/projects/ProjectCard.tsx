@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight, Lock } from 'lucide-react';
 import { Project } from '../../../types';
 
 interface ProjectCardProps {
@@ -150,17 +150,28 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
         <div className="px-6 pb-6 pt-0">
           <div className="h-px bg-zinc-200 dark:bg-[#1f1f1f] mb-4" />
           <div className="flex items-center gap-4">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
-            >
-              <Github size={13} strokeWidth={1.7} />
-              Code
-            </a>
+            {project.githubUrl !== 'private-repository' ? (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                <Github size={13} strokeWidth={1.7} />
+                Code
+              </a>
+            ) : ( 
+              <p
+                className="flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                <Lock size={13} strokeWidth={1.7} />
+                Private Repository
+              </p>
+            )}
+
             <a
               href={project.liveUrl}
               target="_blank"
