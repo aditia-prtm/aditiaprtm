@@ -1,0 +1,68 @@
+import { motion } from "framer-motion";
+import { personalInfo } from "../../data/portfolio";
+
+// ─── Case file panel ──────────────────────────────────────────────
+export default function CaseFile() {
+  const rows = [
+    { key: 'STATUS',     val: 'Open for freelance',        accent: true  },
+    { key: 'ROLE',       val: 'Fullstack Developer',        accent: false },
+    { key: 'UNIVERSITY', val: 'Sriwijaya University',       accent: false },
+    { key: 'LOCATION',   val: personalInfo.location,        accent: false },
+    { key: 'STACK',      val: 'React · Next.js · Supabase', accent: false },
+  ];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 1.9 }}
+      className="border border-zinc-200 bg-zinc-50 dark:border-[#1f1f1f] dark:bg-[#0e0e0e]"
+    >
+      {/* File header */}
+      <div className="flex items-center justify-between border-b border-zinc-200 dark:border-[#1f1f1f] px-5 py-3">
+        <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#666]">
+          SUBJECT.FILE
+        </span>
+        <div className="flex gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-zinc-200 dark:bg-[#1f1f1f]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-zinc-200 dark:bg-[#1f1f1f]" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#b8860b]/50 dark:bg-[#d4af37]/60" />
+        </div>
+      </div>
+
+      {/* Rows */}
+      {rows.map(({ key, val, accent }, i) => (
+        <motion.div
+          key={key}
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 2.05 + i * 0.08, duration: 0.5 }}
+          className="flex items-start gap-6 border-b border-zinc-100 dark:border-[#131313] px-5 py-4 last:border-0 group hover:bg-zinc-100 dark:hover:bg-[#111] transition-colors"
+        >
+          <span className="font-mono text-[9px] tracking-[0.22em] text-zinc-500 dark:text-[#666] flex-shrink-0 mt-0.5 w-20">
+            {key}
+          </span>
+          <span className={`font-mono text-xs leading-relaxed transition-colors ${
+            accent
+              ? 'text-[#b8860b] dark:text-[#d4af37]'
+              : 'text-zinc-600 dark:text-[#9a9a9a] group-hover:text-zinc-800 dark:group-hover:text-[#c8c8c8]'
+          }`}>
+            {val}
+          </span>
+        </motion.div>
+      ))}
+
+      {/* Footer */}
+      <div className="flex items-center gap-2 px-5 py-3 border-t border-zinc-200 dark:border-[#1f1f1f]">
+        <motion.span
+          className="w-1.5 h-1.5 rounded-full bg-[#b8860b] dark:bg-[#d4af37] flex-shrink-0"
+          animate={{ opacity: [1, 0.2, 1] }}
+          transition={{ duration: 2.4, repeat: Infinity }}
+        />
+        <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#666]">
+          Currently active
+        </span>
+      </div>
+    </motion.div>
+  );
+}

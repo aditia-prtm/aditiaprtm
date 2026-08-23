@@ -74,9 +74,9 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
 
             {/* Logo box */}
             <img
-              src="/favicon-removebg.png"
+              src="/favicon.png"
               alt="adtx"
-              className="rounded-full h-14 w-14 md:h-20 md:w-20 border border-[#b8860b]/25 dark:border-[#d4af37]/20
+              className="rounded-full h-14 w-14 p-2 md:h-20 md:w-20 border border-[#b8860b]/25 dark:border-[#d4af37]/20
                 bg-[#b8860b]/8 dark:bg-[#d4af37]/8"
             />
           </motion.div>

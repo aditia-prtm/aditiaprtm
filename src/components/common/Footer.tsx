@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowUp, Github, Linkedin, Instagram, Mail, MapPin } from 'lucide-react';
 import { Home, Code2, Folder, Briefcase, Phone } from 'lucide-react';
-import { personalInfo, navLinks } from '../data/portfolio';
+import { personalInfo, navLinks } from '../../data/portfolio';
 
 const iconMap: Record<string, React.ComponentType<any>> = {
   Home,
@@ -46,7 +46,7 @@ export default function Footer() {
               className="flex items-center gap-3 group w-fit"
             >
               <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-                <img src="/favicon.png" alt="" className="rounded-md" />
+                <img src="/favicon.jpg" alt="" className="rounded-md" />
               </div>
               <span
                 className="text-lg font-bold text-zinc-900 dark:text-[#f0ede6]"

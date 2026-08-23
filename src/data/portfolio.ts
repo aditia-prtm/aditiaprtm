@@ -6,17 +6,19 @@ import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiTypescript, SiC} from "react
 
 export const personalInfo = {
   name: "Aditia Pratama",
-  title: "Junior Frontend Developer",
+  title: "Frontend Developer",
   taglines: [
     "Sriwijaya University student",
-    "Junior Frontend Developer", 
+    "Frontend Developer", 
+    "Competitive Programmer",
+    "AI Engineer wannabe",
   ],
   bio: `I am an Computer Science (Informatics Engineering) student with a passion for software development, especially in full-stack web development. I enjoy turning ideas into real products by building responsive, scalable, and user-friendly applications. I continuously improve my skills by learning modern technologies, working on personal projects, and exploring new tools that can make development more efficient.`,
   bio2: `My goal is to become a software engineer who creates impactful digital products while constantly growing as a developer. I believe that consistency, curiosity, and problem-solving are the keys to building great software. Outside of coding, I enjoy competitive programming, learning new technologies, and challenging myself through projects that expand both my technical and creative abilities.`,
   location: "Ogan Komering Ilir, Indonesia",
   availability: "Open for Freelance",
   email: "mhdaditiapratama268@gmail.com",
-  resume: "#",
+  resume: "https://drive.google.com/file/d/1JiE9aUpNbRojCQYx7t2yraGunoe_dLAQ/view?usp=drive_link",
   social: {
     github: "https://github.com/aditia-prtm",
     linkedin: "https://linkedin.com/in/m-aditia-putra-pratama-a3b0bb376/",
@@ -101,6 +103,23 @@ export const tools = [
 export const projects = [
   {
     id: 1,
+    title: "SRIFOTON",
+    subtitle: "Sriwijaya Informatic Exhibition",
+    description:
+      "Website for a Annual Event, SRIFOTON",
+    longDescription:
+    "Sriwijaya Informatics Exhibition (SRIFOTON) is the largest annual event organized by the Informatics Student Association (HMIF) of Sriwijaya University.",
+    tags: ["Next.js", "Supabase", "Google Gemini API", "Groq API"],
+    category: "Event",
+    color: "#8b5cf6",
+    gradient: "from-[#FFD166] via-[#F5A623] to-[#FF4D6D]",
+    image: "Srifoton.png",
+    liveUrl: "https://flash-note-two.vercel.app/",
+    githubUrl: "https://github.com/aditia-prtm/FlashNote",
+    featured: true,
+  },
+  {
+    id: 2,
     title: "FlashNote",
     subtitle: "A Simple Note-App Web",
     description:
@@ -117,7 +136,7 @@ export const projects = [
     featured: false,
   },
   {
-    id: 2,
+    id: 3,
     title: "Tic-Tac-Toe",
     subtitle: "Play a Game vs Computer",
     description:

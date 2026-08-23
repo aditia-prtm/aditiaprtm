@@ -58,7 +58,7 @@ function TiltCard({ project, onClick }: { project: Project; onClick: () => void 
       >
 
         {/* Project image area */}
-        <div className={`relative h-48 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
+        <div className={`relative h-60 sm:h-72 md:h-80 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
           <div className="absolute inset-0 bg-grid opacity-20" />
           <div className="absolute inset-0 flex items-center justify-center">
             {project.image ? (
@@ -238,7 +238,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           </div>
 
           {/* Header image */}
-          <div className={`mt-5 mx-6 h-44 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
+          <div className={`mt-5 mx-6 h-72 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
             <div className="absolute inset-0 bg-grid opacity-20" />
             <div className="absolute inset-0 flex items-center justify-center">
               {project.image ? (
