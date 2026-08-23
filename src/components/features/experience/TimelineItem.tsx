@@ -17,7 +17,7 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
   return (
     <motion.div
       initial={{ opacity: 0, y: 32 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
       transition={{ duration: 0.7, delay: index * 0.13, ease: [0.16, 1, 0.3, 1] }}
       className="relative flex gap-5"
     >
@@ -25,7 +25,7 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
       <div className="flex flex-col items-center flex-shrink-0 w-9">
         <motion.div
           initial={{ scale: 0 }}
-          animate={isInView ? { scale: 1 } : {}}
+          animate={isInView ? { scale: 1 } : { scale: 0 }}
           transition={{ delay: index * 0.13 + 0.25, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           className="relative z-10 w-9 h-9 flex items-center justify-center flex-shrink-0 border border-zinc-200 bg-white dark:border-[#1f1f1f] dark:bg-[#080808]"
           style={{ boxShadow: '0 0 0 3px rgba(184,134,11,0.1)' }}
@@ -36,7 +36,7 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
         {!isLast && (
           <motion.div
             initial={{ scaleY: 0 }}
-            animate={isInView ? { scaleY: 1 } : {}}
+            animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
             transition={{ delay: index * 0.13 + 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             style={{ transformOrigin: 'top' }}
             className="flex-1 w-px mt-2 bg-zinc-200 dark:bg-[#1f1f1f]"

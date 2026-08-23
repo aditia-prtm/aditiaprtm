@@ -17,7 +17,7 @@ export default function StatCard({ icon: Icon, value, label, delay, isInView }: 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
       className="flex flex-col gap-3 p-5 cursor-default transition-colors border border-zinc-200 bg-zinc-50 hover:border-[#b8860b]/40 dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:hover:border-[#d4af37]/30"
     >

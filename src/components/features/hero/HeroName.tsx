@@ -1,13 +1,21 @@
 import { motion } from 'framer-motion';
 import { personalInfo } from '../../../data/portfolio';
+import { LOADING_OFFSET } from '../../../sections/Hero';
+
+interface HeroNameProps {
+  isInView: boolean;
+  isFirstRender: boolean;
+}
 
 /**
  * HeroName
  * Staggered animated typography for first name and gold-accented last name.
  */
-export default function HeroName() {
+export default function HeroName({ isInView, isFirstRender }: HeroNameProps) {
   const firstName = (personalInfo.name.split(' ')[0] ?? '').split('');
   const lastName = (personalInfo.name.split(' ')[1] ?? '').split('');
+
+  const d = (base: number) => (isFirstRender ? base : Math.max(0, base - LOADING_OFFSET));
 
   return (
     <h1
@@ -22,8 +30,8 @@ export default function HeroName() {
             key={`first-${i}`}
             className="inline-block text-zinc-900 dark:text-[#f0ede6]"
             initial={{ y: '110%', opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 1.45 + i * 0.045 }}
+            animate={isInView ? { y: 0, opacity: 1 } : { y: '110%', opacity: 0 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: d(1.45 + i * 0.045) }}
           >
             {ch === ' ' ? '\u00A0' : ch}
           </motion.span>
@@ -37,11 +45,11 @@ export default function HeroName() {
             key={`last-${i}`}
             className="inline-block name-gold"
             initial={{ y: '110%', opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            animate={isInView ? { y: 0, opacity: 1 } : { y: '110%', opacity: 0 }}
             transition={{
               duration: 0.7,
               ease: [0.16, 1, 0.3, 1],
-              delay: 1.55 + (firstName.length + i) * 0.042,
+              delay: d(1.55 + (firstName.length + i) * 0.042),
             }}
           >
             {ch === ' ' ? '\u00A0' : ch}

@@ -35,7 +35,7 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
           <motion.div
             key={key}
             initial={{ opacity: 0, x: -10 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
             transition={{ delay: 0.15 + i * 0.08, duration: 0.5 }}
             className="flex items-start gap-6 border-b border-zinc-100 dark:border-[#131313] px-5 py-4 last:border-0 group hover:bg-zinc-100 dark:hover:bg-[#111] transition-colors"
           >

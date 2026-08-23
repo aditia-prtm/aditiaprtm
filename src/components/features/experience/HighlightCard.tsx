@@ -16,7 +16,7 @@ export default function HighlightCard({ exp, delay, isInView }: HighlightCardPro
   return (
     <motion.div
       initial={{ opacity: 0, x: 24 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 24 }}
       transition={{ duration: 0.65, delay, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ x: -3 }}
       className="flex items-start gap-3.5 p-4 cursor-default transition-colors border border-zinc-200 bg-zinc-50 hover:border-[#b8860b]/40 dark:border-[#1f1f1f] dark:bg-transparent dark:hover:border-[#d4af37]/30 dark:hover:bg-[#0e0e0e]"

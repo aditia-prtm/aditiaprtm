@@ -11,7 +11,7 @@ import { TimelineItem, StatCard, HighlightCard } from '../components/features/ex
  */
 export default function Experience() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-5%' });
+  const isInView = useInView(sectionRef, { once: false, margin: '-5%' });
 
   // Derived metrics from experiences data
   const totalYears = experiences.length > 0 ? `${experiences.length}+` : '—';
@@ -39,7 +39,7 @@ export default function Experience() {
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mb-14 lg:mb-18"
         >
@@ -99,7 +99,7 @@ export default function Experience() {
             {/* Divider label */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.75 }}
             >
               <LabeledRule label="Career snapshot" />
@@ -120,7 +120,7 @@ export default function Experience() {
             {/* Currently open strip */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
               transition={{ duration: 0.6, delay: 0.95 }}
               className="flex items-center gap-3 px-4 py-3 bg-[#b8860b]/[0.05] border border-[#b8860b]/20 dark:bg-[#d4af37]/[0.04] dark:border-[#d4af37]/18"
             >

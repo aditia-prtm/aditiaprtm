@@ -10,7 +10,7 @@ import { TechStackCard, ToolBadge } from '../components/features/skills';
  */
 export default function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-8%' });
+  const isInView = useInView(sectionRef, { once: false, margin: '-8%' });
 
   return (
     <section
@@ -25,7 +25,7 @@ export default function Skills() {
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="w-full mb-14 lg:mb-18"
         >
@@ -56,7 +56,7 @@ export default function Skills() {
         {/* Tech stack grid — case-file wrapper */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="w-full border border-zinc-200 bg-zinc-50 dark:border-[#1f1f1f] dark:bg-[#0e0e0e] mb-8"
         >
@@ -80,7 +80,7 @@ export default function Skills() {
         {/* Tools / extra badges */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="w-full"
         >

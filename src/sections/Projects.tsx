@@ -12,7 +12,7 @@ import { ProjectCard, ProjectModal } from '../components/features/projects';
  */
 export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-5%' });
+  const isInView = useInView(sectionRef, { once: false, margin: '-5%' });
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
@@ -28,7 +28,7 @@ export default function Projects() {
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mb-14 lg:mb-18"
         >
@@ -60,7 +60,7 @@ export default function Projects() {
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 48 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 48 }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="h-full"
             >
@@ -72,7 +72,7 @@ export default function Projects() {
         {/* View all on GitHub link */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
           transition={{ delay: 0.55, duration: 0.5 }}
           className="flex justify-center mt-12"
         >

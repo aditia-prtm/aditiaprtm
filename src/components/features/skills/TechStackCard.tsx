@@ -19,11 +19,10 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
   return (
     <motion.div
       initial={{ opacity: 0, y: 36 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 36 }}
       transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      whileHover={{ y: -5 }}
       className="relative flex flex-col items-center gap-3 p-4 cursor-default border border-zinc-200 bg-white dark:border-[#1f1f1f] dark:bg-[#0a0a0a] transition-colors duration-300 group hover:border-[#b8860b]/50 dark:hover:border-[#d4af37]/40 dark:hover:bg-[#0e0e0e]"
     >
       {/* Subtle gold glow on hover */}
@@ -51,7 +50,7 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
       {/* Label */}
       <motion.p
         initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5, delay: delay + 0.15 }}
         className="font-mono text-[9px] tracking-[0.14em] uppercase text-center leading-tight text-zinc-500 dark:text-[#666] group-hover:text-zinc-800 dark:group-hover:text-[#ccc] transition-colors duration-200"
       >

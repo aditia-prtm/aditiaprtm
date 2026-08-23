@@ -9,7 +9,7 @@ import { ContactInfo, ContactForm } from '../components/features/contact';
  */
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-8%' });
+  const isInView = useInView(sectionRef, { once: false, margin: '-8%' });
 
   const containerVariants = {
     hidden: {},
@@ -34,7 +34,7 @@ export default function Contact() {
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mb-14 lg:mb-18"
         >

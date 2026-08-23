@@ -1,15 +1,23 @@
 import { motion } from 'framer-motion';
+import { LOADING_OFFSET } from '../../../sections/Hero';
+
+interface ScrollIndicatorProps {
+  isInView?: boolean;
+  isFirstRender?: boolean;
+}
 
 /**
  * ScrollIndicator
  * Animated vertical bouncing line and text prompting user to scroll.
  */
-export default function ScrollIndicator() {
+export default function ScrollIndicator({ isInView = true, isFirstRender = true }: ScrollIndicatorProps) {
+  const d = (base: number) => (isFirstRender ? base : Math.max(0, base - LOADING_OFFSET));
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 3.2, duration: 0.8 }}
+      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+      transition={{ delay: d(3.2), duration: 0.8 }}
       className="relative z-10 flex justify-center pb-5 lg:-mt-10"
     >
       <motion.div
