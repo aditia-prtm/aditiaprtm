@@ -1,8 +1,9 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { Send } from 'lucide-react';
+import { CheckCheck, CheckSquare, Send, SquareCheck } from 'lucide-react';
 import FileHeader from '../../common/FileHeader';
 import FormField from './FormField';
+import { supabase } from '../../../lib/supabase';
 
 const inputClass = `
   px-4 py-3 text-sm transition-all
@@ -20,20 +21,37 @@ const inputClass = `
  */
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    setTimeout(() => setStatus('sent'), 1200);
+    setErrorMessage('');
+
+    const { error } = await supabase.from('contacts').insert({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      message: form.message.trim(),
+    });
+
+    if (error) {
+      setStatus('error');
+      setErrorMessage(error.message);
+      return;
+    }
+
+    setForm({ name: '', email: '', message: '' });
+    setStatus('sent');
   };
 
   const handleReset = () => {
     setStatus('idle');
+    setErrorMessage('');
     setForm({ name: '', email: '', message: '' });
   };
 
@@ -54,7 +72,7 @@ export default function ContactForm() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-5xl select-none"
             >
-              🎉
+              <SquareCheck size={50} strokeWidth={2}/>
             </motion.div>
             <div>
               <h3
@@ -114,6 +132,12 @@ export default function ContactForm() {
                 className={`${inputClass} resize-none`}
               />
             </FormField>
+
+            {status === 'error' && (
+              <p className="text-sm text-red-600 dark:text-red-400" role="alert">
+                Message failed to send. {errorMessage}
+              </p>
+            )}
 
             {/* Submit button */}
             <motion.button
