@@ -18,7 +18,6 @@ export interface PersonalInfo {
   email: string;
   resume: string;
   social: SocialLinks;
-  funFacts: string[];
 }
 
 export interface TechStackItem {

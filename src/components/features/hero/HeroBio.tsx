@@ -92,7 +92,7 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         transition={{ delay: d(2.3), duration: 0.7 }}
         className="flex items-center gap-8 mb-12"
       >
-        <Stat num="5+" label="Projects" />
+        <Stat num="2+" label="Projects" />
         <Stat num="∞" label="Curiosity" />
         <Stat num="01" label="Goal: Ship" />
       </motion.div>

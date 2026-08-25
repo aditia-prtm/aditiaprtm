@@ -1,5 +1,5 @@
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaPython } from 'react-icons/fa6';
-import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiTypescript, SiC } from 'react-icons/si';
+import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiTypescript, SiC, SiMysql} from 'react-icons/si';
 import { PersonalInfo, TechStackItem, Project, Experience, NavLink } from '../types';
 
 // ─── Portfolio Data ───────────────────────────────────────────────
@@ -10,9 +10,9 @@ export const personalInfo: PersonalInfo = {
     'Sriwijaya University student',
     'Frontend Developer',
     'Competitive Programmer',
-    'AI Engineer wannabe',
+    'AI Engineer wannabe :)',
   ],
-  bio: `I am an Computer Science (Informatics Engineering) student with a passion for software development, especially in full-stack web development. I enjoy turning ideas into real products by building responsive, scalable, and user-friendly applications. I continuously improve my skills by learning modern technologies, working on personal projects, and exploring new tools that can make development more efficient.`,
+  bio: `I am a Computer Science (Informatics Engineering) student with a passion for software development, especially in full-stack web development. I enjoy turning ideas into real products by building responsive, scalable, and user-friendly applications. I continuously improve my skills by learning modern technologies, working on personal projects, and exploring new tools that can make development more efficient.`,
   bio2: `My goal is to become a software engineer who creates impactful digital products while constantly growing as a developer. I believe that consistency, curiosity, and problem-solving are the keys to building great software. Outside of coding, I enjoy competitive programming, learning new technologies, and challenging myself through projects that expand both my technical and creative abilities.`,
   location: 'Ogan Komering Ilir, Indonesia',
   availability: 'Open for Freelance',
@@ -24,11 +24,7 @@ export const personalInfo: PersonalInfo = {
     instagram: 'https://instagram.com/adtxprtm_',
     email: 'mailto:mhdaditiapratama268@gmail.com',
   },
-  funFacts: [
-    '☕  Powered by specialty coffee',
-    '⚽  Enjoying watching and playing football',
-    '🎞️  I like watching movies',
-  ],
+
 };
 
 // ─── Skills ──────────────────────────────────────────────────────
@@ -88,6 +84,11 @@ export const techStack: TechStackItem[] = [
     label: 'C',
     icon: SiC,
   },
+  {
+    id: 12,
+    label: 'MySQL',
+    icon: SiMysql,
+  },
 ];
 
 export const tools: string[] = [
@@ -95,6 +96,7 @@ export const tools: string[] = [
   'Github',
   'Vercel',
   'Visual Studio Code',
+  'Antigravity',
   'Figma',
 ];
 
@@ -115,38 +117,6 @@ export const projects: Project[] = [
     liveUrl: 'https://srifoton.hmifunsri.com',
     githubUrl: 'private-repository',
     featured: true,
-  },
-  {
-    id: 2,
-    title: 'FlashNote',
-    subtitle: 'A Simple Note-App Web',
-    description: 'My first project with database integration.',
-    longDescription:
-      'A minimalist notes app built with Next.js and Supabase. Create, edit, and delete personal notes with a clean dark UI.',
-    tags: ['Next.js', 'TailwindCSS', 'Supabase'],
-    category: 'Mini Project',
-    color: '#8b5cf6',
-    gradient: 'from-[#FFD166] via-[#F5A623] to-[#FF4D6D]',
-    image: 'FlashNote.png',
-    liveUrl: 'https://flash-note-two.vercel.app/',
-    githubUrl: 'https://github.com/aditia-prtm/FlashNote',
-    featured: false,
-  },
-  {
-    id: 3,
-    title: 'Tic-Tac-Toe',
-    subtitle: 'Play a Game vs Computer',
-    description: 'My first-ever toy project while learning basic HTML.',
-    longDescription:
-      'A simple web-based Tic-Tac-Toe game. Built entirely with Vanilla JS, it focuses on core looping logic and HTML element manipulation. The game includes a computer opponent that utilizes Math.random() to place its marks.',
-    tags: ['HTML', 'CSS', 'Javascript'],
-    category: 'Toy Project',
-    color: '#8b5cf6',
-    gradient: 'from-[#FFD166] via-[#F5A623] to-[#FF4D6D]',
-    image: 'tic-tac-toe.png',
-    liveUrl: 'https://aditia-prtm.github.io/tic-tac-toe/',
-    githubUrl: 'https://github.com/aditia-prtm/tic-tac-toe',
-    featured: false,
   },
 ];
 
