@@ -1,9 +1,23 @@
-import { useState, FormEvent } from 'react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCheck, CheckSquare, Send, SquareCheck } from 'lucide-react';
+import { Send, SquareCheck } from 'lucide-react';
 import FileHeader from '../../common/FileHeader';
 import FormField from './FormField';
 import { supabase } from '../../../lib/supabase';
+
+type ContactFormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+type SubmitStatus = 'idle' | 'sending' | 'sent' | 'error';
+
+const initialFormData: ContactFormData = {
+  name: '',
+  email: '',
+  message: '',
+};
 
 const inputClass = `
   px-4 py-3 text-sm transition-all
@@ -20,16 +34,23 @@ const inputClass = `
  * Interactive contact message form with controlled inputs and animated completion state.
  */
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [form, setForm] = useState<ContactFormData>(initialFormData);
+  const [status, setStatus] = useState<SubmitStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const isSending = status === 'sending';
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = event.target;
+
+    setForm((currentForm) => ({
+      ...currentForm,
+      [name]: value,
+    }));
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setStatus('sending');
     setErrorMessage('');
 
@@ -45,14 +66,14 @@ export default function ContactForm() {
       return;
     }
 
-    setForm({ name: '', email: '', message: '' });
+    setForm(initialFormData);
     setStatus('sent');
   };
 
   const handleReset = () => {
     setStatus('idle');
     setErrorMessage('');
-    setForm({ name: '', email: '', message: '' });
+    setForm(initialFormData);
   };
 
   return (
@@ -72,7 +93,7 @@ export default function ContactForm() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-5xl select-none"
             >
-              <SquareCheck size={50} strokeWidth={2}/>
+              <SquareCheck size={50} strokeWidth={2} />
             </motion.div>
             <div>
               <h3
@@ -139,22 +160,21 @@ export default function ContactForm() {
               </p>
             )}
 
-            {/* Submit button */}
             <motion.button
               type="submit"
-              disabled={status === 'sending'}
+              disabled={isSending}
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
               className="flex items-center justify-center gap-2 py-3.5 font-mono text-[12px] tracking-[0.15em] uppercase transition-colors disabled:opacity-60 bg-[#b8860b] text-white hover:bg-[#9a7209] dark:bg-[#d4af37] dark:text-[#080808] dark:hover:bg-[#c9a227]"
             >
-              {status === 'sending' ? (
+              {isSending ? (
                 <>
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ repeat: Infinity, duration: 0.9, ease: 'linear' }}
                     className="w-4 h-4 border-2 border-current/30 border-t-current rounded-full"
                   />
-                  Sending…
+                  Sending...
                 </>
               ) : (
                 <>
