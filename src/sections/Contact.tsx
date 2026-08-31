@@ -52,7 +52,7 @@ export default function Contact() {
               Let's <span className="contact-gold-text">work together</span>
             </h2>
             <p
-              className="max-w-xs text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a] sm:text-right"
+              className="max-w-xs text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] sm:text-right"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Freelance, collaboration, or just a good chat about tech — my inbox is open.

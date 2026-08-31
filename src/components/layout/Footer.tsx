@@ -57,7 +57,7 @@ export default function Footer() {
             </a>
 
             <p
-              className="text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a] max-w-xs"
+              className="text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] max-w-xs"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Undergraduate Informatics Engineering student building clean, human-centered software — one project at a time.
@@ -70,7 +70,7 @@ export default function Footer() {
                 transition={{ duration: 2.4, repeat: Infinity }}
               />
               <span
-                className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#888]"
+                className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-600 dark:text-[#888]"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 {personalInfo.availability}
@@ -87,7 +87,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   aria-label={label}
                   whileHover={{ y: -2 }}
-                  className="w-8 h-8 flex items-center justify-center border border-zinc-200 text-zinc-500 hover:border-[#b8860b]/50 hover:text-[#b8860b] dark:border-[#1f1f1f] dark:text-[#666] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37] transition-colors duration-200"
+                  className="w-8 h-8 flex items-center justify-center border border-zinc-200 text-zinc-600 hover:border-[#b8860b]/50 hover:text-[#b8860b] dark:border-[#1f1f1f] dark:text-[#666] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37] transition-colors duration-200"
                 >
                   <Icon size={14} strokeWidth={1.7} />
                 </motion.a>
@@ -98,7 +98,7 @@ export default function Footer() {
           {/* Navigate column */}
           <div className="md:col-span-3 md:col-start-7 flex flex-col gap-4">
             <span
-              className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-400 dark:text-[#555]"
+              className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Navigate
@@ -110,7 +110,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <button
                       onClick={() => handleNavClick(link.href)}
-                      className="flex items-center gap-2.5 text-sm text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
+                      className="flex items-center gap-2.5 text-sm text-zinc-600 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
                       style={{ fontFamily: "'JetBrains Mono', monospace" }}
                     >
                       {IconComponent && <IconComponent size={13} strokeWidth={1.7} />}
@@ -125,7 +125,7 @@ export default function Footer() {
           {/* Connect column */}
           <div className="md:col-span-3 flex flex-col gap-4">
             <span
-              className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-400 dark:text-[#555]"
+              className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Connect
@@ -133,14 +133,14 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="flex items-center gap-2.5 text-sm text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200 break-all"
+                className="flex items-center gap-2.5 text-sm text-zinc-600 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200 break-all"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 <Mail size={13} strokeWidth={1.7} className="flex-shrink-0" />
                 {personalInfo.email}
               </a>
               <span
-                className="flex items-center gap-2.5 text-sm text-zinc-500 dark:text-[#888]"
+                className="flex items-center gap-2.5 text-sm text-zinc-600 dark:text-[#888]"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 <MapPin size={13} strokeWidth={1.7} className="flex-shrink-0" />
@@ -153,14 +153,14 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="py-6 border-t border-zinc-200 dark:border-[#1f1f1f] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p
-            className="font-mono text-[10px] text-zinc-400 dark:text-[#555] tracking-widest text-center sm:text-left"
+            className="font-mono text-[10px] text-zinc-500 dark:text-[#555] tracking-widest text-center sm:text-left"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             © {year} {personalInfo.name} — Portfolio
           </p>
 
           <p
-            className="font-mono text-[10px] text-zinc-400 dark:text-[#555] tracking-widest text-center"
+            className="font-mono text-[10px] text-zinc-500 dark:text-[#555] tracking-widest text-center"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             Built with React · Tailwind CSS · Framer Motion
@@ -170,7 +170,7 @@ export default function Footer() {
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="group flex items-center gap-1.5 font-mono text-[10px] tracking-widest uppercase text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors"
+            className="group flex items-center gap-1.5 font-mono text-[10px] tracking-widest uppercase text-zinc-600 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             Back to top

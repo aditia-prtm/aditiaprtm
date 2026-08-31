@@ -57,7 +57,7 @@ export default function Experience() {
               The <span className="experience-gold-text">journey</span> so far
             </h2>
             <p
-              className="max-w-xs text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a] sm:text-right"
+              className="max-w-xs text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] sm:text-right"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Places where I've grown, learned with awesome people, and built cool stuff.
@@ -130,7 +130,7 @@ export default function Experience() {
                 className="w-4 h-4 rounded-full flex-shrink-0 border-[1.5px] border-[#b8860b]/30 border-t-[#b8860b] dark:border-[#d4af37]/30 dark:border-t-[#d4af37]"
               />
               <span
-                className="text-[10px] leading-relaxed text-zinc-500 dark:text-[#8a8a8a]"
+                className="text-[10px] leading-relaxed text-zinc-600 dark:text-[#8a8a8a]"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 Open to:{' '}

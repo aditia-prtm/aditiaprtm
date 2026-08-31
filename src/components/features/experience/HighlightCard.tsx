@@ -33,7 +33,7 @@ export default function HighlightCard({ exp, delay, isInView }: HighlightCardPro
             {exp.company}
           </span>
           <span className="text-zinc-300 dark:text-[#333] text-xs">·</span>
-          <span className="font-mono text-[9px] text-zinc-400 dark:text-[#666] uppercase tracking-wide">
+          <span className="font-mono text-[9px] text-zinc-500 dark:text-[#666] uppercase tracking-wide">
             {exp.period.split(' ')[0]}
           </span>
         </div>
@@ -44,7 +44,7 @@ export default function HighlightCard({ exp, delay, isInView }: HighlightCardPro
               strokeWidth={2.2}
               className="flex-shrink-0 mt-0.5 text-[#b8860b] dark:text-[#d4af37]"
             />
-            <p className="text-[11px] text-zinc-500 dark:text-[#888] leading-relaxed line-clamp-2">
+            <p className="text-[11px] text-zinc-600 dark:text-[#888] leading-relaxed line-clamp-2">
               {exp.highlights[0]}
             </p>
           </div>

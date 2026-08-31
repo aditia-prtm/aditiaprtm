@@ -33,7 +33,7 @@ export default function MarqueeStrip({ tags = DEFAULT_TAGS, speed = 24 }: Marque
         {repeated.map((t, i) => (
           <span
             key={`${t}-${i}`}
-            className="flex items-center gap-3 font-mono text-[11px] tracking-[0.22em] uppercase text-zinc-500 dark:text-[#666]"
+            className="flex items-center gap-3 font-mono text-[11px] tracking-[0.22em] uppercase text-zinc-600 dark:text-[#666]"
           >
             <span className="w-1 h-1 rounded-full bg-[#b8860b] dark:bg-[#d4af37] flex-shrink-0" />
             {t}

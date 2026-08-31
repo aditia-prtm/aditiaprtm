@@ -30,7 +30,7 @@ export default function StatCard({ icon: Icon, value, label, delay, isInView }: 
           {value}
         </p>
         <p
-          className="font-mono text-[9px] tracking-[0.18em] uppercase text-zinc-500 dark:text-[#777]"
+          className="font-mono text-[9px] tracking-[0.18em] uppercase text-zinc-600 dark:text-[#777]"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
         >
           {label}

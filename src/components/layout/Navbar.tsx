@@ -75,7 +75,7 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
                 className={`group relative px-3.5 py-1.5 rounded-xl text-[11px] font-medium tracking-[0.08em] transition-colors duration-200 ${
                   isActive
                     ? 'text-[#b8860b] dark:text-[#d4af37]'
-                    : 'text-zinc-500 dark:text-[#666] hover:text-zinc-900 dark:hover:text-[#eee]'
+                    : 'text-zinc-600 dark:text-[#666] hover:text-zinc-900 dark:hover:text-[#eee]'
                 }`}
               >
                 {/* Active background pill */}
@@ -124,7 +124,7 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
           whileTap={{ scale: 0.92 }}
           onClick={onToggleDark}
           aria-label="Toggle theme"
-          className="w-8 h-8 flex items-center justify-center rounded-xl transition-colors duration-200 text-zinc-500 hover:text-[#b8860b] hover:bg-zinc-100 dark:text-[#666] dark:hover:text-[#d4af37] dark:hover:bg-white/[0.04]"
+          className="w-8 h-8 flex items-center justify-center rounded-xl transition-colors duration-200 text-zinc-600 hover:text-[#b8860b] hover:bg-zinc-100 dark:text-[#666] dark:hover:text-[#d4af37] dark:hover:bg-white/[0.04]"
         >
           <AnimatePresence mode="wait" initial={false}>
             {isDark ? (

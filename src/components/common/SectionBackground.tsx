@@ -22,7 +22,7 @@ export default function SectionBackground({ glowPosition = 'both' }: SectionBack
             width: 560,
             height: 560,
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(184,134,11,0.04) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(184,134,11,0.06) 0%, transparent 70%)',
           }}
         />
       )}
@@ -36,7 +36,7 @@ export default function SectionBackground({ glowPosition = 'both' }: SectionBack
             width: 480,
             height: 480,
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(184,134,11,0.035) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(184,134,11,0.05) 0%, transparent 70%)',
           }}
         />
       )}

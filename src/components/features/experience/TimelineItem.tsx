@@ -78,7 +78,7 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
                   <>
                     <span className="text-zinc-300 dark:text-[#333]">·</span>
                     <span
-                      className="font-mono text-[9px] tracking-wide text-zinc-400 dark:text-[#666] uppercase"
+                      className="font-mono text-[9px] tracking-wide text-zinc-500 dark:text-[#666] uppercase"
                       style={{ fontFamily: "'JetBrains Mono', monospace" }}
                     >
                       {exp.type}
@@ -90,9 +90,9 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
 
             {/* Period badge */}
             <div className="flex items-center gap-1.5 flex-shrink-0 px-3 py-1.5 self-start border border-zinc-200 bg-white dark:border-[#1f1f1f] dark:bg-transparent">
-              <Calendar size={11} strokeWidth={1.7} className="text-zinc-400 dark:text-[#666]" />
+              <Calendar size={11} strokeWidth={1.7} className="text-zinc-500 dark:text-[#666]" />
               <span
-                className="font-mono text-[9px] tracking-widest text-zinc-500 dark:text-[#888] whitespace-nowrap"
+                className="font-mono text-[9px] tracking-widest text-zinc-600 dark:text-[#888] whitespace-nowrap"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 {exp.period}
@@ -102,13 +102,13 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
 
           <div className="h-px bg-zinc-200 dark:bg-[#1f1f1f] mb-4" />
 
-          <p className="text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a] mb-4">
+          <p className="text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] mb-4">
             {exp.description}
           </p>
 
           <div className="flex flex-col gap-1.5">
             {exp.highlights.map((h: string) => (
-              <div key={h} className="flex items-start gap-2 text-xs text-zinc-500 dark:text-[#8a8a8a]">
+              <div key={h} className="flex items-start gap-2 text-xs text-zinc-600 dark:text-[#8a8a8a]">
                 <ChevronRight size={12} strokeWidth={2.2} className="flex-shrink-0 mt-0.5 text-[#b8860b] dark:text-[#d4af37]" />
                 {h}
               </div>

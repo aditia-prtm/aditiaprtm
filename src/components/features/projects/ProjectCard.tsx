@@ -114,12 +114,12 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
               </span>
             </h3>
             <p
-              className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-400 dark:text-[#666] mb-3"
+              className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#666] mb-3"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               {project.subtitle}
             </p>
-            <p className="text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a] line-clamp-2 mb-5">
+            <p className="text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] line-clamp-2 mb-5">
               {project.description}
             </p>
 
@@ -128,7 +128,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
               {project.tags.slice(0, 4).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 py-0.5 font-mono text-[9px] tracking-wide border border-zinc-200 bg-zinc-100 text-zinc-500 dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#777]"
+                  className="px-2.5 py-0.5 font-mono text-[9px] tracking-wide border border-zinc-200 bg-zinc-100 text-zinc-600 dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#777]"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   {tag}
@@ -136,7 +136,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
               ))}
               {project.tags.length > 4 && (
                 <span
-                  className="px-2 py-0.5 font-mono text-[9px] text-zinc-400 dark:text-[#555]"
+                  className="px-2 py-0.5 font-mono text-[9px] text-zinc-500 dark:text-[#555]"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   +{project.tags.length - 4}
@@ -156,7 +156,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
+                className="flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-zinc-600 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 <Github size={13} strokeWidth={1.7} />
@@ -164,7 +164,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
               </a>
             ) : ( 
               <p
-                className="flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
+                className="flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-zinc-600 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 <Lock size={13} strokeWidth={1.7} />
@@ -177,7 +177,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-zinc-500 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
+              className="flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-zinc-600 dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] transition-colors duration-200"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               <ExternalLink size={13} strokeWidth={1.7} />

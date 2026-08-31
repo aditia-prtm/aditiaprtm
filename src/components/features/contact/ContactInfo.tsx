@@ -39,7 +39,7 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
             transition={{ delay: 0.15 + i * 0.08, duration: 0.5 }}
             className="flex items-start gap-6 border-b border-zinc-100 dark:border-[#131313] px-5 py-4 last:border-0 group hover:bg-zinc-100 dark:hover:bg-[#111] transition-colors"
           >
-            <span className="font-mono text-[9px] tracking-[0.2em] text-zinc-400 dark:text-[#555] flex-shrink-0 mt-0.5 w-24">
+            <span className="font-mono text-[9px] tracking-[0.2em] text-zinc-600 dark:text-[#555] flex-shrink-0 mt-0.5 w-24">
               {key}
             </span>
             {href ? (
@@ -50,7 +50,7 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
                 {val}
               </a>
             ) : (
-              <span className="font-mono text-xs leading-relaxed text-zinc-500 dark:text-[#8a8a8a] group-hover:text-zinc-700 dark:group-hover:text-[#bbb] transition-colors">
+              <span className="font-mono text-xs leading-relaxed text-zinc-600 dark:text-[#8a8a8a] group-hover:text-zinc-700 dark:group-hover:text-[#bbb] transition-colors">
                 {val}
               </span>
             )}
@@ -64,7 +64,7 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
             animate={{ opacity: [1, 0.2, 1] }}
             transition={{ duration: 2.4, repeat: Infinity }}
           />
-          <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#888]">
+          <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-600 dark:text-[#888]">
             {personalInfo.availability}
           </span>
         </div>
@@ -102,7 +102,7 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
               <ArrowUpRight
                 size={13}
                 strokeWidth={2}
-                className="text-zinc-400 dark:text-[#555] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37] transition-colors duration-200"
+                className="text-zinc-500 dark:text-[#555] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37] transition-colors duration-200"
               />
             </motion.a>
           ))}

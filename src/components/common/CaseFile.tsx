@@ -50,7 +50,7 @@ export default function CaseFile({ isInView = true, isFirstRender = true }: Case
           transition={{ delay: d(2.05 + i * 0.08), duration: 0.5 }}
           className="flex items-start gap-6 border-b border-zinc-100 dark:border-[#131313] px-5 py-4 last:border-0 group hover:bg-zinc-100 dark:hover:bg-[#111] transition-colors"
         >
-          <span className="font-mono text-[9px] tracking-[0.22em] text-zinc-500 dark:text-[#666] flex-shrink-0 mt-0.5 w-20">
+          <span className="font-mono text-[9px] tracking-[0.22em] text-zinc-600 dark:text-[#666] flex-shrink-0 mt-0.5 w-20">
             {key}
           </span>
           <span
@@ -72,7 +72,7 @@ export default function CaseFile({ isInView = true, isFirstRender = true }: Case
           animate={{ opacity: [1, 0.2, 1] }}
           transition={{ duration: 2.4, repeat: Infinity }}
         />
-        <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#666]">
+        <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-600 dark:text-[#666]">
           Currently active
         </span>
       </div>

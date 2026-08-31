@@ -43,7 +43,7 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
       >
         <Icon
           size={32}
-          className="transition-colors duration-200 text-zinc-400 dark:text-[#555] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37]"
+          className="transition-colors duration-200 text-zinc-500 dark:text-[#555] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37]"
         />
       </motion.div>
 
@@ -52,7 +52,7 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5, delay: delay + 0.15 }}
-        className="font-mono text-[9px] tracking-[0.14em] uppercase text-center leading-tight text-zinc-500 dark:text-[#666] group-hover:text-zinc-800 dark:group-hover:text-[#ccc] transition-colors duration-200"
+        className="font-mono text-[9px] tracking-[0.14em] uppercase text-center leading-tight text-zinc-600 dark:text-[#666] group-hover:text-zinc-800 dark:group-hover:text-[#ccc] transition-colors duration-200"
       >
         {label}
       </motion.p>

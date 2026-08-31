@@ -22,7 +22,7 @@ const initialFormData: ContactFormData = {
 const inputClass = `
   px-4 py-3 text-sm transition-all
   border border-zinc-200 bg-white
-  text-zinc-900 placeholder-zinc-400
+  text-zinc-900 placeholder-zinc-500
   focus:outline-none focus:ring-2 focus:ring-[#b8860b]/25 focus:border-[#b8860b]/60
   dark:border-[#1f1f1f] dark:bg-[#080808]
   dark:text-[#f0ede6] dark:placeholder-[#444]
@@ -102,7 +102,7 @@ export default function ContactForm() {
               >
                 Message sent!
               </h3>
-              <p className="text-sm text-zinc-500 dark:text-[#8a8a8a]">
+              <p className="text-sm text-zinc-600 dark:text-[#8a8a8a]">
                 Thanks for reaching out. I'll get back to you within 24 hours.
               </p>
             </div>

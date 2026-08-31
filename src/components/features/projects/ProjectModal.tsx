@@ -101,7 +101,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               {project.title}
             </h2>
             <p
-              className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-400 dark:text-[#666] mb-5"
+              className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#666] mb-5"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               {project.subtitle}
@@ -128,7 +128,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             {/* Long description */}
             <div className="space-y-3 mb-6">
               {project.longDescription.split('\n\n').map((para: string, i: number) => (
-                <p key={i} className="text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a]">
+                <p key={i} className="text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a]">
                   {para}
                 </p>
               ))}

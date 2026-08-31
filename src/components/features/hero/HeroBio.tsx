@@ -133,13 +133,13 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
           className="flex items-center gap-3 group"
         >
           <span
-            className="font-mono text-[11px] tracking-[0.2em] uppercase text-zinc-500 group-hover:text-zinc-700 dark:text-[#888] dark:group-hover:text-[#bbb] transition-colors"
+            className="font-mono text-[11px] tracking-[0.2em] uppercase text-zinc-600 group-hover:text-zinc-800 dark:text-[#888] dark:group-hover:text-[#bbb] transition-colors"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             Resume
           </span>
           <span className="flex items-center justify-center w-8 h-8 border border-zinc-200 group-hover:border-zinc-300 dark:border-[#1f1f1f] dark:group-hover:border-[#333] transition-colors duration-300">
-            <Download size={12} className="text-zinc-500 group-hover:text-zinc-700 dark:text-[#888] dark:group-hover:text-[#bbb] transition-colors" />
+            <Download size={12} className="text-zinc-600 group-hover:text-zinc-800 dark:text-[#888] dark:group-hover:text-[#bbb] transition-colors" />
           </span>
         </motion.a>
       </motion.div>

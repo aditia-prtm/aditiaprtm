@@ -18,7 +18,7 @@ export default function Stat({ num, label, className = '' }: StatProps) {
         {num}
       </div>
       <div
-        className="font-mono text-[10px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#777] mt-1"
+        className="font-mono text-[10px] tracking-[0.2em] uppercase text-zinc-600 dark:text-[#777] mt-1"
         style={{ fontFamily: "'JetBrains Mono', monospace" }}
       >
         {label}

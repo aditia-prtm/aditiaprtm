@@ -46,7 +46,7 @@ export default function Projects() {
               Things I've <span className="projects-gold-text">shipped</span>
             </h2>
             <p
-              className="max-w-xs text-sm leading-relaxed text-zinc-500 dark:text-[#8a8a8a] sm:text-right"
+              className="max-w-xs text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] sm:text-right"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               Projects I've built so far — click any card to explore further.

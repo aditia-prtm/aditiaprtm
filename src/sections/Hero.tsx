@@ -74,11 +74,11 @@ export default function Hero() {
               transition={{ delay: d(1.7), duration: 0.6 }}
               className="flex items-center gap-3"
             >
-              <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-400 dark:text-[#555]">
+              <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]">
                 {new Date().getFullYear()}
               </div>
-              <div className="flex-1 h-px bg-zinc-100 dark:bg-[#141414]" />
-              <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-400 dark:text-[#555]">
+              <div className="flex-1 h-px bg-zinc-200 dark:bg-[#141414]" />
+              <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]">
                 v2.0
               </div>
             </motion.div>
@@ -93,10 +93,10 @@ export default function Hero() {
               transition={{ delay: d(2.6), duration: 0.8 }}
               className="border-l-2 border-[#b8860b]/20 dark:border-[#d4af37]/18 pl-4"
             >
-              <p className="italic font-serif text-xs text-zinc-500 dark:text-[#888] leading-relaxed">
+              <p className="italic font-serif text-xs text-zinc-600 dark:text-[#888] leading-relaxed">
                 "Clean code always looks like it was written by someone who cares."
               </p>
-              <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-400 dark:text-[#666] mt-2 block">
+              <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#666] mt-2 block">
                 — Robert C. Martin
               </span>
             </motion.div>

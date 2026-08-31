@@ -59,12 +59,15 @@ body {
 }
 
 /* ─── Centralized Reusable Utility Classes ────────────────────────── */
+/* Light-mode gold gradients use darker stops — the previous middle stop
+   (#d4a017) is only ~2:1 on white, below the 3:1 large-text minimum. */
 .gold-gradient-text,
 .skills-gold-text,
 .projects-gold-text,
 .experience-gold-text,
-.contact-gold-text {
-  background: linear-gradient(135deg, #b8860b 0%, #d4a017 50%, #9a7209 100%);
+.contact-gold-text,
+.name-gold {
+  background: linear-gradient(135deg, #9a7209 0%, #b8860b 50%, #8a6808 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -74,20 +77,7 @@ body {
 .dark .skills-gold-text,
 .dark .projects-gold-text,
 .dark .experience-gold-text,
-.dark .contact-gold-text {
-  background: linear-gradient(135deg, #d4af37 0%, #f5e177 50%, #c9a227 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.name-gold {
-  background: linear-gradient(135deg, #b8860b 0%, #d4a017 50%, #9a7209 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
+.dark .contact-gold-text,
 .dark .name-gold {
   background: linear-gradient(135deg, #d4af37 0%, #f5e177 50%, #c9a227 100%);
   -webkit-background-clip: text;
@@ -103,8 +93,8 @@ body {
 .contact-grid-bg,
 .loading-grid-bg {
   background-image:
-    linear-gradient(to right, #00000008 1px, transparent 1px),
-    linear-gradient(to bottom, #00000008 1px, transparent 1px);
+    linear-gradient(to right, #00000012 1px, transparent 1px),
+    linear-gradient(to bottom, #00000012 1px, transparent 1px);
   background-size: 72px 72px;
 }
 
