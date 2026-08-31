@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
+
+// ─── Libs ─────────────────────────────────────────────────────────
+import { initLenis, destroyLenis } from './lib/lenis';
 
 // ─── Hooks ────────────────────────────────────────────────────────
 import { useDarkMode } from './hooks/useDarkMode';
@@ -29,21 +32,25 @@ export default function App() {
     return () => clearTimeout(timeout);
   }, []);
 
-  // Initialize Lenis smooth scroll
+  // Initialize Lenis smooth scroll (instance stored in the lib/lenis singleton
+  // so components like ProjectModal can pause it with lenis.stop()).
   useEffect(() => {
-    const lenis = new Lenis({
+    const lenis = initLenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
+    rafId = requestAnimationFrame(raf);
 
-    requestAnimationFrame(raf);
-
-    return () => lenis.destroy();
+    return () => {
+      cancelAnimationFrame(rafId);
+      destroyLenis();
+    };
   }, []);
 
   return (

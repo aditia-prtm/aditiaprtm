@@ -1,8 +1,10 @@
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Lock, X } from 'lucide-react';
 import { Project } from '../../../types';
 import FileHeader from '../../common/FileHeader';
 import LabeledRule from '../../common/LabeledRule';
+import { getLenis } from '../../../lib/lenis';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -12,8 +14,26 @@ interface ProjectModalProps {
 /**
  * ProjectModal
  * Modal presentation displaying full project details, long description, tech stack tags, and links.
+ *
+ * Scroll handling (desktop wheel + mobile touch):
+ * - `data-lenis-prevent` makes Lenis ignore wheel/touch events over the modal, so the
+ *   modal scrolls natively instead of the page (Lenis hijacks wheel events on window
+ *   and would otherwise scroll the portfolio page behind the modal).
+ * - `overscroll-contain` blocks scroll chaining when the modal reaches its top/bottom
+ *   scroll boundary, so the page never starts scrolling behind the modal.
+ * - While open, Lenis is paused (lenis.stop()) to fully lock the page behind the modal.
  */
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+  const isOpen = project !== null;
+
+  // Lock page scrolling while the modal is open; restore on close/unmount.
+  useEffect(() => {
+    if (!isOpen) return;
+    const lenis = getLenis();
+    lenis?.stop();
+    return () => lenis?.start();
+  }, [isOpen]);
+
   if (!project) return null;
 
   return (
@@ -35,7 +55,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           exit={{ scale: 0.92, opacity: 0, y: 32 }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           onClick={(e) => e.stopPropagation()}
-          className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-zinc-200 bg-white dark:border-[#1f1f1f] dark:bg-[#0e0e0e] shadow-2xl dark:shadow-black/70"
+          data-lenis-prevent
+          className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto overscroll-contain border border-zinc-200 bg-white dark:border-[#1f1f1f] dark:bg-[#0e0e0e] shadow-2xl dark:shadow-black/70"
         >
           {/* File header */}
           <FileHeader
