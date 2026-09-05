@@ -17,7 +17,7 @@ export const personalInfo: PersonalInfo = {
   location: 'Ogan Komering Ilir, Indonesia',
   availability: 'Open for Freelance',
   email: 'mhdaditiapratama268@gmail.com',
-  resume: 'https://drive.google.com/file/d/18YqR4GFk3YJWnWESvLE5E67uzcOoFHwn/view?usp=sharing',
+  resume: 'https://drive.google.com/file/d/1J842grmhWYJZO-Dvr_2c-lr3bEbLRg1m/view?usp=sharing',
   social: {
     github: 'https://github.com/aditia-prtm',
     linkedin: 'https://linkedin.com/in/m-aditia-putra-pratama-a3b0bb376/',
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     description: 'Official website for SRIFOTON, a national annual informatics exhibition and competition by HMIF Unsri.',
     longDescription:
       'Sriwijaya Informatics Exhibition (SRIFOTON) is the largest annual event organized by the Informatics Student Association (HMIF) of Sriwijaya University. As a national-scale event, it serves as a venue for students across Indonesia to compete, learn, and exchange ideas through competitions, workshops, and related programs.',
-    tags: ['Next.js', 'Supabase', 'Google Gemini API', 'Groq API'],
+    tags: ['Next.js', 'Supabase', 'Framer-Motion'],
     category: 'Event',
     color: '#b8860b',
     gradient: 'from-[#8a6808] via-[#b8860b] to-[#d4af37]',
