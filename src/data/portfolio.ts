@@ -115,7 +115,7 @@ export const projects: Project[] = [
     gradient: 'from-[#8a6808] via-[#b8860b] to-[#d4af37]',
     image: 'Srifoton.png',
     liveUrl: 'https://srifoton.hmifunsri.com',
-    githubUrl: 'private-repository',
+    githubUrl: 'private-code',
     featured: true,
   },
   {

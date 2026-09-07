@@ -150,7 +150,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
         <div className="px-6 pb-6 pt-0">
           <div className="h-px bg-zinc-200 dark:bg-[#1f1f1f] mb-4" />
           <div className="flex items-center gap-4">
-            {project.githubUrl !== 'private-repository' ? (
+            {project.githubUrl !== 'private-code' ? (
               <a
                 href={project.githubUrl}
                 target="_blank"
@@ -168,7 +168,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 <Lock size={13} strokeWidth={1.7} />
-                Private Repository
+                Private Code
               </p>
             )}
 

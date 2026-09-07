@@ -152,7 +152,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             {/* Actions */}
             <div className="flex gap-3">
-              {project.githubUrl !== 'private-repository' ? ( 
+              {project.githubUrl !== 'private-code' ? ( 
                 <a
                   href={project.githubUrl}
                   target="_blank"
@@ -169,7 +169,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   <Lock size={15} strokeWidth={1.8} />
-                  Private Repository
+                  Private Code
                 </p>
               )}
               <a
