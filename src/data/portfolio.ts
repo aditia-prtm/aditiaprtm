@@ -118,6 +118,22 @@ export const projects: Project[] = [
     githubUrl: 'private-repository',
     featured: true,
   },
+  {
+    id: 2,
+    title: 'FootyPedia',
+    subtitle: 'The Football Database and Encyclopedia',
+    description: 'An interactive React-based football data platform powered by TheSportsDB API for exploring and bookmarking player and club statistics.',
+    longDescription:
+      'FootyPedia is a responsive React web application designed for searching and exploring real-time statistics of football players and clubs worldwide. Powered by TheSportsDB API, the platform features a dynamic favoriting system with segmented controls, skeleton loading states, mobile-first navigation, and fluid UI animations via Framer Motion.',
+    tags: ['Next.js', 'TailwindCSS', 'Framer-Motion', 'TheSportsDB REST API'],
+    category: 'Self-Project',
+    color: '#b8860b',
+    gradient: 'from-[#8a6808] via-[#b8860b] to-[#d4af37]',
+    image: 'footypedia.png',
+    liveUrl: 'https://footypedia-one.vercel.app/',
+    githubUrl: 'https://github.com/aditia-prtm/FootyPedia',
+    featured: false,
+  },
 ];
 
 // ─── Experience ───────────────────────────────────────────────────
