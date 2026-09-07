@@ -15,7 +15,7 @@ export function useDarkMode() {
     if (typeof window !== 'undefined') {
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
-    // 3. Default to dark
+    // 3. Default to light
     return true;
   });
 
