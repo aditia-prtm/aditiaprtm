@@ -63,13 +63,13 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         className="h-7 flex items-center mb-7"
       >
         <span
-          className="text-sm text-zinc-600 dark:text-[#999]"
+          className="text-base text-zinc-600 dark:text-[#999]"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
         >
-          {'<'}
+          <span className='name-gold'>{'<'}</span>
           {typed}
           <BlinkingCursor />
-          {'/>'}
+          <span className='name-gold'>{'/>'}</span>
         </span>
       </motion.div>
 
@@ -78,8 +78,7 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         initial={{ opacity: 0, y: 12 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
         transition={{ delay: d(2.2), duration: 0.7 }}
-        className="text-zinc-600 dark:text-[#9a9a9a] leading-[1.9] text-sm max-w-[420px] mb-7"
-        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+        className="font-outfit text-zinc-600 dark:text-[#9a9a9a] leading-[1.9] text-base max-w-[420px] mb-7"
       >
         {personalInfo.bio}{' '}
         <span className="text-[#b8860b] dark:text-[#d4af37]">Sriwijaya University</span>{'. '}

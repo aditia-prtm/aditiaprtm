@@ -25,11 +25,11 @@ export default function HighlightCard({ exp, delay, isInView }: HighlightCardPro
         <Briefcase size={13} strokeWidth={1.8} className="text-[#b8860b] dark:text-[#d4af37]" />
       </div>
       <div className="min-w-0">
-        <p className="text-sm font-bold text-zinc-900 dark:text-[#f0ede6] leading-tight truncate">
+        <p className="font-outfit text-sm font-bold text-zinc-900 dark:text-[#f0ede6] leading-tight truncate">
           {exp.role}
         </p>
         <div className="flex items-center gap-1.5 mt-0.5">
-          <span className="text-xs font-semibold text-[#b8860b] dark:text-[#d4af37]">
+          <span className="font-outfit text-xs font-semibold text-[#b8860b] dark:text-[#d4af37]">
             {exp.company}
           </span>
           <span className="text-zinc-300 dark:text-[#333] text-xs">·</span>
@@ -38,13 +38,13 @@ export default function HighlightCard({ exp, delay, isInView }: HighlightCardPro
           </span>
         </div>
         {exp.highlights?.[0] && (
-          <div className="flex items-start gap-1.5 mt-2">
+          <div className="flex items-center gap-1.5 mt-2">
             <ChevronRight
               size={11}
               strokeWidth={2.2}
               className="flex-shrink-0 mt-0.5 text-[#b8860b] dark:text-[#d4af37]"
             />
-            <p className="text-[11px] text-zinc-600 dark:text-[#888] leading-relaxed line-clamp-2">
+            <p className="font-outfit text-[11px] text-zinc-600 dark:text-[#888] leading-relaxed line-clamp-2">
               {exp.highlights[0]}
             </p>
           </div>

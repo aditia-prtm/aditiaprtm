@@ -102,13 +102,13 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
 
           <div className="h-px bg-zinc-200 dark:bg-[#1f1f1f] mb-4" />
 
-          <p className="text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] mb-4">
+          <p className="font-outfit text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] mb-4">
             {exp.description}
           </p>
 
           <div className="flex flex-col gap-1.5">
             {exp.highlights.map((h: string) => (
-              <div key={h} className="flex items-start gap-2 text-xs text-zinc-600 dark:text-[#8a8a8a]">
+              <div key={h} className="font-outfit flex items-start gap-2 text-xs text-zinc-600 dark:text-[#8a8a8a]">
                 <ChevronRight size={12} strokeWidth={2.2} className="flex-shrink-0 mt-0.5 text-[#b8860b] dark:text-[#d4af37]" />
                 {h}
               </div>

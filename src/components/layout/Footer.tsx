@@ -61,8 +61,7 @@ export default function Footer() {
             </a>
 
             <p
-              className="text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] max-w-xs"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              className="font-outfit text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] max-w-xs"
             >
               Undergraduate Informatics Engineering student building clean, human-centered software — one project at a time.
             </p>
@@ -160,14 +159,7 @@ export default function Footer() {
             className="font-mono text-[10px] text-zinc-500 dark:text-[#555] tracking-widest text-center sm:text-left"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
-            © {year} {personalInfo.name} — Portfolio
-          </p>
-
-          <p
-            className="font-mono text-[10px] text-zinc-500 dark:text-[#555] tracking-widest text-center"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
-          >
-            Built with React · Tailwind CSS · Framer Motion
+            © {year} {personalInfo.name}  
           </p>
 
           <motion.button

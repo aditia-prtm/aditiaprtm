@@ -20,7 +20,7 @@ const initialFormData: ContactFormData = {
 };
 
 const inputClass = `
-  px-4 py-3 text-sm transition-all
+  font-outfit px-4 py-3 text-sm transition-all
   border border-zinc-200 bg-white
   text-zinc-900 placeholder-zinc-500
   focus:outline-none focus:ring-2 focus:ring-[#b8860b]/25 focus:border-[#b8860b]/60
@@ -102,7 +102,7 @@ export default function ContactForm() {
               >
                 Message sent!
               </h3>
-              <p className="text-sm text-zinc-600 dark:text-[#8a8a8a]">
+              <p className="font-outfit text-sm text-zinc-600 dark:text-[#8a8a8a]">
                 Thanks for reaching out. I'll get back to you within 24 hours.
               </p>
             </div>
@@ -155,7 +155,7 @@ export default function ContactForm() {
             </FormField>
 
             {status === 'error' && (
-              <p className="text-sm text-red-600 dark:text-red-400" role="alert">
+              <p className="font-outfit text-sm text-red-600 dark:text-red-400" role="alert">
                 Message failed to send. {errorMessage}
               </p>
             )}

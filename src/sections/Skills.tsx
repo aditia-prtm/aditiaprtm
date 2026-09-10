@@ -45,8 +45,7 @@ export default function Skills() {
             </h2>
 
             <p
-              className="max-w-sm text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] sm:text-right"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              className="font-outfit max-w-sm text-base leading-relaxed text-zinc-600 dark:text-[#8a8a8a] sm:text-right"
             >
               Tools I reach for daily alongside stacks I'm actively exploring — a living snapshot of my craft.
             </p>

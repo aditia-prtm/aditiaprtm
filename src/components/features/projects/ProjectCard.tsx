@@ -119,7 +119,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
             >
               {project.subtitle}
             </p>
-            <p className="text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] line-clamp-2 mb-5">
+            <p className="font-outfit text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] line-clamp-2 mb-5">
               {project.description}
             </p>
 

@@ -57,8 +57,7 @@ export default function Experience() {
               The <span className="experience-gold-text">journey</span> so far
             </h2>
             <p
-              className="max-w-xs text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] sm:text-right"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              className="font-outfit max-w-xs text-base leading-relaxed text-zinc-600 dark:text-[#8a8a8a] sm:text-right"
             >
               Places where I've grown, learned with awesome people, and built cool stuff.
             </p>
