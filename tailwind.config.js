@@ -11,6 +11,7 @@ export default {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         serif: ["'Playfair Display'", 'Playfair Display', 'Georgia', 'serif'],
         mono: ["'JetBrains Mono'", 'JetBrains Mono', 'monospace'],
+        outfit: ['Outfit', 'sans-serif'],
       },
       colors: {
         brand: {

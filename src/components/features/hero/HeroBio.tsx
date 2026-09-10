@@ -49,7 +49,7 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
           className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-600 dark:text-[#888]"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
         >
-          Informatics · {personalInfo.location}
+          {personalInfo.location}
         </span>
       </motion.div>
 
@@ -61,14 +61,16 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ delay: d(2.1), duration: 0.6 }}
-        className="h-7 flex items-center mb-10"
+        className="h-7 flex items-center mb-7"
       >
         <span
           className="text-sm text-zinc-600 dark:text-[#999]"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
         >
+          {'<'}
           {typed}
           <BlinkingCursor />
+          {'/>'}
         </span>
       </motion.div>
 
@@ -80,22 +82,10 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         className="text-zinc-600 dark:text-[#9a9a9a] leading-[1.9] text-sm max-w-[420px] mb-12"
         style={{ fontFamily: "'JetBrains Mono', monospace" }}
       >
-        Undergraduate Informatics Engineering student at{' '}
-        <span className="text-[#b8860b] dark:text-[#d4af37]">Sriwijaya University</span>
-        . Passionate about building impactful, human-centered software — from pixel-perfect interfaces to resilient backends.
+        {personalInfo.bio}{' '}
+        <span className="text-[#b8860b] dark:text-[#d4af37]">Sriwijaya University</span>{'. '}
+        {personalInfo.bio2}
       </motion.p>
-
-      {/* Stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
-        transition={{ delay: d(2.3), duration: 0.7 }}
-        className="flex items-center gap-8 mb-12"
-      >
-        <Stat num="2+" label="Projects" />
-        <Stat num="∞" label="Curiosity" />
-        <Stat num="01" label="Goal: Ship" />
-      </motion.div>
 
       {/* CTAs */}
       <motion.div
