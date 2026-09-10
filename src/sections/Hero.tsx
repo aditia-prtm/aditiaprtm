@@ -75,11 +75,11 @@ export default function Hero() {
               className="flex items-center gap-3"
             >
               <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]">
-                {new Date().getFullYear()}
+                ADTX
               </div>
               <div className="flex-1 h-px bg-zinc-200 dark:bg-[#141414]" />
               <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]">
-                v2.0
+                {new Date().getFullYear()}
               </div>
             </motion.div>
 

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowUp, Github, Linkedin, Instagram, Mail, MapPin, Home, Code2, Folder, Briefcase, Phone, LucideIcon } from 'lucide-react';
 import { personalInfo, navLinks } from '../../data/portfolio';
+import { DotMatrixBackground } from '../common';
 
 const iconMap: Record<string, LucideIcon> = {
   Home,
@@ -29,10 +30,13 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-zinc-200 dark:border-[#1f1f1f] overflow-hidden bg-white dark:bg-[#080808]">
-      {/* Subtle top gradient line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gradient-to-r from-transparent via-[#b8860b]/50 dark:via-[#d4af37]/50 to-transparent" />
+      {/* Animated Dot Matrix Background */}
+      <DotMatrixBackground gap={28} dotSize={1.5} />
 
-      <div className="max-w-[1300px] mx-auto px-8 md:px-16">
+      {/* Subtle top gradient line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gradient-to-r from-transparent via-[#b8860b]/50 dark:via-[#d4af37]/50 to-transparent pointer-events-none" />
+
+      <div className="relative z-10 max-w-[1300px] mx-auto px-8 md:px-16">
         {/* Main grid */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
           {/* Brand column */}

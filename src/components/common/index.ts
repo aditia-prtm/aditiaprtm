@@ -6,3 +6,4 @@ export { default as Stat } from './Stat';
 export { default as SocialLink } from './SocialLink';
 export { default as MarqueeStrip } from './MarqueeStrip';
 export { default as CaseFile } from './CaseFile';
+export { default as DotMatrixBackground } from './DotMatrixBackground';

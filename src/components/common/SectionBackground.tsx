@@ -1,14 +1,39 @@
+import DotMatrixBackground from './DotMatrixBackground';
+
 interface SectionBackgroundProps {
-  glowPosition?: 'top-left' | 'top-right' | 'both';
+  glowPosition?: 'top-left' | 'top-right' | 'both' | 'none';
+  withDotMatrix?: boolean;
+  dotGap?: number;
+  dotSize?: number;
+  dotOpacity?: number;
 }
 
 /**
  * SectionBackground
- * Renders the subtle geometric grid overlay and ambient warm gold radial glow pools.
+ * Renders the animated dot matrix layer, subtle geometric grid overlay,
+ * and ambient warm gold radial glow pools.
  */
-export default function SectionBackground({ glowPosition = 'both' }: SectionBackgroundProps) {
+export default function SectionBackground({
+  glowPosition = 'both',
+  withDotMatrix = true,
+  dotGap = 32,
+  dotSize = 1.4,
+  dotOpacity = 0.85,
+}: SectionBackgroundProps) {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* Animated Dot Matrix Layer - Active in dark mode for sections */}
+      {withDotMatrix && (
+        <div className="hidden dark:block absolute inset-0">
+          <DotMatrixBackground
+            gap={dotGap}
+            dotSize={dotSize}
+            opacityMultiplier={dotOpacity}
+            maskVariant="radial"
+          />
+        </div>
+      )}
+
       {/* Background grid */}
       <div className="absolute inset-0 section-grid-bg" />
 
