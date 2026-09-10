@@ -3,7 +3,6 @@ import { ArrowRight, Download, Github, Linkedin, Instagram, Mail } from 'lucide-
 import { personalInfo } from '../../../data/portfolio';
 import { useTypingEffect } from '../../../hooks/useTypingEffect';
 import BlinkingCursor from '../../common/BlinkingCursor';
-import Stat from '../../common/Stat';
 import SocialLink from '../../common/SocialLink';
 import HeroName from './HeroName';
 import { LOADING_OFFSET } from '../../../sections/Hero';
@@ -79,7 +78,7 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         initial={{ opacity: 0, y: 12 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
         transition={{ delay: d(2.2), duration: 0.7 }}
-        className="text-zinc-600 dark:text-[#9a9a9a] leading-[1.9] text-sm max-w-[420px] mb-12"
+        className="text-zinc-600 dark:text-[#9a9a9a] leading-[1.9] text-sm max-w-[420px] mb-7"
         style={{ fontFamily: "'JetBrains Mono', monospace" }}
       >
         {personalInfo.bio}{' '}
@@ -92,7 +91,7 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         initial={{ opacity: 0, y: 12 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
         transition={{ delay: d(2.4), duration: 0.7 }}
-        className="flex flex-wrap gap-6 mb-14"
+        className="flex flex-wrap gap-6 mb-10"
       >
         {/* Primary CTA */}
         <motion.a
@@ -136,10 +135,10 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
 
       {/* Social links */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ delay: d(2.55), duration: 0.7 }}
-        className="flex flex-col gap-3.5"
+        className="flex flex-wrap items-center gap-6"
       >
         {socials.map(({ icon, href, label }) => (
           <SocialLink key={label} icon={icon} href={href} label={label} />
