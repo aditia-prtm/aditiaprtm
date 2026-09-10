@@ -64,7 +64,7 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
       >
         <span
           className="text-base text-zinc-600 dark:text-[#999]"
-          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          style={{ fontFamily: "'Outfit', 'JetBrains Mono', monospace" }}
         >
           <span className='name-gold'>{'<'}</span>
           {typed}

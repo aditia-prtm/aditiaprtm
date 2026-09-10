@@ -71,20 +71,9 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
               </h3>
               <div className="flex items-center gap-2 mt-1">
                 <Briefcase size={11} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
-                <span className="text-sm font-semibold text-[#b8860b] dark:text-[#d4af37]">
+                <span className="text-sm font-outfit font-semibold text-[#b8860b] dark:text-[#d4af37]">
                   {exp.company}
                 </span>
-                {exp.type && (
-                  <>
-                    <span className="text-zinc-300 dark:text-[#333]">·</span>
-                    <span
-                      className="font-mono text-[9px] tracking-wide text-zinc-500 dark:text-[#666] uppercase"
-                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                    >
-                      {exp.type}
-                    </span>
-                  </>
-                )}
               </div>
             </div>
 

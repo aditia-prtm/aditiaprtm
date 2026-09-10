@@ -26,7 +26,7 @@ export default function CaseFile({ isInView = true, isFirstRender = true }: Case
     { key: 'ROLE', val: personalInfo.title, accent: false },
     { key: 'UNIVERSITY', val: 'Sriwijaya University', accent: false },
     { key: 'LOCATION', val: personalInfo.location, accent: false },
-    { key: 'STACK', val: 'React · Next.js · Supabase', accent: false },
+    { key: 'STACK', val: 'React · Next.js · TailwindCSS', accent: false },
   ];
 
   const d = (base: number) => (isFirstRender ? base : Math.max(0, base - LOADING_OFFSET));

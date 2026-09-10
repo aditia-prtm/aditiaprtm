@@ -7,10 +7,11 @@ export const personalInfo: PersonalInfo = {
   name: 'Aditia Pratama',
   title: 'Frontend Developer',
   taglines: [
-    'Sriwijaya University student',
+    'Informatics Engineering',
     'Frontend Developer',
     'Competitive Programmer',
     'AI Engineer wannabe :)',
+    'Tech Enthusiast',
   ],
   bio: `Informatics Engineering student at`,
   bio2: ` Passionate about building impactful, human-centered software — from pixel-perfect interfaces to resilient backends.`,
