@@ -3,7 +3,6 @@ import { ArrowRight, Download, Github, Linkedin, Instagram, Mail } from 'lucide-
 import { personalInfo } from '../../../data/portfolio';
 import { useTypingEffect } from '../../../hooks/useTypingEffect';
 import BlinkingCursor from '../../common/BlinkingCursor';
-import SocialLink from '../../common/SocialLink';
 import HeroName from './HeroName';
 import { LOADING_OFFSET } from '../../../sections/Hero';
 
@@ -130,18 +129,6 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
             <Download size={12} className="text-zinc-600 group-hover:text-zinc-800 dark:text-[#888] dark:group-hover:text-[#bbb] transition-colors" />
           </span>
         </motion.a>
-      </motion.div>
-
-      {/* Social links */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ delay: d(2.55), duration: 0.7 }}
-        className="flex flex-wrap items-center gap-6"
-      >
-        {socials.map(({ icon, href, label }) => (
-          <SocialLink key={label} icon={icon} href={href} label={label} />
-        ))}
       </motion.div>
     </div>
   );

@@ -61,7 +61,7 @@ export default function Hero() {
 
       {/* Main content grid */}
       <motion.div style={{ y, opacity }} className="relative z-10 flex-1 flex items-center">
-        <div className="w-full max-w-[1300px] mx-auto px-8 md:px-16 pt-5 pb-16 grid lg:grid-cols-[1fr_380px] gap-16 lg:gap-24 items-start">
+        <div className="w-full max-w-[1300px] mx-auto px-8 md:px-16 pt-5 pb-10 lg:pb-4 grid lg:grid-cols-[1fr_380px] gap-16 lg:gap-24 items-start">
           {/* Left panel: intro, bio, stats, and CTAs */}
           <HeroBio isInView={isInView} isFirstRender={isFirstRender} />
 
