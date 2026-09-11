@@ -1,5 +1,3 @@
-// src\components\features\skills\ToolBadge.tsx
-
 import { motion } from 'framer-motion';
 
 interface ToolBadgeProps {

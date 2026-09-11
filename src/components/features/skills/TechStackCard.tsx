@@ -1,5 +1,3 @@
-// src\components\features\skills\TechStackCard.tsx
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { IconType } from 'react-icons';
@@ -63,7 +61,7 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5, delay: delay + 0.15 }}
-        className="font-outfit text-[11px] font-semibold tracking-[0.08em] uppercase text-center leading-tight text-zinc-600 dark:text-[#777] group-hover:text-zinc-900 dark:group-hover:text-[#f0ede6] transition-colors duration-200"
+        className="font-outfit text-[10px] font-semibold tracking-[0.08em] uppercase text-center leading-tight text-zinc-600 dark:text-[#777] group-hover:text-zinc-900 dark:group-hover:text-[#f0ede6] transition-colors duration-200"
       >
         {label}
       </motion.p>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, ChevronRight } from 'lucide-react';
+import { Briefcase, Calendar, ChevronRight, School } from 'lucide-react';
 import { Experience } from '../../../types';
 
 interface TimelineItemProps {
@@ -69,7 +69,7 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
                 {exp.role}
               </h3>
               <div className="flex items-center gap-2 mt-1">
-                <Briefcase size={11} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
+                <School size={11} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
                 <span className="text-sm font-outfit font-semibold text-[#b8860b] dark:text-[#d4af37]">
                   {exp.company}
                 </span>

@@ -1,5 +1,3 @@
-// src/components/features/skills/TechBadge.tsx
-
 import { motion } from 'framer-motion';
 import { IconType } from 'react-icons';
 

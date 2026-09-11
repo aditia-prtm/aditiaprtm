@@ -104,7 +104,7 @@ export const experiences: Experience[] = [
     id: 1,
     role: 'HMIF UNSRI - PTI Division',
     company: 'Sriwijaya University',
-    period: '2025 - 2026',
+    period: '2026 - 2027',
     type: 'Organization',
     description:
       'Currently exploring front-end web development within the PTI division of HMIF. I am focusing on building responsive user interfaces and applying my skills by developing foundational, hands-on web projects from scratch.',
