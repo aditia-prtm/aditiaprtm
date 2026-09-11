@@ -64,22 +64,6 @@ export default function Hero() {
 
           {/* Right panel: year stamp, dossier case file, and quote */}
           <div className="flex flex-col gap-6 mt-2 lg:mt-12">
-            {/* Year stamp */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ delay: d(1.7), duration: 0.6 }}
-              className="flex items-center gap-3"
-            >
-              <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]">
-                ADTX
-              </div>
-              <div className="flex-1 h-px bg-zinc-300 dark:bg-[#141414]" />
-              <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]">
-                {new Date().getFullYear()}
-              </div>
-            </motion.div>
-
             {/* Case file */}
             <CaseFile isInView={isInView} isFirstRender={isFirstRender} />
 
@@ -90,10 +74,10 @@ export default function Hero() {
               transition={{ delay: d(2.6), duration: 0.8 }}
               className="border-l-2 border-[#b8860b]/35 bg-[#b8860b]/[0.035] dark:border-[#d4af37]/18 dark:bg-transparent pl-4 py-3"
             >
-              <p className="italic font-serif text-xs text-zinc-600 dark:text-[#888] leading-relaxed">
+              <p className="font-outfit italic text-xs text-zinc-600 dark:text-[#888] leading-relaxed">
                 "Make it work, make it right, make it fast."
               </p>
-              <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#666] mt-2 block">
+              <span className="font-outfit text-[9px] font-semibold tracking-[0.14em] uppercase text-zinc-500 dark:text-[#666] mt-2 block">
                 Kent Beck
               </span>
             </motion.div>

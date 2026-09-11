@@ -45,8 +45,7 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
           >
             <span className="w-6 h-px bg-[#b8860b] dark:bg-[#d4af37]" />
             <span
-              className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              className="font-outfit text-[10px] font-semibold tracking-[0.18em] uppercase text-zinc-500 dark:text-[#555]"
             >
               LOADING...
             </span>
@@ -87,14 +86,12 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
             className="relative z-10 text-center"
           >
             <p
-              className="font-bold text-xl text-zinc-900 dark:text-[#f0ede6] mb-1.5"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="font-outfit font-bold text-xl text-zinc-900 dark:text-[#f0ede6] mb-1.5"
             >
               {personalInfo.name}
             </p>
             <p
-              className="text-xs text-zinc-600 dark:text-[#666] tracking-[0.15em] uppercase"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              className="font-outfit text-xs font-semibold text-zinc-600 dark:text-[#666] tracking-[0.12em] uppercase"
             >
               Initialising portfolio…
             </p>
@@ -128,8 +125,7 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
               transition={{ duration: 2, repeat: Infinity }}
             />
             <span
-              className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#555]"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              className="font-outfit text-[10px] font-semibold tracking-[0.14em] uppercase text-zinc-500 dark:text-[#555]"
             >
               Loading assets
             </span>

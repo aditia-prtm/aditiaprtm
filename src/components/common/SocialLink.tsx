@@ -26,7 +26,7 @@ export default function SocialLink({ icon: Icon, href, label }: SocialLinkProps)
         strokeWidth={1.5}
         className="text-zinc-500 group-hover:text-[#b8860b] dark:text-[#666] dark:group-hover:text-[#d4af37] transition-colors duration-300"
       />
-      <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-zinc-600 group-hover:text-[#b8860b] dark:text-[#777] dark:group-hover:text-[#d4af37] transition-colors duration-300">
+      <span className="font-outfit text-[10px] font-semibold tracking-[0.12em] uppercase text-zinc-600 group-hover:text-[#b8860b] dark:text-[#777] dark:group-hover:text-[#d4af37] transition-colors duration-300">
         {label}
       </span>
     </motion.a>

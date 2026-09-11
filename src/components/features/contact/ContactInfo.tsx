@@ -28,7 +28,7 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
   return (
     <div className="flex flex-col gap-6">
       {/* Contact file */}
-      <div className="border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none">
+      <div className="rounded-2xl overflow-hidden border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none">
         <FileHeader label="CONTACT.FILE" />
 
         {infoRows.map(({ key, val, href }, i) => (
@@ -39,18 +39,18 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
             transition={{ delay: 0.15 + i * 0.08, duration: 0.5 }}
             className="flex items-start gap-6 border-b border-zinc-200/80 dark:border-[#131313] px-5 py-4 last:border-0 group hover:bg-[#b8860b]/[0.045] dark:hover:bg-[#111] transition-colors"
           >
-            <span className="font-mono text-[9px] tracking-[0.2em] text-zinc-600 dark:text-[#555] flex-shrink-0 mt-0.5 w-24">
+            <span className="font-outfit text-[10px] font-semibold tracking-[0.12em] text-zinc-600 dark:text-[#555] flex-shrink-0 mt-0.5 w-24">
               {key}
             </span>
             {href ? (
               <a
                 href={href}
-                className="font-mono text-xs leading-relaxed text-[#b8860b] dark:text-[#d4af37] hover:underline break-all"
+                className="font-outfit text-xs leading-relaxed text-[#b8860b] dark:text-[#d4af37] hover:underline break-all font-semibold"
               >
                 {val}
               </a>
             ) : (
-              <span className="font-mono text-xs leading-relaxed text-zinc-600 dark:text-[#8a8a8a] group-hover:text-zinc-700 dark:group-hover:text-[#bbb] transition-colors">
+              <span className="font-outfit text-xs leading-relaxed text-zinc-600 dark:text-[#8a8a8a] group-hover:text-zinc-700 dark:group-hover:text-[#bbb] transition-colors">
                 {val}
               </span>
             )}
@@ -64,15 +64,15 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
             animate={{ opacity: [1, 0.2, 1] }}
             transition={{ duration: 2.4, repeat: Infinity }}
           />
-          <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-600 dark:text-[#888]">
+          <span className="font-outfit text-[10px] font-semibold tracking-[0.12em] uppercase text-zinc-600 dark:text-[#888]">
             {personalInfo.availability}
           </span>
         </div>
       </div>
 
       {/* Quote-style personal line */}
-      <div className="border-l-2 border-[#b8860b]/35 bg-[#b8860b]/[0.035] dark:border-[#d4af37]/20 dark:bg-transparent pl-4 py-3">
-        <p className="italic font-serif text-sm text-zinc-600 dark:text-[#999] leading-relaxed">
+      <div className="rounded-2xl border-l-2 border-[#b8860b]/35 bg-[#b8860b]/[0.035] dark:border-[#d4af37]/20 dark:bg-transparent pl-4 py-3">
+        <p className="font-outfit italic text-sm text-zinc-600 dark:text-[#999] leading-relaxed">
           Got an idea worth building? Let's talk it through.
         </p>
       </div>
@@ -82,27 +82,34 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
         <div className="mb-4">
           <LabeledRule label="Find me online" />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2.5">
           {socials.map(({ icon: Icon, label, href }) => (
             <motion.a
               key={label}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ x: 4 }}
-              transition={{ duration: 0.2 }}
-              className="flex items-center justify-between px-4 py-3 group border border-zinc-300 bg-white/75 text-zinc-600 shadow-[0_8px_22px_rgba(24,24,27,0.04)] hover:border-[#b8860b]/40 hover:bg-[#b8860b]/[0.04] hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:text-[#888] dark:shadow-none dark:hover:border-[#d4af37]/35 dark:hover:bg-[#d4af37]/[0.05] dark:hover:text-[#d4af37] transition-colors duration-200"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="
+                flex items-center justify-between px-5 py-3 rounded-2xl group
+                border border-zinc-400/50 bg-white text-zinc-800
+                hover:border-zinc-400 hover:bg-zinc-50
+                dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#f0ede6]
+                dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
+                transition-all duration-300
+              "
             >
               <div className="flex items-center gap-3">
-                <Icon size={15} strokeWidth={1.7} />
-                <span className="font-mono text-[11px] tracking-[0.1em] uppercase font-medium">
+                <Icon size={15} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
+                <span className="font-outfit text-xs tracking-wider uppercase font-semibold">
                   {label}
                 </span>
               </div>
               <ArrowUpRight
-                size={13}
-                strokeWidth={2}
-                className="text-zinc-500 dark:text-[#555] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37] transition-colors duration-200"
+                size={14}
+                strokeWidth={2.2}
+                className="text-zinc-500 dark:text-[#777] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </motion.a>
           ))}

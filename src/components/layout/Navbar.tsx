@@ -55,10 +55,10 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
         initial={{ y: -72, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-        className={`pointer-events-auto flex items-center gap-1 px-3 py-2 rounded-2xl transition-all duration-500 font-mono ${
+        className={`pointer-events-auto flex items-center gap-1 px-4 py-2 rounded-full transition-all duration-500 font-outfit ${
           scrolled
-            ? 'border border-zinc-200/80 bg-white/80 backdrop-blur-xl shadow-lg shadow-black/[0.06] dark:border-[#1f1f1f] dark:bg-[#0a0a0a]/85 dark:shadow-black/40'
-            : 'border border-zinc-200/60 bg-white/60 backdrop-blur-md dark:border-[#1a1a1a] dark:bg-[#0a0a0a]/60'
+            ? 'border border-zinc-300/80 bg-white/80 backdrop-blur-xl shadow-lg shadow-black/[0.06] dark:border-[#1f1f1f] dark:bg-[#0a0a0a]/85 dark:shadow-black/40'
+            : 'border border-zinc-200/80 bg-white/60 backdrop-blur-md dark:border-[#1a1a1a] dark:bg-[#0a0a0a]/60'
         }`}
       >
         {/* Nav links */}
@@ -97,7 +97,7 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
                   {IconComponent && (
                     <IconComponent size={15} strokeWidth={1.75} className="text-current" />
                   )}
-                  <span className="hidden md:block leading-none uppercase text-[9px] tracking-[0.16em]">
+                  <span className="hidden md:block leading-none uppercase text-[9px] font-semibold tracking-[0.12em]">
                     {link.label}
                   </span>
                 </span>

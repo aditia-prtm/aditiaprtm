@@ -14,14 +14,7 @@ interface ProjectModalProps {
 /**
  * ProjectModal
  * Modal presentation displaying full project details, long description, tech stack tags, and links.
- *
- * Scroll handling (desktop wheel + mobile touch):
- * - `data-lenis-prevent` makes Lenis ignore wheel/touch events over the modal, so the
- *   modal scrolls natively instead of the page (Lenis hijacks wheel events on window
- *   and would otherwise scroll the portfolio page behind the modal).
- * - `overscroll-contain` blocks scroll chaining when the modal reaches its top/bottom
- *   scroll boundary, so the page never starts scrolling behind the modal.
- * - While open, Lenis is paused (lenis.stop()) to fully lock the page behind the modal.
+ * Styled with rounded-2xl container and Hero CTA-matching buttons.
  */
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const isOpen = project !== null;
@@ -56,7 +49,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           onClick={(e) => e.stopPropagation()}
           data-lenis-prevent
-          className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto overscroll-contain border border-zinc-300 bg-[#fffdf8] dark:border-[#1f1f1f] dark:bg-[#0e0e0e] shadow-2xl dark:shadow-black/70"
+          className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto overscroll-contain rounded-2xl border border-zinc-300 bg-[#fffdf8] dark:border-[#1f1f1f] dark:bg-[#0e0e0e] shadow-2xl dark:shadow-black/70"
         >
           {/* File header */}
           <FileHeader
@@ -65,15 +58,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <button
                 onClick={onClose}
                 aria-label="Close modal"
-                className="w-7 h-7 flex items-center justify-center border border-zinc-300 bg-white/80 text-zinc-500 dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#666] hover:text-[#b8860b] dark:hover:text-[#d4af37] hover:border-[#b8860b]/40 hover:bg-[#b8860b]/[0.04] dark:hover:border-[#d4af37]/40 transition-colors"
+                className="w-7 h-7 rounded-lg flex items-center justify-center border border-zinc-300 bg-white/80 text-zinc-500 dark:border-[#1f1f1f] dark:bg-[#161616] dark:text-[#888] hover:text-[#b8860b] dark:hover:text-[#d4af37] hover:border-[#b8860b]/40 hover:bg-[#b8860b]/[0.04] dark:hover:border-[#d4af37]/40 transition-colors"
               >
-                <X size={13} strokeWidth={2} />
+                <X size={14} strokeWidth={2} />
               </button>
             }
           />
 
           {/* Header image */}
-          <div className={`mt-5 mx-6 h-72 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
+          <div className={`mt-5 mx-6 h-72 bg-gradient-to-br ${project.gradient} relative overflow-hidden rounded-xl`}>
             <div className="absolute inset-0 bg-grid opacity-20" />
             <div className="absolute inset-0 flex items-center justify-center">
               {project.image ? (
@@ -92,17 +85,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <div className="p-6 sm:p-8">
             {/* Title */}
             <h2
-              className="font-black leading-tight tracking-[-0.01em] mb-1 text-zinc-900 dark:text-[#f0ede6]"
+              className="font-outfit font-black leading-tight tracking-[-0.01em] mb-1 text-zinc-900 dark:text-[#f0ede6]"
               style={{
                 fontSize: 'clamp(1.4rem, 3vw, 1.85rem)',
-                fontFamily: "'Playfair Display', serif",
               }}
             >
               {project.title}
             </h2>
             <p
-              className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#666] mb-5"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              className="font-outfit text-[10px] font-semibold tracking-[0.14em] uppercase text-zinc-500 dark:text-[#666] mb-5"
             >
               {project.subtitle}
             </p>
@@ -110,15 +101,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             {/* Badges */}
             <div className="flex flex-wrap items-center gap-2 mb-6">
               <span
-                className="px-2.5 py-1 font-mono text-[9px] tracking-[0.1em] uppercase border border-[#b8860b]/40 bg-[#b8860b]/8 text-[#b8860b] dark:border-[#d4af37]/30 dark:bg-[#d4af37]/10 dark:text-[#d4af37]"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                className="px-3 py-1 rounded-full font-outfit text-[9px] font-semibold tracking-[0.08em] uppercase border border-[#b8860b]/40 bg-[#b8860b]/8 text-[#b8860b] dark:border-[#d4af37]/30 dark:bg-[#d4af37]/10 dark:text-[#d4af37]"
               >
                 {project.category}
               </span>
               {project.featured && (
                 <span
-                  className="px-2.5 py-1 font-mono text-[9px] tracking-[0.1em] uppercase bg-[#b8860b] text-white dark:bg-[#d4af37] dark:text-[#080808]"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  className="px-3 py-1 rounded-full font-outfit text-[9px] font-semibold tracking-[0.08em] uppercase bg-[#b8860b] text-white dark:bg-[#d4af37] dark:text-[#080808]"
                 >
                   ★ Featured
                 </span>
@@ -141,8 +130,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 {project.tags.map((tag: string) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 font-mono text-[10px] tracking-wide border border-zinc-300 bg-white/80 text-zinc-600 dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#999]"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    className="px-3 py-1.5 rounded-xl font-outfit text-[10px] font-semibold tracking-[0.04em] border border-zinc-300 bg-white/80 text-zinc-600 dark:border-[#1f1f1f] dark:bg-[#141414] dark:text-[#999]"
                   >
                     {tag}
                   </span>
@@ -151,37 +139,55 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
 
             {/* Actions */}
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
               {project.githubUrl !== 'private-code' ? ( 
-                <a
+                <motion.a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 py-3 font-mono text-[12px] tracking-[0.1em] uppercase transition-colors border border-zinc-300 bg-white/80 text-zinc-800 hover:border-[#b8860b]/50 hover:bg-[#b8860b]/[0.04] hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="
+                    flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-2xl
+                    border border-zinc-400/50 bg-white text-zinc-800
+                    hover:border-zinc-400 hover:bg-zinc-50
+                    dark:border-[#1f1f1f] dark:bg-[#141414] dark:text-[#f0ede6]
+                    dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
+                    transition-all duration-300 font-outfit text-sm font-semibold tracking-wide
+                  "
                 >
-                  <Github size={15} strokeWidth={1.8} />
-                  View on GitHub
-                </a>
+                  <Github size={15} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
+                  <span>View on GitHub</span>
+                </motion.a>
               ) : (
-                <p
-                  className="flex-1 flex items-center justify-center gap-2 py-3 font-mono text-[12px] tracking-[0.1em] uppercase transition-colors border border-zinc-300 bg-white/80 text-zinc-800 hover:border-[#b8860b]/50 hover:bg-[#b8860b]/[0.04] hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                <div
+                  className="
+                    flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-2xl
+                    border border-zinc-300/50 bg-zinc-100/50 text-zinc-500
+                    dark:border-[#1a1a1a] dark:bg-[#141414]/50 dark:text-[#666]
+                    font-outfit text-sm font-semibold tracking-wide
+                  "
                 >
-                  <Lock size={15} strokeWidth={1.8} />
-                  Private Code
-                </p>
+                  <Lock size={15} strokeWidth={2} />
+                  <span>Private Code</span>
+                </div>
               )}
-              <a
+              <motion.a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 py-3 font-mono text-[12px] tracking-[0.1em] uppercase transition-colors bg-[#b8860b] text-white hover:bg-[#9a7209] dark:bg-[#d4af37] dark:text-[#080808] dark:hover:bg-[#c9a227]"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="
+                  flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-2xl
+                  bg-[#b8860b] text-white hover:bg-[#9a7209]
+                  dark:bg-[#d4af37] dark:text-[#080808] dark:hover:bg-[#c9a227]
+                  transition-all duration-300 font-outfit text-sm font-semibold tracking-wide shadow-md shadow-[#b8860b]/20
+                "
               >
-                <ExternalLink size={15} strokeWidth={1.8} />
-                Live Demo
-              </a>
+                <ExternalLink size={15} strokeWidth={2.2} />
+                <span>Live Demo</span>
+              </motion.a>
             </div>
           </div>
         </motion.div>

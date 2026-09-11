@@ -1,5 +1,5 @@
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaPython } from 'react-icons/fa6';
-import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiTypescript, SiC, SiMysql} from 'react-icons/si';
+import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiTypescript, SiC, SiMysql, SiPandas, SiNumpy } from 'react-icons/si';
 import { PersonalInfo, TechStackItem, Project, Experience, NavLink } from '../types';
 
 // ─── Portfolio Data ───────────────────────────────────────────────
@@ -30,66 +30,27 @@ export const personalInfo: PersonalInfo = {
 
 // ─── Skills ──────────────────────────────────────────────────────
 export const techStack: TechStackItem[] = [
-  {
-    id: 1,
-    label: 'HTML',
-    icon: FaHtml5,
-  },
-  {
-    id: 2,
-    label: 'CSS',
-    icon: FaCss3Alt,
-  },
-  {
-    id: 3,
-    label: 'Javascript',
-    icon: FaJs,
-  },
-  {
-    id: 4,
-    label: 'TypeScript',
-    icon: SiTypescript,
-  },
-  {
-    id: 5,
-    label: 'TailwindCSS',
-    icon: SiTailwindcss,
-  },
-  {
-    id: 6,
-    label: 'ReactJS',
-    icon: FaReact,
-  },
-  {
-    id: 7,
-    label: 'NextJS',
-    icon: SiNextdotjs,
-  },
-  {
-    id: 8,
-    label: 'Java',
-    icon: FaJava,
-  },
-  {
-    id: 9,
-    label: 'Python',
-    icon: FaPython,
-  },
-  {
-    id: 10,
-    label: 'C++',
-    icon: SiCplusplus,
-  },
-  {
-    id: 11,
-    label: 'C',
-    icon: SiC,
-  },
-  {
-    id: 12,
-    label: 'MySQL',
-    icon: SiMysql,
-  },
+  // Front-End Web
+  { id: 1, label: 'HTML', icon: FaHtml5},
+  { id: 2, label: 'CSS', icon: FaCss3Alt},
+  { id: 3, label: 'Javascript', icon: FaJs},
+  { id: 4, label: 'TypeScript', icon: SiTypescript},
+  { id: 5, label: 'TailwindCSS', icon: SiTailwindcss},
+  { id: 6, label: 'ReactJS', icon: FaReact},
+  { id: 7, label: 'NextJS', icon: SiNextdotjs},
+
+  // Data Science & Scripting (Tempat NumPy, Pandas, Matplotlib)
+  { id: 9, label: 'Python', icon: FaPython},
+  { id: 13, label: 'Pandas', icon: SiPandas},
+  { id: 14, label: 'NumPy', icon: SiNumpy},
+
+  // Backend & Databases
+  { id: 8, label: 'Java', icon: FaJava},
+  { id: 12, label: 'MySQL', icon: SiMysql},
+
+  // Systems / Low-Level
+  { id: 10, label: 'C++', icon: SiCplusplus},
+  { id: 11, label: 'C', icon: SiC},
 ];
 
 export const tools: string[] = [

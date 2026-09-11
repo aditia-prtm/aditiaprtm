@@ -8,8 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        serif: ["'Playfair Display'", 'Playfair Display', 'Georgia', 'serif'],
+        sans: ['Outfit', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ["'JetBrains Mono'", 'JetBrains Mono', 'monospace'],
         outfit: ['Outfit', 'sans-serif'],
       },

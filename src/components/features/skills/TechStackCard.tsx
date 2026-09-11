@@ -1,3 +1,5 @@
+// src\components\features\skills\TechStackCard.tsx
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { IconType } from 'react-icons';
@@ -11,7 +13,8 @@ interface TechStackCardProps {
 
 /**
  * TechStackCard
- * Interactive tech stack grid card with icon scaling, subtle gold radial glow, and mono label.
+ * Interactive tech stack grid card with icon scaling, subtle gold radial glow, and compact label.
+ * Styled with rounded-2xl container matching Hero CTA / card design language.
  */
 export default function TechStackCard({ label, icon: Icon, isInView, delay }: TechStackCardProps) {
   const [hovered, setHovered] = useState(false);
@@ -21,17 +24,25 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
       initial={{ opacity: 0, y: 36 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 36 }}
       transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -3, scale: 1.02 }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      className="relative flex flex-col items-center gap-3 p-4 cursor-default border border-zinc-300 bg-white/90 shadow-[0_8px_22px_rgba(24,24,27,0.04)] dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:shadow-none transition-colors duration-300 group hover:border-[#b8860b]/50 hover:bg-[#b8860b]/[0.035] dark:hover:border-[#d4af37]/40 dark:hover:bg-[#0e0e0e]"
+      className="
+        relative flex flex-col items-center gap-3 p-4 cursor-default rounded-2xl
+        border border-zinc-300 bg-white/90 shadow-[0_8px_22px_rgba(24,24,27,0.04)]
+        hover:border-[#b8860b]/50 hover:bg-white
+        dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:shadow-none
+        dark:hover:border-[#d4af37]/40 dark:hover:bg-[#0e0e0e]
+        transition-all duration-300 group
+      "
     >
       {/* Subtle gold glow on hover */}
       <motion.div
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.25 }}
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none rounded-2xl"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(184,134,11,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at center, rgba(184,134,11,0.08) 0%, transparent 70%)',
         }}
       />
 
@@ -43,7 +54,7 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
       >
         <Icon
           size={32}
-          className="transition-colors duration-200 text-zinc-500 dark:text-[#555] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37]"
+          className="transition-colors duration-200 text-zinc-500 dark:text-[#777] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37]"
         />
       </motion.div>
 
@@ -52,7 +63,7 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5, delay: delay + 0.15 }}
-        className="font-mono text-[9px] tracking-[0.14em] uppercase text-center leading-tight text-zinc-600 dark:text-[#666] group-hover:text-zinc-800 dark:group-hover:text-[#ccc] transition-colors duration-200"
+        className="font-outfit text-[11px] font-semibold tracking-[0.08em] uppercase text-center leading-tight text-zinc-600 dark:text-[#777] group-hover:text-zinc-900 dark:group-hover:text-[#f0ede6] transition-colors duration-200"
       >
         {label}
       </motion.p>

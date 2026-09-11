@@ -37,10 +37,9 @@ export default function Projects() {
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <h2
-              className="font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"
+              className="font-outfit font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"
               style={{
                 fontSize: 'clamp(2.6rem, 5vw, 3.75rem)',
-                fontFamily: "'Playfair Display', serif",
               }}
             >
               Things I've <span className="projects-gold-text">shipped</span>
@@ -80,16 +79,24 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.96 }}
-            className="group flex items-center gap-2 px-6 py-3 font-mono text-[11px] tracking-[0.15em] uppercase transition-colors border border-zinc-300 bg-white/80 text-zinc-800 shadow-[0_10px_30px_rgba(24,24,27,0.06)] hover:border-[#b8860b]/50 hover:bg-[#b8860b]/[0.045] hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:shadow-none dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            whileTap={{ scale: 0.97 }}
+            className="
+              inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl
+              border border-zinc-400/50 bg-white text-zinc-800
+              hover:border-zinc-400 hover:bg-zinc-50
+              dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#f0ede6]
+              dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
+              transition-all duration-300 group
+            "
           >
-            <Github size={14} strokeWidth={1.8} />
-            More on GitHub
+            <Github size={14} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
+            <span className="font-outfit font-semibold tracking-wide text-sm">
+              More on GitHub
+            </span>
             <ArrowUpRight
-              size={13}
+              size={14}
               strokeWidth={2.2}
-              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-zinc-800 dark:text-[#f0ede6]"
             />
           </motion.a>
         </motion.div>

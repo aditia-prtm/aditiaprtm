@@ -19,8 +19,8 @@ export default function HeroName({ isInView, isFirstRender }: HeroNameProps) {
 
   return (
     <h1
-      className="font-black leading-[0.88] tracking-[-0.02em] mb-8"
-      style={{ fontSize: 'clamp(3.4rem, 7.5vw, 6rem)', fontFamily: "'Playfair Display', serif" }}
+      className="font-outfit font-extrabold leading-[0.88] tracking-[-0.02em] mb-8"
+      style={{ fontSize: 'clamp(3rem, 6.5vw, 5.2rem)' }}
       aria-label={personalInfo.name}
     >
       {/* First name */}

@@ -24,14 +24,14 @@ export default function FileHeader({ label, action, className = '' }: FileHeader
               transition={{ duration: 2.4, repeat: Infinity }}
             />
           </div>
-          <span className="font-mono text-[9px] text-zinc-500 dark:text-[#555] tracking-[0.25em] uppercase">
+          <span className="font-outfit text-[10px] font-semibold text-zinc-500 dark:text-[#555] tracking-[0.16em] uppercase">
             {label}
           </span>
           {action}
         </>
       ) : (
         <>
-          <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#666]">
+          <span className="font-outfit text-[10px] font-semibold tracking-[0.18em] uppercase text-zinc-500 dark:text-[#666]">
             {label}
           </span>
           <div className="flex items-center gap-1.5">

@@ -1,3 +1,5 @@
+// src\sections\Skills.tsx
+
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { techStack, tools } from '../data/portfolio';
@@ -35,10 +37,9 @@ export default function Skills() {
 
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <h2
-              className="font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"
+              className="font-outfit font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"
               style={{
                 fontSize: 'clamp(2.6rem, 5vw, 3.75rem)',
-                fontFamily: "'Playfair Display', serif",
               }}
             >
               Tech <span className="skills-gold-text">stack</span> &amp; tooling
@@ -57,7 +58,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none mb-8"
+          className="w-full rounded-2xl overflow-hidden border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none mb-8"
         >
           {/* File header */}
           <FileHeader label="SKILLS.MAP" />

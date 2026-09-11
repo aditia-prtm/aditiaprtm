@@ -20,7 +20,7 @@ const initialFormData: ContactFormData = {
 };
 
 const inputClass = `
-  font-outfit px-4 py-3 text-sm transition-all
+  font-outfit px-4 py-3 text-sm transition-all rounded-xl
   border border-zinc-300 bg-white/90
   text-zinc-900 placeholder-zinc-500
   focus:outline-none focus:ring-2 focus:ring-[#b8860b]/25 focus:border-[#b8860b]/60
@@ -77,7 +77,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none">
+    <div className="rounded-2xl overflow-hidden border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none">
       <FileHeader label="NEW_MESSAGE.TSX" />
 
       <div className="p-6 sm:p-8">
@@ -97,7 +97,7 @@ export default function ContactForm() {
             </motion.div>
             <div>
               <h3
-                className="font-black tracking-[-0.01em] font-serif text-zinc-900 dark:text-[#f0ede6] mb-2"
+                className="font-outfit font-black tracking-[-0.01em] text-zinc-900 dark:text-[#f0ede6] mb-2"
                 style={{ fontSize: 'clamp(1.25rem, 3vw, 1.5rem)' }}
               >
                 Message sent!
@@ -109,8 +109,16 @@ export default function ContactForm() {
             <motion.button
               onClick={handleReset}
               whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.96 }}
-              className="mt-1 px-6 py-3 font-mono text-[11px] tracking-[0.15em] uppercase transition-colors border border-zinc-300 bg-white/80 text-zinc-800 hover:border-[#b8860b]/50 hover:bg-[#b8860b]/[0.04] hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
+              whileTap={{ scale: 0.97 }}
+              className="
+                mt-1 inline-flex items-center justify-center px-6 py-3 rounded-2xl
+                font-outfit text-xs font-semibold tracking-wide
+                border border-zinc-400/50 bg-white text-zinc-800
+                hover:border-zinc-400 hover:bg-zinc-50
+                dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#f0ede6]
+                dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
+                transition-all duration-300
+              "
             >
               Send another
             </motion.button>
@@ -165,7 +173,12 @@ export default function ContactForm() {
               disabled={isSending}
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
-              className="flex items-center justify-center gap-2 py-3.5 font-mono text-[12px] tracking-[0.15em] uppercase transition-colors disabled:opacity-60 bg-[#b8860b] text-white hover:bg-[#9a7209] dark:bg-[#d4af37] dark:text-[#080808] dark:hover:bg-[#c9a227]"
+              className="
+                flex items-center justify-center gap-2 py-3.5 px-6 rounded-2xl
+                font-outfit text-sm font-semibold tracking-wide transition-all duration-300
+                disabled:opacity-60 bg-[#b8860b] text-white hover:bg-[#9a7209]
+                dark:bg-[#d4af37] dark:text-[#080808] dark:hover:bg-[#c9a227] shadow-md shadow-[#b8860b]/20
+              "
             >
               {isSending ? (
                 <>
@@ -178,7 +191,7 @@ export default function ContactForm() {
                 </>
               ) : (
                 <>
-                  <Send size={14} strokeWidth={2} />
+                  <Send size={15} strokeWidth={2.2} />
                   Send Message
                 </>
               )}

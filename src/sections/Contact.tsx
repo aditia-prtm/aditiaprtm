@@ -43,10 +43,9 @@ export default function Contact() {
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <h2
-              className="font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"
+              className="font-outfit font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"
               style={{
                 fontSize: 'clamp(2.6rem, 5vw, 3.75rem)',
-                fontFamily: "'Playfair Display', serif",
               }}
             >
               Let's <span className="contact-gold-text">work together</span>

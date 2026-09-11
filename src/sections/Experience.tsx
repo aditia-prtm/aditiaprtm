@@ -48,10 +48,9 @@ export default function Experience() {
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <h2
-              className="font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"
+              className="font-outfit font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"
               style={{
                 fontSize: 'clamp(2.6rem, 5vw, 3.75rem)',
-                fontFamily: "'Playfair Display', serif",
               }}
             >
               The <span className="experience-gold-text">journey</span> so far
@@ -129,8 +128,7 @@ export default function Experience() {
                 className="w-4 h-4 rounded-full flex-shrink-0 border-[1.5px] border-[#b8860b]/30 border-t-[#b8860b] dark:border-[#d4af37]/30 dark:border-t-[#d4af37]"
               />
               <span
-                className="text-[10px] leading-relaxed text-zinc-600 dark:text-[#8a8a8a]"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                className="font-outfit text-[11px] font-medium leading-relaxed text-zinc-600 dark:text-[#8a8a8a]"
               >
                 Open to:{' '}
                 <span className="text-[#b8860b] dark:text-[#d4af37]">

@@ -26,7 +26,7 @@ export default function ScrollIndicator({ isInView = true, isFirstRender = true 
         className="flex flex-col items-center gap-3"
       >
         <div className="w-px h-12 bg-gradient-to-b from-transparent to-zinc-500 dark:to-[#1f1f1f]" />
-        <span className="font-mono text-[8px] tracking-[0.4em] uppercase text-zinc-500 dark:text-[#555]">
+        <span className="font-outfit text-[9px] font-semibold tracking-[0.22em] uppercase text-zinc-500 dark:text-[#555]">
           scroll
         </span>
       </motion.div>

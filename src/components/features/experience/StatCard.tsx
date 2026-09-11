@@ -19,19 +19,17 @@ export default function StatCard({ icon: Icon, value, label, delay, isInView }: 
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      className="flex flex-col gap-3 p-5 cursor-default transition-colors border border-zinc-300 bg-white/85 shadow-[0_10px_28px_rgba(24,24,27,0.055)] hover:border-[#b8860b]/40 hover:bg-white dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:shadow-none dark:hover:border-[#d4af37]/30"
+      className="flex flex-col gap-3 p-5 cursor-default transition-colors rounded-2xl border border-zinc-300 bg-white/85 shadow-[0_10px_28px_rgba(24,24,27,0.055)] hover:border-[#b8860b]/40 hover:bg-white dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:shadow-none dark:hover:border-[#d4af37]/30"
     >
       <Icon size={15} strokeWidth={1.6} className="text-[#b8860b] dark:text-[#d4af37]" />
       <div>
         <p
-          className="font-black text-2xl leading-none tracking-tight text-zinc-900 dark:text-[#f0ede6] mb-1.5"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          className="font-outfit font-black text-2xl leading-none tracking-tight text-zinc-900 dark:text-[#f0ede6] mb-1.5"
         >
           {value}
         </p>
         <p
-          className="font-mono text-[9px] tracking-[0.18em] uppercase text-zinc-600 dark:text-[#777]"
-          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          className="font-outfit text-[9px] font-semibold tracking-[0.14em] uppercase text-zinc-600 dark:text-[#777]"
         >
           {label}
         </p>

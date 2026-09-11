@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Download } from 'lucide-react';
+import { Linkedin, Download, Github, MapPin } from 'lucide-react';
 import { personalInfo } from '../../../data/portfolio';
 import { useTypingEffect } from '../../../hooks/useTypingEffect';
 import BlinkingCursor from '../../common/BlinkingCursor';
@@ -18,11 +18,6 @@ interface HeroBioProps {
 export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
   const typed = useTypingEffect(personalInfo.taglines, 65, 32, 2200);
 
-  const handleScrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   /** Subtract LOADING_OFFSET from delay on re-visits, floor at 0. */
   const d = (base: number) => (isFirstRender ? base : Math.max(0, base - LOADING_OFFSET));
 
@@ -35,10 +30,9 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         transition={{ duration: 0.7, delay: d(1.3) }}
         className="flex items-center gap-4 mb-10"
       >
-        <span className="w-8 h-px bg-[#b8860b] dark:bg-[#d4af37]" />
+        <MapPin size={12} strokeWidth={1.9} className="text-[#b8860b] dark:text-[#d4af37]" />
         <span
-          className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-600 dark:text-[#888]"
-          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          className="font-outfit text-[10px] font-semibold tracking-[0.22em] uppercase text-zinc-600 dark:text-[#888]"
         >
           {personalInfo.location}
         </span>
@@ -56,7 +50,6 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
       >
         <span
           className="text-base text-zinc-600 dark:text-[#999]"
-          style={{ fontFamily: "'Outfit', 'JetBrains Mono', monospace" }}
         >
           <span className='name-gold'>{'<'}</span>
           {typed}
@@ -82,44 +75,72 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         initial={{ opacity: 0, y: 12 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
         transition={{ delay: d(2.4), duration: 0.7 }}
-        className="flex flex-wrap gap-6 mb-10"
+        className="flex flex-wrap gap-3 mb-10"
       >
-        {/* Primary CTA */}
-        <motion.a
-          href="#projects"
-          whileHover={{ x: 4 }}
-          whileTap={{ scale: 0.97 }}
-          onClick={handleScrollToProjects}
-          className="flex items-center gap-3 group"
-        >
-          <span
-            className="font-mono text-[11px] tracking-[0.2em] uppercase text-zinc-800 dark:text-[#f0ede6]"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
-          >
-            View Work
-          </span>
-          <span className="flex items-center justify-center w-8 h-8 border border-[#b8860b]/40 group-hover:border-[#b8860b] group-hover:bg-[#b8860b]/8 dark:border-[#d4af37]/40 dark:group-hover:border-[#d4af37] dark:group-hover:bg-[#d4af37]/8 transition-all duration-300">
-            <ArrowRight size={12} className="text-[#b8860b] dark:text-[#d4af37]" />
-          </span>
-        </motion.a>
-
-        {/* Secondary CTA */}
+        {/* CTA Resume */}
         <motion.a
           href={personalInfo.resume}
           target="_blank"
           rel="noopener noreferrer"
-          whileHover={{ x: 4 }}
+          whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="flex items-center gap-3 group"
+          className="
+            inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl
+            border border-zinc-400/50 bg-white text-zinc-800
+            hover:border-zinc-400 hover:bg-zinc-50
+            dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#f0ede6]
+            dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
+            transition-all duration-300
+          "
         >
-          <span
-            className="font-mono text-[11px] tracking-[0.2em] uppercase text-zinc-600 group-hover:text-zinc-800 dark:text-[#888] dark:group-hover:text-[#bbb] transition-colors"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
-          >
+          <Download size={13} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
+          <span className="font-outfit font-semibold tracking-wide text-sm">
             Resume
           </span>
-          <span className="flex items-center justify-center w-8 h-8 border border-zinc-300 bg-white/70 group-hover:border-zinc-400 group-hover:bg-zinc-50 dark:border-[#1f1f1f] dark:bg-transparent dark:group-hover:border-[#333] transition-colors duration-300">
-            <Download size={12} className="text-zinc-600 group-hover:text-zinc-800 dark:text-[#888] dark:group-hover:text-[#bbb] transition-colors" />
+        </motion.a>
+
+        {/* CTA GitHub */}
+        <motion.a
+          href={personalInfo.social.github}
+          target='_blank'
+          rel='noopener noreferrer'
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          className="
+            inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl
+            border border-zinc-400/50 bg-white text-zinc-800
+            hover:border-zinc-400 hover:bg-zinc-50
+            dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#f0ede6]
+            dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
+            transition-all duration-300
+          "
+        >
+          <Github size={13} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
+          <span className="font-outfit font-semibold tracking-wide text-sm">
+            GitHub
+          </span>
+        </motion.a>
+
+        {/* CTA LinkedIn */}
+        <motion.a
+          href={personalInfo.social.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          className="
+            inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl
+            border border-zinc-400/50  bg-white text-zinc-800
+            hover:border-zinc-400 hover:bg-zinc-50
+            
+            dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#f0ede6]
+            dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
+            transition-all duration-300
+          "
+        >
+          <Linkedin size={13} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
+          <span className="font-outfit font-semibold tracking-wide text-sm">
+            LinkedIn
           </span>
         </motion.a>
       </motion.div>

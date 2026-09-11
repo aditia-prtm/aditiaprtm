@@ -25,7 +25,6 @@ export default function CaseFile({ isInView = true, isFirstRender = true }: Case
     { key: 'STATUS', val: personalInfo.availability, accent: true },
     { key: 'ROLE', val: personalInfo.title, accent: false },
     { key: 'UNIVERSITY', val: 'Sriwijaya University', accent: false },
-    { key: 'LOCATION', val: personalInfo.location, accent: false },
     { key: 'STACK', val: 'React · Next.js · TailwindCSS', accent: false },
   ];
 
@@ -36,7 +35,7 @@ export default function CaseFile({ isInView = true, isFirstRender = true }: Case
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: d(1.9) }}
-      className="border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.08)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none"
+      className="rounded-2xl overflow-hidden border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.08)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none"
     >
       {/* File header */}
       <FileHeader label="SUBJECT.FILE" />
@@ -50,11 +49,11 @@ export default function CaseFile({ isInView = true, isFirstRender = true }: Case
           transition={{ delay: d(2.05 + i * 0.08), duration: 0.5 }}
           className="flex items-start gap-6 border-b border-zinc-200/80 dark:border-[#131313] px-5 py-4 last:border-0 group hover:bg-[#b8860b]/[0.045] dark:hover:bg-[#111] transition-colors"
         >
-          <span className="font-mono text-[9px] tracking-[0.22em] text-zinc-600 dark:text-[#666] flex-shrink-0 mt-0.5 w-20">
+          <span className="font-outfit text-[10px] font-semibold tracking-[0.14em] text-zinc-600 dark:text-[#666] flex-shrink-0 mt-0.5 w-20">
             {key}
           </span>
           <span
-            className={`font-mono text-xs leading-relaxed transition-colors ${
+            className={`font-outfit text-xs leading-relaxed transition-colors ${
               accent
                 ? 'text-[#b8860b] dark:text-[#d4af37]'
                 : 'text-zinc-600 dark:text-[#9a9a9a] group-hover:text-zinc-800 dark:group-hover:text-[#c8c8c8]'
@@ -72,7 +71,7 @@ export default function CaseFile({ isInView = true, isFirstRender = true }: Case
           animate={{ opacity: [1, 0.2, 1] }}
           transition={{ duration: 2.4, repeat: Infinity }}
         />
-        <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-600 dark:text-[#666]">
+        <span className="font-outfit text-[10px] font-semibold tracking-[0.12em] uppercase text-zinc-600 dark:text-[#666]">
           Currently active
         </span>
       </div>

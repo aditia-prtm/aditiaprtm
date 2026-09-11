@@ -1,3 +1,5 @@
+// src\components\features\skills\ToolBadge.tsx
+
 import { motion } from 'framer-motion';
 
 interface ToolBadgeProps {
@@ -8,7 +10,7 @@ interface ToolBadgeProps {
 
 /**
  * ToolBadge
- * Monospaced tool badge with subtle border, background transition, and lift-on-hover.
+ * Tool badge with rounded-xl border, background transition, and lift-on-hover matching Hero CTA.
  */
 export default function ToolBadge({ name, delay, isInView }: ToolBadgeProps) {
   return (
@@ -16,8 +18,15 @@ export default function ToolBadge({ name, delay, isInView }: ToolBadgeProps) {
       initial={{ opacity: 0, scale: 0.85 }}
       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
       transition={{ duration: 0.45, delay, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -2 }}
-      className="px-3.5 py-1.5 font-mono text-[10px] cursor-default border border-zinc-300 bg-white/75 text-zinc-600 shadow-[0_6px_18px_rgba(24,24,27,0.035)] hover:border-[#b8860b]/50 hover:text-[#b8860b] hover:bg-[#b8860b]/[0.04] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#666] dark:shadow-none dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37] dark:hover:bg-[#d4af37]/[0.06] transition-colors duration-200 tracking-[0.08em] uppercase"
+      whileHover={{ y: -2, scale: 1.03 }}
+      className="
+        inline-flex items-center px-4 py-2 font-outfit text-xs font-semibold cursor-default rounded-xl
+        border border-zinc-400/50 bg-white text-zinc-700 shadow-[0_4px_14px_rgba(24,24,27,0.04)]
+        hover:border-zinc-400 hover:bg-zinc-50 hover:text-zinc-900
+        dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#888] dark:shadow-none
+        dark:hover:border-[#3a3a3a] dark:hover:bg-[#1c1c1c] dark:hover:text-[#f0ede6]
+        transition-all duration-300 tracking-wide uppercase
+      "
     >
       {name}
     </motion.span>
