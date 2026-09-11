@@ -118,7 +118,7 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
           >
             Resume
           </span>
-          <span className="flex items-center justify-center w-8 h-8 border border-zinc-200 group-hover:border-zinc-300 dark:border-[#1f1f1f] dark:group-hover:border-[#333] transition-colors duration-300">
+          <span className="flex items-center justify-center w-8 h-8 border border-zinc-300 bg-white/70 group-hover:border-zinc-400 group-hover:bg-zinc-50 dark:border-[#1f1f1f] dark:bg-transparent dark:group-hover:border-[#333] transition-colors duration-300">
             <Download size={12} className="text-zinc-600 group-hover:text-zinc-800 dark:text-[#888] dark:group-hover:text-[#bbb] transition-colors" />
           </span>
         </motion.a>

@@ -19,7 +19,7 @@ export default function StatCard({ icon: Icon, value, label, delay, isInView }: 
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      className="flex flex-col gap-3 p-5 cursor-default transition-colors border border-zinc-200 bg-zinc-50 hover:border-[#b8860b]/40 dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:hover:border-[#d4af37]/30"
+      className="flex flex-col gap-3 p-5 cursor-default transition-colors border border-zinc-300 bg-white/85 shadow-[0_10px_28px_rgba(24,24,27,0.055)] hover:border-[#b8860b]/40 hover:bg-white dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:shadow-none dark:hover:border-[#d4af37]/30"
     >
       <Icon size={15} strokeWidth={1.6} className="text-[#b8860b] dark:text-[#d4af37]" />
       <div>

@@ -63,7 +63,7 @@ export default function Footer() {
             <p
               className="font-outfit text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] max-w-xs"
             >
-              Undergraduate Informatics Engineering student building clean, human-centered software — one project at a time.
+              {personalInfo.bio2}
             </p>
 
             <div className="flex items-center gap-2 mt-1">

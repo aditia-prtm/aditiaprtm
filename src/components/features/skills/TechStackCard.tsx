@@ -23,7 +23,7 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
       transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      className="relative flex flex-col items-center gap-3 p-4 cursor-default border border-zinc-200 bg-white dark:border-[#1f1f1f] dark:bg-[#0a0a0a] transition-colors duration-300 group hover:border-[#b8860b]/50 dark:hover:border-[#d4af37]/40 dark:hover:bg-[#0e0e0e]"
+      className="relative flex flex-col items-center gap-3 p-4 cursor-default border border-zinc-300 bg-white/90 shadow-[0_8px_22px_rgba(24,24,27,0.04)] dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:shadow-none transition-colors duration-300 group hover:border-[#b8860b]/50 hover:bg-[#b8860b]/[0.035] dark:hover:border-[#d4af37]/40 dark:hover:bg-[#0e0e0e]"
     >
       {/* Subtle gold glow on hover */}
       <motion.div

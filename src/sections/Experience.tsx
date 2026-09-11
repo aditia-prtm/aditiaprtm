@@ -30,7 +30,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={sectionRef}
-      className="relative py-14 lg:py-20 overflow-hidden bg-white dark:bg-[#080808]"
+      className="relative py-14 lg:py-20 overflow-hidden bg-[#fffdf8] dark:bg-[#080808]"
     >
       {/* Subtle ambient lighting */}
       <SectionBackground glowPosition="both" />

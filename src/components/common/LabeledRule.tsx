@@ -14,7 +14,7 @@ export default function LabeledRule({ label, className = '' }: LabeledRuleProps)
       <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#888]">
         {label}
       </span>
-      <div className="flex-1 h-px bg-zinc-200 dark:bg-[#1f1f1f]" />
+      <div className="flex-1 h-px bg-zinc-300 dark:bg-[#1f1f1f]" />
     </div>
   );
 }

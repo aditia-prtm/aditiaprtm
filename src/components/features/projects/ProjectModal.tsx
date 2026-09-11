@@ -56,7 +56,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           onClick={(e) => e.stopPropagation()}
           data-lenis-prevent
-          className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto overscroll-contain border border-zinc-200 bg-white dark:border-[#1f1f1f] dark:bg-[#0e0e0e] shadow-2xl dark:shadow-black/70"
+          className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto overscroll-contain border border-zinc-300 bg-[#fffdf8] dark:border-[#1f1f1f] dark:bg-[#0e0e0e] shadow-2xl dark:shadow-black/70"
         >
           {/* File header */}
           <FileHeader
@@ -65,7 +65,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <button
                 onClick={onClose}
                 aria-label="Close modal"
-                className="w-7 h-7 flex items-center justify-center border border-zinc-200 bg-zinc-100 text-zinc-500 dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#666] hover:text-[#b8860b] dark:hover:text-[#d4af37] hover:border-[#b8860b]/40 dark:hover:border-[#d4af37]/40 transition-colors"
+                className="w-7 h-7 flex items-center justify-center border border-zinc-300 bg-white/80 text-zinc-500 dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#666] hover:text-[#b8860b] dark:hover:text-[#d4af37] hover:border-[#b8860b]/40 hover:bg-[#b8860b]/[0.04] dark:hover:border-[#d4af37]/40 transition-colors"
               >
                 <X size={13} strokeWidth={2} />
               </button>
@@ -141,7 +141,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 {project.tags.map((tag: string) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 font-mono text-[10px] tracking-wide border border-zinc-200 bg-zinc-100 text-zinc-600 dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#999]"
+                    className="px-3 py-1 font-mono text-[10px] tracking-wide border border-zinc-300 bg-white/80 text-zinc-600 dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#999]"
                     style={{ fontFamily: "'JetBrains Mono', monospace" }}
                   >
                     {tag}
@@ -157,7 +157,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 py-3 font-mono text-[12px] tracking-[0.1em] uppercase transition-colors border border-zinc-200 bg-zinc-100 text-zinc-800 hover:border-[#b8860b]/50 hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 font-mono text-[12px] tracking-[0.1em] uppercase transition-colors border border-zinc-300 bg-white/80 text-zinc-800 hover:border-[#b8860b]/50 hover:bg-[#b8860b]/[0.04] hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   <Github size={15} strokeWidth={1.8} />
@@ -165,7 +165,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </a>
               ) : (
                 <p
-                  className="flex-1 flex items-center justify-center gap-2 py-3 font-mono text-[12px] tracking-[0.1em] uppercase transition-colors border border-zinc-200 bg-zinc-100 text-zinc-800 hover:border-[#b8860b]/50 hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 font-mono text-[12px] tracking-[0.1em] uppercase transition-colors border border-zinc-300 bg-white/80 text-zinc-800 hover:border-[#b8860b]/50 hover:bg-[#b8860b]/[0.04] hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   <Lock size={15} strokeWidth={1.8} />

@@ -24,7 +24,7 @@ export default function MarqueeStrip({ tags = DEFAULT_TAGS, speed = 24 }: Marque
   const repeated = [...tags, ...tags, ...tags];
 
   return (
-    <div className="overflow-hidden border-y border-zinc-200 dark:border-[#1f1f1f] py-3 select-none">
+    <div className="overflow-hidden border-y border-zinc-300 bg-white/55 dark:border-[#1f1f1f] dark:bg-transparent py-3 select-none">
       <motion.div
         className="flex gap-10 whitespace-nowrap"
         animate={{ x: ['0%', '-33.333%'] }}

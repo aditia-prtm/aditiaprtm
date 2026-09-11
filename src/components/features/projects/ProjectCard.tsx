@@ -43,7 +43,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
       whileHover={{ z: 20 }}
       className="group cursor-pointer h-full"
     >
-      <div className="relative h-full overflow-hidden border border-zinc-200 bg-zinc-50 dark:border-[#1f1f1f] dark:bg-[#0a0a0a] transition-colors duration-300 group-hover:border-[#b8860b]/50 dark:group-hover:border-[#d4af37]/40 dark:group-hover:bg-[#0e0e0e] group-hover:shadow-xl dark:group-hover:shadow-black/40 group-hover:shadow-black/8 flex flex-col justify-between">
+      <div className="relative h-full overflow-hidden border border-zinc-300 bg-white/88 shadow-[0_14px_38px_rgba(24,24,27,0.07)] dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:shadow-none transition-colors duration-300 group-hover:border-[#b8860b]/50 group-hover:bg-white dark:group-hover:border-[#d4af37]/40 dark:group-hover:bg-[#0e0e0e] group-hover:shadow-xl dark:group-hover:shadow-black/40 group-hover:shadow-black/8 flex flex-col justify-between">
         {/* Top Image Section */}
         <div>
           {/* Project image area */}
@@ -128,7 +128,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
               {project.tags.slice(0, 4).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 py-0.5 font-mono text-[9px] tracking-wide border border-zinc-200 bg-zinc-100 text-zinc-600 dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#777]"
+                  className="px-2.5 py-0.5 font-mono text-[9px] tracking-wide border border-zinc-300 bg-zinc-50 text-zinc-600 dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#777]"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   {tag}
@@ -148,7 +148,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
 
         {/* Action links */}
         <div className="px-6 pb-6 pt-0">
-          <div className="h-px bg-zinc-200 dark:bg-[#1f1f1f] mb-4" />
+          <div className="h-px bg-zinc-300 dark:bg-[#1f1f1f] mb-4" />
           <div className="flex items-center gap-4">
             {project.githubUrl !== 'private-code' ? (
               <a

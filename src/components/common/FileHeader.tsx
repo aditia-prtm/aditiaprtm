@@ -12,12 +12,12 @@ interface FileHeaderProps {
  */
 export default function FileHeader({ label, action, className = '' }: FileHeaderProps) {
   return (
-    <div className={`flex items-center justify-between border-b border-zinc-200 dark:border-[#1f1f1f] px-5 py-3 ${className}`}>
+    <div className={`flex items-center justify-between border-b border-zinc-300 bg-zinc-50/80 dark:border-[#1f1f1f] dark:bg-transparent px-5 py-3 ${className}`}>
       {action ? (
         <>
           <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-zinc-200 dark:bg-[#1f1f1f]" />
-            <span className="w-1.5 h-1.5 rounded-full bg-zinc-200 dark:bg-[#1f1f1f]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-[#1f1f1f]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-[#1f1f1f]" />
             <motion.span
               className="w-1.5 h-1.5 rounded-full bg-[#b8860b] dark:bg-[#d4af37]"
               animate={{ opacity: [1, 0.2, 1] }}
@@ -35,8 +35,8 @@ export default function FileHeader({ label, action, className = '' }: FileHeader
             {label}
           </span>
           <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-zinc-200 dark:bg-[#1f1f1f]" />
-            <span className="w-1.5 h-1.5 rounded-full bg-zinc-200 dark:bg-[#1f1f1f]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-[#1f1f1f]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-[#1f1f1f]" />
             <motion.span
               className="w-1.5 h-1.5 rounded-full bg-[#b8860b] dark:bg-[#d4af37]"
               animate={{ opacity: [1, 0.2, 1] }}

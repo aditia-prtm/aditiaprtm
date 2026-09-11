@@ -27,7 +27,7 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
           initial={{ scale: 0 }}
           animate={isInView ? { scale: 1 } : { scale: 0 }}
           transition={{ delay: index * 0.13 + 0.25, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-9 h-9 flex items-center justify-center flex-shrink-0 border border-zinc-200 bg-white dark:border-[#1f1f1f] dark:bg-[#080808]"
+          className="relative z-10 w-9 h-9 flex items-center justify-center flex-shrink-0 border border-zinc-300 bg-white shadow-[0_6px_18px_rgba(184,134,11,0.12)] dark:border-[#1f1f1f] dark:bg-[#080808] dark:shadow-none"
           style={{ boxShadow: '0 0 0 3px rgba(184,134,11,0.1)' }}
         >
           <Briefcase size={14} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
@@ -39,7 +39,7 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
             animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
             transition={{ delay: index * 0.13 + 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             style={{ transformOrigin: 'top' }}
-            className="flex-1 w-px mt-2 bg-zinc-200 dark:bg-[#1f1f1f]"
+            className="flex-1 w-px mt-2 bg-zinc-300 dark:bg-[#1f1f1f]"
           />
         )}
       </div>
@@ -49,7 +49,7 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
         <motion.div
           whileHover={{ x: 3 }}
           transition={{ duration: 0.25 }}
-          className="relative p-5 cursor-default transition-colors duration-200 border border-zinc-200 bg-zinc-50 hover:border-[#b8860b]/40 dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:hover:border-[#d4af37]/30 dark:hover:bg-[#0e0e0e]"
+          className="relative p-5 cursor-default transition-colors duration-200 border border-zinc-300 bg-white/85 shadow-[0_12px_34px_rgba(24,24,27,0.06)] hover:border-[#b8860b]/40 hover:bg-white dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:shadow-none dark:hover:border-[#d4af37]/30 dark:hover:bg-[#0e0e0e]"
         >
           {/* Accent top bar */}
           <div
@@ -78,7 +78,7 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
             </div>
 
             {/* Period badge */}
-            <div className="flex items-center gap-1.5 flex-shrink-0 px-3 py-1.5 self-start border border-zinc-200 bg-white dark:border-[#1f1f1f] dark:bg-transparent">
+            <div className="flex items-center gap-1.5 flex-shrink-0 px-3 py-1.5 self-start border border-zinc-300 bg-zinc-50 dark:border-[#1f1f1f] dark:bg-transparent">
               <Calendar size={11} strokeWidth={1.7} className="text-zinc-500 dark:text-[#666]" />
               <span
                 className="font-mono text-[9px] tracking-widest text-zinc-600 dark:text-[#888] whitespace-nowrap"
@@ -89,7 +89,7 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
             </div>
           </div>
 
-          <div className="h-px bg-zinc-200 dark:bg-[#1f1f1f] mb-4" />
+          <div className="h-px bg-zinc-300 dark:bg-[#1f1f1f] mb-4" />
 
           <p className="font-outfit text-sm leading-relaxed text-zinc-600 dark:text-[#8a8a8a] mb-4">
             {exp.description}

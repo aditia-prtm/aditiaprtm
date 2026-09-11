@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { SectionBackground, MarqueeStrip, CaseFile } from '../components/common';
+import { SectionBackground, CaseFile } from '../components/common';
 import { HeroBio, ScrollIndicator } from '../components/features/hero';
 
 /**
@@ -51,13 +51,10 @@ export default function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative min-h-screen flex flex-col overflow-hidden bg-white dark:bg-[#080808] pt-[70px]"
+      className="relative min-h-screen flex flex-col overflow-hidden bg-[#fffdf8] dark:bg-[#080808] pt-[70px]"
     >
       {/* Background grid and glow pools */}
       <SectionBackground glowPosition="both" />
-
-      {/* Marquee ticker */}
-      <MarqueeStrip />
 
       {/* Main content grid */}
       <motion.div style={{ y, opacity }} className="relative z-10 flex-1 flex items-center">
@@ -77,7 +74,7 @@ export default function Hero() {
               <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]">
                 ADTX
               </div>
-              <div className="flex-1 h-px bg-zinc-200 dark:bg-[#141414]" />
+              <div className="flex-1 h-px bg-zinc-300 dark:bg-[#141414]" />
               <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-zinc-500 dark:text-[#555]">
                 {new Date().getFullYear()}
               </div>
@@ -91,13 +88,13 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: d(2.6), duration: 0.8 }}
-              className="border-l-2 border-[#b8860b]/20 dark:border-[#d4af37]/18 pl-4"
+              className="border-l-2 border-[#b8860b]/35 bg-[#b8860b]/[0.035] dark:border-[#d4af37]/18 dark:bg-transparent pl-4 py-3"
             >
               <p className="italic font-serif text-xs text-zinc-600 dark:text-[#888] leading-relaxed">
-                "Clean code always looks like it was written by someone who cares."
+                "Make it work, make it right, make it fast."
               </p>
               <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-zinc-500 dark:text-[#666] mt-2 block">
-                — Robert C. Martin
+                Kent Beck
               </span>
             </motion.div>
           </div>

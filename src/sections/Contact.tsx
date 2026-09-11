@@ -25,7 +25,7 @@ export default function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-14 lg:py-20 overflow-hidden bg-white dark:bg-[#080808]"
+      className="relative py-14 lg:py-20 overflow-hidden bg-[#fffdf8] dark:bg-[#080808]"
     >
       {/* Background ambient lighting */}
       <SectionBackground glowPosition="both" />

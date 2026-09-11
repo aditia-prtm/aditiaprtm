@@ -16,7 +16,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative py-14 lg:py-20 overflow-hidden bg-white dark:bg-[#080808]"
+      className="relative py-14 lg:py-20 overflow-hidden bg-[#fffdf8] dark:bg-[#080808]"
     >
       {/* Background grid and subtle gold illumination */}
       <SectionBackground glowPosition="both" />
@@ -57,7 +57,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full border border-zinc-200 bg-zinc-50 dark:border-[#1f1f1f] dark:bg-[#0e0e0e] mb-8"
+          className="w-full border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none mb-8"
         >
           {/* File header */}
           <FileHeader label="SKILLS.MAP" />

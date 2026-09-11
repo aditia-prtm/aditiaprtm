@@ -116,9 +116,9 @@ export default function Navbar({ isDark, onToggleDark }: NavbarProps) {
         </div>
 
         {/* Divider */}
-        <div className="w-px h-5 bg-zinc-200 dark:bg-[#1f1f1f] mx-1.5" />
+        <div className="w-px h-5 bg-zinc-400 dark:bg-[#666] mx-1.5" />
 
-        {/* Theme toggle */}
+        {/* Theme toggle */}  
         <motion.button
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.92 }}

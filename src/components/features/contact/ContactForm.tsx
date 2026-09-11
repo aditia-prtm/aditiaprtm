@@ -21,7 +21,7 @@ const initialFormData: ContactFormData = {
 
 const inputClass = `
   font-outfit px-4 py-3 text-sm transition-all
-  border border-zinc-200 bg-white
+  border border-zinc-300 bg-white/90
   text-zinc-900 placeholder-zinc-500
   focus:outline-none focus:ring-2 focus:ring-[#b8860b]/25 focus:border-[#b8860b]/60
   dark:border-[#1f1f1f] dark:bg-[#080808]
@@ -77,7 +77,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="border border-zinc-200 bg-zinc-50 dark:border-[#1f1f1f] dark:bg-[#0e0e0e]">
+    <div className="border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none">
       <FileHeader label="NEW_MESSAGE.TSX" />
 
       <div className="p-6 sm:p-8">
@@ -110,7 +110,7 @@ export default function ContactForm() {
               onClick={handleReset}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.96 }}
-              className="mt-1 px-6 py-3 font-mono text-[11px] tracking-[0.15em] uppercase transition-colors border border-zinc-200 bg-white text-zinc-800 hover:border-[#b8860b]/50 hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
+              className="mt-1 px-6 py-3 font-mono text-[11px] tracking-[0.15em] uppercase transition-colors border border-zinc-300 bg-white/80 text-zinc-800 hover:border-[#b8860b]/50 hover:bg-[#b8860b]/[0.04] hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
             >
               Send another
             </motion.button>

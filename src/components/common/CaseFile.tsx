@@ -36,7 +36,7 @@ export default function CaseFile({ isInView = true, isFirstRender = true }: Case
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: d(1.9) }}
-      className="border border-zinc-200 bg-zinc-50 dark:border-[#1f1f1f] dark:bg-[#0e0e0e]"
+      className="border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.08)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none"
     >
       {/* File header */}
       <FileHeader label="SUBJECT.FILE" />
@@ -48,7 +48,7 @@ export default function CaseFile({ isInView = true, isFirstRender = true }: Case
           initial={{ opacity: 0, x: -10 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
           transition={{ delay: d(2.05 + i * 0.08), duration: 0.5 }}
-          className="flex items-start gap-6 border-b border-zinc-100 dark:border-[#131313] px-5 py-4 last:border-0 group hover:bg-zinc-100 dark:hover:bg-[#111] transition-colors"
+          className="flex items-start gap-6 border-b border-zinc-200/80 dark:border-[#131313] px-5 py-4 last:border-0 group hover:bg-[#b8860b]/[0.045] dark:hover:bg-[#111] transition-colors"
         >
           <span className="font-mono text-[9px] tracking-[0.22em] text-zinc-600 dark:text-[#666] flex-shrink-0 mt-0.5 w-20">
             {key}
@@ -66,7 +66,7 @@ export default function CaseFile({ isInView = true, isFirstRender = true }: Case
       ))}
 
       {/* Footer */}
-      <div className="flex items-center gap-2 px-5 py-3 border-t border-zinc-200 dark:border-[#1f1f1f]">
+      <div className="flex items-center gap-2 px-5 py-3 border-t border-zinc-300 bg-zinc-50/70 dark:border-[#1f1f1f] dark:bg-transparent">
         <motion.span
           className="w-1.5 h-1.5 rounded-full bg-[#b8860b] dark:bg-[#d4af37] flex-shrink-0"
           animate={{ opacity: [1, 0.2, 1] }}

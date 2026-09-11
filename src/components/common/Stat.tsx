@@ -10,7 +10,7 @@ interface StatProps {
  */
 export default function Stat({ num, label, className = '' }: StatProps) {
   return (
-    <div className={`border-l border-zinc-200 dark:border-[#1f1f1f] pl-5 ${className}`}>
+    <div className={`border-l border-zinc-300 dark:border-[#1f1f1f] pl-5 ${className}`}>
       <div
         className="font-serif text-3xl font-bold leading-none tracking-tight text-zinc-900 dark:text-[#f0ede6]"
         style={{ fontFamily: "'Playfair Display', serif" }}

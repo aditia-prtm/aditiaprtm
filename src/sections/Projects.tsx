@@ -19,7 +19,7 @@ export default function Projects() {
     <section
       id="projects"
       ref={sectionRef}
-      className="relative py-14 lg:py-20 overflow-hidden bg-white dark:bg-[#080808]"
+      className="relative py-14 lg:py-20 overflow-hidden bg-[#fffdf8] dark:bg-[#080808]"
     >
       {/* Ambient background grid and glow */}
       <SectionBackground glowPosition="both" />
@@ -81,7 +81,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.96 }}
-            className="group flex items-center gap-2 px-6 py-3 font-mono text-[11px] tracking-[0.15em] uppercase transition-colors border border-zinc-200 bg-zinc-100 text-zinc-800 hover:border-[#b8860b]/50 hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
+            className="group flex items-center gap-2 px-6 py-3 font-mono text-[11px] tracking-[0.15em] uppercase transition-colors border border-zinc-300 bg-white/80 text-zinc-800 shadow-[0_10px_30px_rgba(24,24,27,0.06)] hover:border-[#b8860b]/50 hover:bg-[#b8860b]/[0.045] hover:text-[#b8860b] dark:border-[#1f1f1f] dark:bg-transparent dark:text-[#ccc] dark:shadow-none dark:hover:border-[#d4af37]/40 dark:hover:text-[#d4af37]"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             <Github size={14} strokeWidth={1.8} />
