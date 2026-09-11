@@ -1,17 +1,10 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Github, Linkedin, Instagram, Mail } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 import { personalInfo } from '../../../data/portfolio';
 import { useTypingEffect } from '../../../hooks/useTypingEffect';
 import BlinkingCursor from '../../common/BlinkingCursor';
 import HeroName from './HeroName';
 import { LOADING_OFFSET } from '../../../sections/Hero';
-
-const socials = [
-  { icon: Github, href: personalInfo.social.github, label: 'GitHub' },
-  { icon: Linkedin, href: personalInfo.social.linkedin, label: 'LinkedIn' },
-  { icon: Instagram, href: personalInfo.social.instagram, label: 'Instagram' },
-  { icon: Mail, href: personalInfo.social.email, label: 'Email' },
-];
 
 interface HeroBioProps {
   isInView: boolean;
