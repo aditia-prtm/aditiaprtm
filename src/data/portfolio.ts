@@ -104,15 +104,14 @@ export const experiences: Experience[] = [
     id: 1,
     role: 'HMIF UNSRI - PTI Division',
     company: 'Sriwijaya University',
-    period: '2026 - 2027',
+    period: '2026 - Present',
     type: 'Organization',
     description:
-      'Currently exploring front-end web development within the PTI division of HMIF. I am focusing on building responsive user interfaces and applying my skills by developing foundational, hands-on web projects from scratch.',
+      'Exploring front-end web development in HMIF (PTI division), building responsive UIs and hands-on web projects from scratch.',
     highlights: [
       'Built 5+ mini-projects',
       'Exploring TailwindCSS, React.js, and Next.js',
       'Integrated Supabase for database/auth',
-      'Focused on writing clean code',
     ],
     color: '#ffc700',
   },
@@ -123,14 +122,49 @@ export const experiences: Experience[] = [
     period: '2023 - 2024',
     type: 'Academic',
     description:
-      'Selected for the OSN team at senior high school, focusing on competitive programming. I explored advanced concepts like Dynamic Programming, Graph Algorithms, and Segment Trees to solve complex problems while competing directly against top students.',
+      'OSN Informatics team member competing in advanced algorithms, Dynamic Programming, and Graph theory against top national students.',
     highlights: [
       'Top 7 at Province Level 2024 (OSN-P)',
       '2nd Winner at Competitive Programming SRIFOTON 2025',
       'Problem Solving and Algorithm',
-      'First introduction to Informatics',
     ],
     color: '#10b981',
+    completed: true,
+  },
+];
+
+// ─── Education ────────────────────────────────────────────────────
+export const educations: Experience[] = [
+  {
+    id: 1,
+    role: 'Sriwijaya University',
+    company: 'Informatics Engineering',
+    period: '2025 - Present',
+    type: 'Bachelor',
+    description:
+      'Focusing on full-stack web development, machine learning, and modern software technologies while actively participating in campus organizations.',
+    highlights: [
+      'GPA: 3.95',
+      'Active member of Academic Divison HMIF',
+      'Fullstack Web Development focus',
+    ],
+    color: '#3b82f6',
+  },
+  {
+    id: 2,
+    role: 'SMA Negeri 1 Jejawi',
+    company: 'Mathematics & Natural Sciences',
+    period: '2022 - 2025',
+    type: 'High School',
+    description:
+      'Completed high school education with a strong emphasis on STEM disciplines, logic, and mathematical fundamentals.',
+    highlights: [
+      'School record-holder for academic achievement (SIMT)',
+      'OSN Informatics competitor (Algorithms & Data Structures)',
+      'Competing in regional & national Math/CP competitions',
+    ],
+    color: '#8b5cf6',
+    completed: true,
   },
 ];
 

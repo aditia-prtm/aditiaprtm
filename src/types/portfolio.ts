@@ -51,6 +51,7 @@ export interface Experience {
   description: string;
   highlights: string[];
   color: string;
+  completed?: boolean;
 }
 
 export interface NavLink {

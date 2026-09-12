@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, ChevronRight, School } from 'lucide-react';
+import { Briefcase, Calendar, Check, ChevronRight, FlagTriangleRight, GraduationCap } from 'lucide-react';
 import { Experience } from '../../../types';
 
 interface TimelineItemProps {
@@ -30,7 +30,11 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
           className="relative z-10 w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 border border-zinc-300 bg-white shadow-[0_6px_18px_rgba(184,134,11,0.12)] dark:border-[#1f1f1f] dark:bg-[#080808] dark:shadow-none"
           style={{ boxShadow: '0 0 0 3px rgba(184,134,11,0.1)' }}
         >
-          <Briefcase size={14} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
+          {exp.completed ? (
+            <Check size={14} strokeWidth={2.5} className="text-[#b8860b] dark:text-[#d4af37]" />
+          ) : (
+            <FlagTriangleRight size={14} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
+          )}
         </motion.div>
 
         {!isLast && (
@@ -69,7 +73,11 @@ export default function TimelineItem({ exp, index, isInView, isLast }: TimelineI
                 {exp.role}
               </h3>
               <div className="flex items-center gap-2 mt-1">
-                <School size={11} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
+                {exp.type === 'Bachelor' || exp.type === 'High School' ? (
+                  <GraduationCap size={11} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
+                ) : (
+                  <Briefcase size={11} strokeWidth={1.7} className="text-[#b8860b] dark:text-[#d4af37]" />
+                )}
                 <span className="text-sm font-outfit font-semibold text-[#b8860b] dark:text-[#d4af37]">
                   {exp.company}
                 </span>
