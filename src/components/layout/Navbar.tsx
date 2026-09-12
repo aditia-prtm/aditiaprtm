@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Moon, Sun, Home, Code2, Folder, Briefcase, Phone, LucideIcon } from 'lucide-react';
+import { Moon, Sun, Home, Code2, Folder, Briefcase, Send, LucideIcon } from 'lucide-react';
 import { navLinks } from '../../data/portfolio';
 
 interface NavbarProps {
@@ -13,7 +13,7 @@ const iconMap: Record<string, LucideIcon> = {
   Code2,
   Folder,
   Briefcase,
-  Phone,
+  Send,
 };
 
 /**

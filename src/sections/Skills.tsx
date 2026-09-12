@@ -12,7 +12,7 @@ import { TechStackCard } from '../components/features/skills';
  */
 export default function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: false, margin: '-8%' });
+  const isInView = useInView(sectionRef, { once: false, margin: '-5%' });
 
   return (
     <section
@@ -26,9 +26,9 @@ export default function Skills() {
       <div className="relative z-10 flex flex-col items-center max-w-[1300px] mx-auto px-8 md:px-16">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="w-full mb-14 lg:mb-18"
         >
           <div className="mb-8">
@@ -55,9 +55,9 @@ export default function Skills() {
 
         {/* Tech stack grid — case-file wrapper */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
           className="w-full rounded-2xl overflow-hidden border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none"
         >
           {/* File header */}
@@ -69,9 +69,9 @@ export default function Skills() {
               <div key={category.name}>
                 {/* Category Header */}
                 <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
-                  transition={{ duration: 0.5, delay: 0.2 + catIndex * 0.1 }}
+                  initial={{ opacity: 0, x: -8 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -8 }}
+                  transition={{ duration: 0.4, delay: 0.05 + catIndex * 0.04 }}
                   className="mb-3"
                 >
                   <h3 className="font-outfit font-semibold text-sm tracking-wider text-zinc-900 dark:text-[#f0ede6] uppercase">
@@ -87,7 +87,7 @@ export default function Skills() {
                       label={item.label}
                       icon={item.icon}
                       isInView={isInView}
-                      delay={0.25 + catIndex * 0.1 + itemIndex * 0.05}
+                      delay={0.06 + catIndex * 0.04 + itemIndex * 0.02}
                     />
                   ))}
                 </div>

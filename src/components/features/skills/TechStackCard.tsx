@@ -18,9 +18,9 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 36 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 36 }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0, y: 14 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
+      transition={{ duration: 0.4, delay, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -2, scale: 1.02 }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
@@ -36,7 +36,7 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
       {/* Icon with original colors */}
       <motion.div
         animate={hovered ? { scale: 1.1 } : { scale: 1 }}
-        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
         className="flex-shrink-0"
       >
         <Icon
@@ -47,14 +47,11 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
       </motion.div>
 
       {/* Label */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.5, delay: delay + 0.15 }}
+      <p
         className="font-outfit text-xs font-medium whitespace-nowrap text-zinc-700 dark:text-[#888] group-hover:text-zinc-900 dark:group-hover:text-[#f0ede6] transition-colors duration-200"
       >
         {label}
-      </motion.p>
+      </p>
     </motion.div>
   );
 }

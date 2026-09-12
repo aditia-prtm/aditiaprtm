@@ -202,5 +202,5 @@ export const navLinks: NavLink[] = [
   { label: 'Skills', href: '#skills', icon: 'Code2' },
   { label: 'Projects', href: '#projects', icon: 'Folder' },
   { label: 'Experience', href: '#experience', icon: 'Briefcase' },
-  { label: 'Contact', href: '#contact', icon: 'Phone' },
+  { label: 'Contact', href: '#contact', icon: 'Send' },
 ];

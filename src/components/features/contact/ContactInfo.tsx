@@ -1,18 +1,10 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Instagram, ArrowUpRight } from 'lucide-react';
 import { personalInfo } from '../../../data/portfolio';
 import FileHeader from '../../common/FileHeader';
-import LabeledRule from '../../common/LabeledRule';
 
 interface ContactInfoProps {
   isInView: boolean;
 }
-
-const socials = [
-  { icon: Github, label: 'GitHub', href: personalInfo.social.github },
-  { icon: Linkedin, label: 'LinkedIn', href: personalInfo.social.linkedin },
-  { icon: Instagram, label: 'Instagram', href: personalInfo.social.instagram },
-];
 
 /**
  * ContactInfo
@@ -75,45 +67,6 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
         <p className="font-outfit italic text-sm text-zinc-600 dark:text-[#999] leading-relaxed">
           Got an idea worth building? Let's talk it through.
         </p>
-      </div>
-
-      {/* Social links */}
-      <div>
-        <div className="mb-4">
-          <LabeledRule label="Find me online" />
-        </div>
-        <div className="flex flex-col gap-2.5">
-          {socials.map(({ icon: Icon, label, href }) => (
-            <motion.a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="
-                flex items-center justify-between px-5 py-3 rounded-2xl group
-                border border-zinc-400/50 bg-white text-zinc-800
-                hover:border-zinc-400 hover:bg-zinc-50
-                dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#f0ede6]
-                dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
-                transition-all duration-300
-              "
-            >
-              <div className="flex items-center gap-3">
-                <Icon size={15} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
-                <span className="font-outfit text-xs tracking-wider uppercase font-semibold">
-                  {label}
-                </span>
-              </div>
-              <ArrowUpRight
-                size={14}
-                strokeWidth={2.2}
-                className="text-zinc-500 dark:text-[#777] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </motion.a>
-          ))}
-        </div>
       </div>
     </div>
   );
