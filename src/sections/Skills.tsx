@@ -79,8 +79,8 @@ export default function Skills() {
                   </h3>
                 </motion.div>
 
-                {/* Items Grid */}
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-3">
+                {/* Items List */}
+                <div className="flex flex-wrap gap-2.5 sm:gap-3">
                   {category.items.map((item, itemIndex) => (
                     <TechStackCard
                       key={item.id}

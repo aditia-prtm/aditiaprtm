@@ -12,6 +12,7 @@ import {
   SiTypescript,
   SiC,
   SiMysql,
+  SiPostgresql,
   SiPandas,
   SiNumpy,
   SiVercel,
@@ -50,42 +51,38 @@ export const personalInfo: PersonalInfo = {
 // ─── Skills ──────────────────────────────────────────────────────
 export const techStackCategories: TechStackCategory[] = [
   {
-    name: 'LANGUAGES',
+    name: 'FRONTEND & UI',
+    items: [
+      { id: 1, label: 'HTML', icon: SiHtml5},
+      { id: 2, label: 'CSS', icon: SiCss},
+      { id: 3, label: 'TailwindCSS', icon: SiTailwindcss},
+      { id: 4, label: 'ReactJS', icon: SiReact},
+      { id: 5, label: 'NextJS', icon: SiNextdotjs},
+      { id: 6, label: 'JavaScript', icon: SiJavascript},
+      { id: 7, label: 'TypeScript', icon: SiTypescript},
+      { id: 8, label: 'Figma', icon: SiFigma},
+    ],
+  },
+  {
+    name: 'DATA & BACKEND',
     items: [
       { id: 1, label: 'Python', icon: SiPython},
-      { id: 2, label: 'JavaScript', icon: SiJavascript},
-      { id: 3, label: 'TypeScript', icon: SiTypescript},
-      { id: 4, label: 'C++', icon: SiCplusplus},
-      { id: 5, label: 'C', icon: SiC},
-      { id: 6, label: 'Java', icon: FaJava},
-    ],
-  },
-  {
-    name: 'WEB',
-    items: [
-      { id: 7, label: 'HTML', icon: SiHtml5},
-      { id: 8, label: 'CSS', icon: SiCss},
-      { id: 9, label: 'ReactJS', icon: SiReact},
-      { id: 10, label: 'NextJS', icon: SiNextdotjs},
-      { id: 11, label: 'TailwindCSS', icon: SiTailwindcss},
-    ],
-  },
-  {
-    name: 'DATA',
-    items: [
-      { id: 12, label: 'Pandas', icon: SiPandas},
-      { id: 13, label: 'NumPy', icon: SiNumpy},
-      { id: 14, label: 'MySQL', icon: SiMysql},
+      { id: 2, label: 'Pandas', icon: SiPandas},
+      { id: 3, label: 'NumPy', icon: SiNumpy},
+      { id: 4, label: 'MySQL', icon: SiMysql},
+      { id: 5, label: 'PostgreSQL', icon: SiPostgresql},
     ],
   },
   {
     name: 'TOOLS',
     items: [
-      { id: 15, label: 'Git', icon: SiGit},
-      { id: 16, label: 'GitHub', icon: SiGithub},
-      { id: 17, label: 'Vercel', icon: SiVercel},
-      { id: 18, label: 'VS Code', icon: VscVscode},
-      { id: 19, label: 'Figma', icon: SiFigma},
+      { id: 1, label: 'Git', icon: SiGit},
+      { id: 2, label: 'GitHub', icon: SiGithub},
+      { id: 3, label: 'VS Code', icon: VscVscode},
+      { id: 4, label: 'Vercel', icon: SiVercel},
+      { id: 5, label: 'C', icon: SiC},
+      { id: 6, label: 'C++', icon: SiCplusplus},
+      { id: 7, label: 'Java', icon: FaJava},
     ],
   },
 ];

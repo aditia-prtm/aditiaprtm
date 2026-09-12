@@ -25,7 +25,7 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
       className="
-        relative flex items-center gap-2 px-4 py-2 cursor-default rounded-full
+        relative inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 cursor-default rounded-full
         border border-zinc-300 bg-white/90 shadow-[0_8px_22px_rgba(24,24,27,0.04)]
         hover:border-[#b8860b]/50 hover:bg-white
         dark:border-[#1f1f1f] dark:bg-[#0a0a0a] dark:shadow-none
@@ -51,7 +51,7 @@ export default function TechStackCard({ label, icon: Icon, isInView, delay }: Te
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5, delay: delay + 0.15 }}
-        className="font-outfit text-xs font-medium text-zinc-700 dark:text-[#888] group-hover:text-zinc-900 dark:group-hover:text-[#f0ede6] transition-colors duration-200"
+        className="font-outfit text-xs font-medium whitespace-nowrap text-zinc-700 dark:text-[#888] group-hover:text-zinc-900 dark:group-hover:text-[#f0ede6] transition-colors duration-200"
       >
         {label}
       </motion.p>
