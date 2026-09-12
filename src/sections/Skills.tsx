@@ -2,9 +2,9 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { techStack, tools } from '../data/portfolio';
+import { techStackCategories } from '../data/portfolio';
 import { LabeledRule, FileHeader, SectionBackground } from '../components/common';
-import { TechStackCard, ToolBadge } from '../components/features/skills';
+import { TechStackCard } from '../components/features/skills';
 
 /**
  * Skills Section
@@ -58,44 +58,40 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full rounded-2xl overflow-hidden border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none mb-8"
+          className="w-full rounded-2xl overflow-hidden border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none"
         >
           {/* File header */}
           <FileHeader label="SKILLS.MAP" />
 
-          {/* Grid */}
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-3 p-6">
-            {techStack.map((cat, i) => (
-              <TechStackCard
-                key={cat.id}
-                label={cat.label}
-                icon={cat.icon}
-                isInView={isInView}
-                delay={0.25 + i * 0.07}
-              />
-            ))}
-          </div>
-        </motion.div>
+          {/* Categories Grid */}
+          <div className="p-6 space-y-6">
+            {techStackCategories.map((category, catIndex) => (
+              <div key={category.name}>
+                {/* Category Header */}
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+                  transition={{ duration: 0.5, delay: 0.2 + catIndex * 0.1 }}
+                  className="mb-3"
+                >
+                  <h3 className="font-outfit font-semibold text-sm tracking-wider text-zinc-900 dark:text-[#f0ede6] uppercase">
+                    {category.name}
+                  </h3>
+                </motion.div>
 
-        {/* Tools / extra badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="w-full"
-        >
-          <div className="mb-5">
-            <LabeledRule label="Also in my toolkit" />
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {tools.map((tech, i) => (
-              <ToolBadge
-                key={tech}
-                name={tech}
-                isInView={isInView}
-                delay={0.55 + i * 0.04}
-              />
+                {/* Items Grid */}
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-3">
+                  {category.items.map((item, itemIndex) => (
+                    <TechStackCard
+                      key={item.id}
+                      label={item.label}
+                      icon={item.icon}
+                      isInView={isInView}
+                      delay={0.25 + catIndex * 0.1 + itemIndex * 0.05}
+                    />
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </motion.div>

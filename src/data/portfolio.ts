@@ -1,6 +1,25 @@
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaPython } from 'react-icons/fa6';
-import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiTypescript, SiC, SiMysql, SiPandas, SiNumpy } from 'react-icons/si';
-import { PersonalInfo, TechStackItem, Project, Experience, NavLink } from '../types';
+import {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiReact,
+  SiPython,
+  SiGit,
+  SiGithub,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiCplusplus,
+  SiTypescript,
+  SiC,
+  SiMysql,
+  SiPandas,
+  SiNumpy,
+  SiVercel,
+  SiFigma
+} from '@icons-pack/react-simple-icons';
+import { VscVscode } from 'react-icons/vsc';
+import { FaJava } from 'react-icons/fa6';
+import { PersonalInfo, TechStackItem, Project, Experience, NavLink, TechStackCategory } from '../types';
 
 // ─── Portfolio Data ───────────────────────────────────────────────
 export const personalInfo: PersonalInfo = {
@@ -29,38 +48,50 @@ export const personalInfo: PersonalInfo = {
 };
 
 // ─── Skills ──────────────────────────────────────────────────────
-export const techStack: TechStackItem[] = [
-  // Front-End Web
-  { id: 1, label: 'HTML', icon: FaHtml5},
-  { id: 2, label: 'CSS', icon: FaCss3Alt},
-  { id: 3, label: 'Javascript', icon: FaJs},
-  { id: 4, label: 'TypeScript', icon: SiTypescript},
-  { id: 5, label: 'TailwindCSS', icon: SiTailwindcss},
-  { id: 6, label: 'ReactJS', icon: FaReact},
-  { id: 7, label: 'NextJS', icon: SiNextdotjs},
-
-  // Data Science & Scripting (Tempat NumPy, Pandas, Matplotlib)
-  { id: 9, label: 'Python', icon: FaPython},
-  { id: 13, label: 'Pandas', icon: SiPandas},
-  { id: 14, label: 'NumPy', icon: SiNumpy},
-
-  // Backend & Databases
-  { id: 8, label: 'Java', icon: FaJava},
-  { id: 12, label: 'MySQL', icon: SiMysql},
-
-  // Systems / Low-Level
-  { id: 10, label: 'C++', icon: SiCplusplus},
-  { id: 11, label: 'C', icon: SiC},
+export const techStackCategories: TechStackCategory[] = [
+  {
+    name: 'LANGUAGES',
+    items: [
+      { id: 1, label: 'Python', icon: SiPython},
+      { id: 2, label: 'JavaScript', icon: SiJavascript},
+      { id: 3, label: 'TypeScript', icon: SiTypescript},
+      { id: 4, label: 'C++', icon: SiCplusplus},
+      { id: 5, label: 'C', icon: SiC},
+      { id: 6, label: 'Java', icon: FaJava},
+    ],
+  },
+  {
+    name: 'WEB',
+    items: [
+      { id: 7, label: 'HTML', icon: SiHtml5},
+      { id: 8, label: 'CSS', icon: SiCss},
+      { id: 9, label: 'ReactJS', icon: SiReact},
+      { id: 10, label: 'NextJS', icon: SiNextdotjs},
+      { id: 11, label: 'TailwindCSS', icon: SiTailwindcss},
+    ],
+  },
+  {
+    name: 'DATA',
+    items: [
+      { id: 12, label: 'Pandas', icon: SiPandas},
+      { id: 13, label: 'NumPy', icon: SiNumpy},
+      { id: 14, label: 'MySQL', icon: SiMysql},
+    ],
+  },
+  {
+    name: 'TOOLS',
+    items: [
+      { id: 15, label: 'Git', icon: SiGit},
+      { id: 16, label: 'GitHub', icon: SiGithub},
+      { id: 17, label: 'Vercel', icon: SiVercel},
+      { id: 18, label: 'VS Code', icon: VscVscode},
+      { id: 19, label: 'Figma', icon: SiFigma},
+    ],
+  },
 ];
 
-export const tools: string[] = [
-  'Git',
-  'Github',
-  'Vercel',
-  'Visual Studio Code',
-  'Antigravity',
-  'Figma',
-];
+// Legacy techStack for backward compatibility
+export const techStack: TechStackItem[] = techStackCategories.flatMap(cat => cat.items);
 
 // ─── Projects ─────────────────────────────────────────────────────
 export const projects: Project[] = [
@@ -144,7 +175,7 @@ export const educations: Experience[] = [
     description:
       'Focusing on full-stack web development, machine learning, and modern software technologies while actively participating in campus organizations.',
     highlights: [
-      'GPA: 3.95',
+      'GPA: 3.95 / 4.00',
       'Active member of Academic Divison HMIF',
       'Fullstack Web Development focus',
     ],

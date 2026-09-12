@@ -23,7 +23,12 @@ export interface PersonalInfo {
 export interface TechStackItem {
   id: number;
   label: string;
-  icon: IconType;
+  icon: IconType | React.ComponentType<any>;
+}
+
+export interface TechStackCategory {
+  name: string;
+  items: TechStackItem[];
 }
 
 export interface Project {

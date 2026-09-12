@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Download, Github, MapPin } from 'lucide-react';
+import { Download, MapPin, Linkedin } from 'lucide-react';
+import { SiGithub } from '@icons-pack/react-simple-icons';
 import { personalInfo } from '../../../data/portfolio';
 import { useTypingEffect } from '../../../hooks/useTypingEffect';
 import BlinkingCursor from '../../common/BlinkingCursor';
@@ -115,7 +116,7 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
             transition-all duration-300
           "
         >
-          <Github size={13} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
+          <SiGithub size={13} color="default" />
           <span className="font-outfit font-semibold tracking-wide text-sm">
             GitHub
           </span>
@@ -132,7 +133,7 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
             inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl
             border border-zinc-400/50  bg-white text-zinc-800
             hover:border-zinc-400 hover:bg-zinc-50
-            
+
             dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#f0ede6]
             dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
             transition-all duration-300
