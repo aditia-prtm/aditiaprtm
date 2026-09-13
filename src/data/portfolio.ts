@@ -130,8 +130,8 @@ export const projects: Project[] = [
 export const experiences: Experience[] = [
   {
     id: 1,
-    role: 'HMIF UNSRI - PTI Division',
-    company: 'Sriwijaya University',
+    role: 'HMIF UNSRI',
+    company: 'Information Technology Development Division',
     period: '2026 - Present',
     type: 'Organization',
     description:
@@ -146,7 +146,7 @@ export const experiences: Experience[] = [
   {
     id: 2,
     role: 'National Olympiad (OSN) Team',
-    company: 'SMA Negeri 1 Jejawi',
+    company: 'Core Member',
     period: '2023 - 2024',
     type: 'Academic',
     description:
