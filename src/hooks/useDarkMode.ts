@@ -13,8 +13,8 @@ export function useDarkMode() {
     if (stored === 'light') return false;
     if (stored === 'dark') return true;
 
-    // 2. Default to dark mode
-    return true;
+    // 2. Default to light mode
+    return false;
   });
 
   useEffect(() => {
