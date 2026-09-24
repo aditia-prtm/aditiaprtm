@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
-import { ArrowUp, Github, Linkedin, Instagram } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Instagram, Mail } from 'lucide-react';
 import { personalInfo } from '../../data/portfolio';
 
 const socials = [
   { icon: Github, label: 'GitHub', href: personalInfo.social.github },
   { icon: Linkedin, label: 'LinkedIn', href: personalInfo.social.linkedin },
   { icon: Instagram, label: 'Instagram', href: personalInfo.social.instagram },
+  { icon: Mail, label: 'E-Mail', href: personalInfo.social.email },
 ];
 
 /**
