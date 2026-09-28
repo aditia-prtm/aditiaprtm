@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Moon, Sun, Home, Code2, Award, Folder, Briefcase, Send, LucideIcon } from 'lucide-react';
 import { navLinks } from '../../data/portfolio';
+import { getLenis } from '../../lib/lenis';
 
 interface NavbarProps {
   isDark: boolean;
@@ -25,12 +26,20 @@ const iconMap: Record<string, LucideIcon> = {
 export default function Navbar({ isDark, onToggleDark, mounted = true }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const previousPathname = useRef(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (previousPathname.current !== pathname) {
+      getLenis()?.scrollTo(0, { immediate: true });
+      previousPathname.current = pathname;
+    }
+  }, [pathname]);
 
   return (
     <div className="fixed top-5 left-0 right-0 z-50 flex justify-center pointer-events-none px-4">
