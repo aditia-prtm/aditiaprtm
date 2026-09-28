@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Award, ExternalLink, Calendar, X, Eye, ShieldCheck, Trophy, Sparkles } from 'lucide-react';
 import { certifications } from '../data/portfolio';
 import { Certification } from '../types';
 import { LabeledRule, SectionBackground } from '../components/common';
+import { getLenis } from '../lib/lenis';
 
 const categories = ['All', 'Competition', 'Award', 'Certification', 'Course'];
 
@@ -14,6 +15,16 @@ export default function Certifications() {
   const isInView = useInView(sectionRef, { once: false, margin: '-5%' });
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeCert, setActiveCert] = useState<Certification | null>(null);
+
+  // Prevent the page behind the lightbox from scrolling while it is open.
+  useEffect(() => {
+    if (!activeCert) return;
+
+    const lenis = getLenis();
+    lenis?.stop();
+
+    return () => lenis?.start();
+  }, [activeCert]);
 
   const filteredCerts =
     selectedCategory === 'All'
