@@ -14,6 +14,7 @@ export default function Certifications() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: false, margin: '-5%' });
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [showAllCerts, setShowAllCerts] = useState(false);
   const [activeCert, setActiveCert] = useState<Certification | null>(null);
 
   // Prevent the page behind the lightbox from scrolling while it is open.
@@ -30,6 +31,7 @@ export default function Certifications() {
     selectedCategory === 'All'
       ? certifications
       : certifications.filter((c) => c.category.toLowerCase() === selectedCategory.toLowerCase());
+  const visibleCerts = showAllCerts ? filteredCerts : filteredCerts.slice(0, 3);
 
   return (
     <section
@@ -82,7 +84,10 @@ export default function Certifications() {
             return (
               <button
                 key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => {
+                  setSelectedCategory(cat);
+                  setShowAllCerts(false);
+                }}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold tracking-wider transition-all duration-200 flex items-center gap-1.5 ${
                   isActive
                     ? 'bg-[#b8860b] text-white shadow-sm shadow-[#b8860b]/25 dark:bg-[#d4af37] dark:text-black font-bold'
@@ -107,7 +112,7 @@ export default function Certifications() {
         {/* Minimalist Certifications Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           <AnimatePresence mode="popLayout">
-            {filteredCerts.map((cert, index) => {
+            {visibleCerts.map((cert, index) => {
               const isHonor = cert.category === 'Competition' || cert.category === 'Award';
 
               return (
@@ -128,6 +133,8 @@ export default function Certifications() {
                         <img
                           src={`/certifications-pict/${cert.image}`}
                           alt={cert.title}
+                          loading="lazy"
+                          decoding="async"
                           onError={(e) => {
                             // Fallback if user hasn't added this specific image file yet
                             const target = e.currentTarget;
@@ -215,6 +222,19 @@ export default function Certifications() {
             })}
           </AnimatePresence>
         </div>
+
+        {filteredCerts.length > 3 && (
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAllCerts((isExpanded) => !isExpanded)}
+              aria-expanded={showAllCerts}
+              className="rounded-xl border border-[#b8860b]/40 px-5 py-2.5 text-xs font-semibold tracking-wider text-[#a07409] transition-colors hover:bg-[#b8860b] hover:text-white dark:border-[#d4af37]/40 dark:text-[#d4af37] dark:hover:bg-[#d4af37] dark:hover:text-black"
+            >
+              {showAllCerts ? 'See less' : `See more (${filteredCerts.length - 3})`}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Certificate Lightbox / Modal */}
