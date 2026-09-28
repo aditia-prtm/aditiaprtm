@@ -216,7 +216,7 @@ export const certifications: Certification[] = [
     category: 'Competition',
     image: 'srifoton25.jpg',
     skills: ['Algorithms', 'Problem Solving', 'C++'],
-    credentialUrl: 'https://srifoton.hmifunsri.com',
+    credentialUrl: 'https://www.instagram.com/p/DP_gTNZj607/?img_index=2',
     gradient: 'from-[#b8860b] via-[#d4af37] to-[#f5e177]',
   },
   {
@@ -227,7 +227,7 @@ export const certifications: Certification[] = [
     category: 'Competition',
     image: 'code-league.jpg',
     skills: ['Algorithms', 'Problem Solving', 'Java'],
-    credentialUrl: 'https://hmif.unsri.ac.id',
+    credentialUrl: 'https://www.hackerrank.com/contests/code-league-2025/leaderboard',
     gradient: 'from-[#1e3a8a] via-[#3b82f6] to-[#60a5fa]',
   },
   {
@@ -271,7 +271,7 @@ export const certifications: Certification[] = [
     category: 'Competition',
     image: 'srifoton24.jpg',
     skills: ['Problem Solving', 'Algorithm & Data Structures', 'C++'],
-    credentialUrl: 'https://srifoton.hmifunsri.com',
+    credentialUrl: 'https://www.hackerrank.com/contests/kualifikasi-srifoton/leaderboard',
     gradient: 'from-[#4c1d95] via-[#7c3aed] to-[#a78bfa]',
   },
 ];
