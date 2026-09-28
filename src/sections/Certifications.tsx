@@ -10,6 +10,9 @@ import { getLenis } from '../lib/lenis';
 
 const categories = ['All', 'Competition', 'Award', 'Certification', 'Course'];
 
+const getThumbnailSrc = (image: string) =>
+  `/certifications-pict/thumbnails/${image.replace(/\.[^.]+$/, '.webp')}`;
+
 export default function Certifications() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: false, margin: '-5%' });
@@ -131,7 +134,7 @@ export default function Certifications() {
                     <div className="relative h-44 sm:h-48 bg-zinc-100 dark:bg-[#141414] overflow-hidden">
                       {cert.image ? (
                         <img
-                          src={`/certifications-pict/${cert.image}`}
+                          src={getThumbnailSrc(cert.image)}
                           alt={cert.title}
                           loading="lazy"
                           decoding="async"
