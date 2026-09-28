@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Certifications from '@/sections/Certifications';
+import Certifications from '@/features/certifications/CertificationSection';
 
 export const metadata: Metadata = {
   title: 'Certifications & Awards | Aditia Pratama',

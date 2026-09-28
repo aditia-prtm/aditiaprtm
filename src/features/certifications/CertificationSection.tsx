@@ -3,10 +3,10 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Award, ExternalLink, Calendar, X, Eye, ShieldCheck, Trophy, Sparkles } from 'lucide-react';
-import { certifications } from '../data/portfolio';
-import { Certification } from '../types';
-import { LabeledRule, SectionBackground } from '../components/common';
-import { getLenis } from '../lib/lenis';
+import { certifications } from '@/data/portfolio';
+import type { Certification } from '@/types';
+import { LabeledRule, SectionBackground } from '@/components/common';
+import { getLenis } from '@/lib/lenis';
 
 const categories = ['All', 'Competition', 'Award', 'Certification', 'Course'];
 

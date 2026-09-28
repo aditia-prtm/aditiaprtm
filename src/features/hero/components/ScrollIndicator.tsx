@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { LOADING_OFFSET } from '../../../sections/Hero';
+import { LOADING_OFFSET } from '@/features/hero/HeroSection';
 
 interface ScrollIndicatorProps {
   isInView?: boolean;

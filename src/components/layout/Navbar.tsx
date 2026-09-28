@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Moon, Sun, Home, Code2, Award, Folder, Briefcase, Send, LucideIcon } from 'lucide-react';
-import { navLinks } from '../../data/portfolio';
-import { getLenis } from '../../lib/lenis';
+import { navLinks } from '@/data/portfolio';
+import { getLenis } from '@/lib/lenis';
 
 interface NavbarProps {
   isDark: boolean;

@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ExternalLink, Github, ArrowUpRight, Lock } from 'lucide-react';
-import { Project } from '../../../types';
+import type { Project } from '@/types';
 
 interface ProjectCardProps {
   project: Project;

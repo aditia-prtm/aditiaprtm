@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { Download, MapPin, Github, Linkedin } from 'lucide-react';
-import { personalInfo } from '../../../data/portfolio';
-import { useTypingEffect } from '../../../hooks/useTypingEffect';
-import BlinkingCursor from '../../common/BlinkingCursor';
+import { personalInfo } from '@/data/portfolio';
+import { useTypingEffect } from '@/hooks/useTypingEffect';
+import BlinkingCursor from '@/components/common/BlinkingCursor';
 import HeroName from './HeroName';
-import { LOADING_OFFSET } from '../../../sections/Hero';
+import { LOADING_OFFSET } from '@/features/hero/HeroSection';
 
 interface HeroBioProps {
   isInView: boolean;

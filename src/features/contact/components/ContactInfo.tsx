@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { personalInfo } from '../../../data/portfolio';
-import FileHeader from '../../common/FileHeader';
+import { personalInfo } from '@/data/portfolio';
+import FileHeader from '@/components/common/FileHeader';
 
 interface ContactInfoProps {
   isInView: boolean;

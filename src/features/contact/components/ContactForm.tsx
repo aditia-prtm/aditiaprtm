@@ -3,9 +3,9 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { Send, SquareCheck } from 'lucide-react';
-import FileHeader from '../../common/FileHeader';
+import FileHeader from '@/components/common/FileHeader';
 import FormField from './FormField';
-import { supabase } from '../../../lib/supabase';
+import { supabase } from '@/lib/supabase';
 
 type ContactFormData = {
   name: string;

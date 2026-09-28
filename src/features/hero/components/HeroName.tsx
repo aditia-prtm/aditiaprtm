@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { personalInfo } from '../../../data/portfolio';
-import { LOADING_OFFSET } from '../../../sections/Hero';
+import { personalInfo } from '@/data/portfolio';
+import { LOADING_OFFSET } from '@/features/hero/HeroSection';
 
 interface HeroNameProps {
   isInView: boolean;

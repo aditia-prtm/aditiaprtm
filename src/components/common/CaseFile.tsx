@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { personalInfo } from '../../data/portfolio';
+import { personalInfo } from '@/data/portfolio';
 import FileHeader from './FileHeader';
-import { LOADING_OFFSET } from '../../sections/Hero';
+import { LOADING_OFFSET } from '@/features/hero/HeroSection';
 
 interface CaseFileRow {
   key: string;

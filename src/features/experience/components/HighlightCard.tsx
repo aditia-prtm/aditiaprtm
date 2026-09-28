@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Briefcase, ChevronRight } from 'lucide-react';
-import { Experience } from '../../../types';
+import type { Experience } from '@/types';
 
 interface HighlightCardProps {
   exp: Experience;

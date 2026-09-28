@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Experience from '@/sections/Experience';
+import Experience from '@/features/experience/ExperienceSection';
 
 export const metadata: Metadata = {
   title: 'Experience & Education | Aditia Pratama',

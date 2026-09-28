@@ -2,8 +2,8 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { LabeledRule, SectionBackground } from '../components/common';
-import { ContactInfo, ContactForm } from '../components/features/contact';
+import { LabeledRule, SectionBackground } from '@/components/common';
+import { ContactInfo, ContactForm } from './components';
 
 /**
  * Contact Section

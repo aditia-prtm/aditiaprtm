@@ -3,9 +3,9 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Briefcase, GraduationCap } from 'lucide-react';
-import { experiences, educations } from '../data/portfolio';
-import { LabeledRule, SectionBackground } from '../components/common';
-import { TimelineItem } from '../components/features/experience';
+import { experiences, educations } from '@/data/portfolio';
+import { LabeledRule, SectionBackground } from '@/components/common';
+import { TimelineItem } from './components';
 
 /**
  * Experience Section

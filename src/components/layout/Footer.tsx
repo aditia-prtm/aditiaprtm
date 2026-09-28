@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowUp, Github, Linkedin, Instagram, Mail } from 'lucide-react';
-import { personalInfo } from '../../data/portfolio';
+import { personalInfo } from '@/data/portfolio';
 
 const socials = [
   { icon: Github, label: 'GitHub', href: personalInfo.social.github },

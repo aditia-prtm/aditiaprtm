@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Projects from '@/sections/Projects';
+import Projects from '@/features/projects/ProjectsSection';
 
 export const metadata: Metadata = {
   title: 'Projects | Aditia Pratama',

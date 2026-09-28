@@ -3,10 +3,10 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Github, ArrowUpRight } from 'lucide-react';
-import { personalInfo, projects } from '../data/portfolio';
-import { Project } from '../types';
-import { LabeledRule, SectionBackground } from '../components/common';
-import { ProjectCard, ProjectModal } from '../components/features/projects';
+import { personalInfo, projects } from '@/data/portfolio';
+import type { Project } from '@/types';
+import { LabeledRule, SectionBackground } from '@/components/common';
+import { ProjectCard, ProjectModal } from './components';
 
 /**
  * Projects Section

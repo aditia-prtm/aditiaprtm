@@ -3,10 +3,10 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Lock, X } from 'lucide-react';
-import { Project } from '../../../types';
-import FileHeader from '../../common/FileHeader';
-import LabeledRule from '../../common/LabeledRule';
-import { getLenis } from '../../../lib/lenis';
+import type { Project } from '@/types';
+import FileHeader from '@/components/common/FileHeader';
+import LabeledRule from '@/components/common/LabeledRule';
+import { getLenis } from '@/lib/lenis';
 
 interface ProjectModalProps {
   project: Project | null;

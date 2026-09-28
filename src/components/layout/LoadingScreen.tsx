@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { personalInfo } from '../../data/portfolio';
+import { personalInfo } from '@/data/portfolio';
 
 interface LoadingScreenProps {
   isLoading: boolean;

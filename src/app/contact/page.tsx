@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Contact from '@/sections/Contact';
+import Contact from '@/features/contact/ContactSection';
 
 export const metadata: Metadata = {
   title: 'Contact | Aditia Pratama',

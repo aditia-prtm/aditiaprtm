@@ -2,8 +2,8 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { SectionBackground, CaseFile } from '../components/common';
-import { HeroBio, ScrollIndicator } from '../components/features/hero';
+import { SectionBackground, CaseFile } from '@/components/common';
+import { HeroBio, ScrollIndicator } from './components';
 
 /**
  * Hero Section

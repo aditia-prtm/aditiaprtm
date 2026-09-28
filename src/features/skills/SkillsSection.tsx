@@ -2,9 +2,9 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { techStackCategories } from '../data/portfolio';
-import { LabeledRule, FileHeader, SectionBackground } from '../components/common';
-import { TechStackCard } from '../components/features/skills';
+import { techStackCategories } from '@/data/portfolio';
+import { LabeledRule, FileHeader, SectionBackground } from '@/components/common';
+import { TechStackCard } from './components';
 
 /**
  * Skills Section
