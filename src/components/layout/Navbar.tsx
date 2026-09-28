@@ -75,14 +75,29 @@ export default function Navbar({ isDark, onToggleDark, mounted = true }: NavbarP
                 )}
 
                 {/* Icon + Label */}
-                <span className="relative flex flex-col items-center gap-1">
+                <motion.span
+                  layout
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  className="relative flex flex-col items-center gap-1"
+                >
                   <IconComponent size={15} strokeWidth={1.75} className="text-current" />
-                  <span
-                    className={`${isActive ? 'block' : 'hidden'} md:block leading-none uppercase text-[6px] sm:text-[7px] md:text-[8px] lg:text-[9px] font-semibold tracking-[0.12em]`}
-                  >
+                  <span className="hidden md:block leading-none uppercase text-[6px] sm:text-[7px] md:text-[8px] lg:text-[9px] font-semibold tracking-[0.12em]">
                     {link.label}
                   </span>
-                </span>
+                  <AnimatePresence initial={false}>
+                    {isActive && (
+                      <motion.span
+                        initial={{ opacity: 0, height: 0, y: -4 }}
+                        animate={{ opacity: 1, height: 'auto', y: 0 }}
+                        exit={{ opacity: 0, height: 0, y: -4 }}
+                        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                        className="block overflow-hidden leading-none uppercase text-[6px] sm:text-[7px] font-semibold tracking-[0.12em] md:hidden"
+                      >
+                        {link.label}
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </motion.span>
 
                 {/* Active indicator dot */}
                 {isActive && (
