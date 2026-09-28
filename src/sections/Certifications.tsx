@@ -222,20 +222,20 @@ export default function Certifications() {
               exit={{ scale: 0.94, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-2xl bg-[#fffdf8] dark:bg-[#0e0e0e] rounded-2xl border border-zinc-300 dark:border-[#222] shadow-2xl overflow-hidden"
+              className="relative flex w-full max-w-2xl max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-3rem)] flex-col overflow-hidden rounded-2xl border border-zinc-300 bg-[#fffdf8] shadow-2xl dark:border-[#222] dark:bg-[#0e0e0e]"
             >
               {/* Modal Top Bar */}
-              <div className="flex items-center justify-between px-5 py-3.5 border-b border-zinc-200 dark:border-[#1a1a1a]">
-                <div className="flex items-center gap-2">
-                  <Award size={16} className="text-[#b8860b] dark:text-[#d4af37]" />
-                  <span className="font-outfit font-semibold text-xs text-zinc-800 dark:text-[#ddd] truncate max-w-xs sm:max-w-md">
+              <div className="flex shrink-0 items-start justify-between gap-3 border-b border-zinc-200 px-4 py-3.5 sm:px-5 dark:border-[#1a1a1a]">
+                <div className="flex min-w-0 items-start gap-2">
+                  <Award size={16} className="mt-0.5 shrink-0 text-[#b8860b] dark:text-[#d4af37]" />
+                  <span className="font-outfit break-words text-xs font-semibold leading-relaxed text-zinc-800 dark:text-[#ddd]">
                     {activeCert.title}
                   </span>
                 </div>
 
                 <button
                   onClick={() => setActiveCert(null)}
-                  className="w-7 h-7 rounded-lg flex items-center justify-center text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 dark:text-[#888] dark:hover:text-white dark:hover:bg-[#1a1a1a] transition-colors"
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-[#888] dark:hover:bg-[#1a1a1a] dark:hover:text-white"
                   aria-label="Close"
                 >
                   <X size={15} />
@@ -243,7 +243,7 @@ export default function Certifications() {
               </div>
 
               {/* Certificate Image View */}
-              <div className="relative aspect-video max-h-[60vh] bg-zinc-900 flex items-center justify-center overflow-hidden">
+              <div className="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden bg-zinc-900">
                 {activeCert.image ? (
                   <img
                     src={`/certifications-pict/${activeCert.image}`}
@@ -273,7 +273,7 @@ export default function Certifications() {
               </div>
 
               {/* Modal Details Footer */}
-              <div className="p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-zinc-50/70 dark:bg-[#121212]/70">
+              <div className="flex shrink-0 flex-col items-start justify-between gap-4 bg-zinc-50/70 p-4 sm:flex-row sm:items-center sm:p-5 dark:bg-[#121212]/70">
                 <div>
                   <div className="text-xs font-semibold text-zinc-900 dark:text-[#f0ede6]">
                     {activeCert.issuer}
