@@ -77,7 +77,9 @@ export default function Navbar({ isDark, onToggleDark, mounted = true }: NavbarP
                 {/* Icon + Label */}
                 <span className="relative flex flex-col items-center gap-1">
                   <IconComponent size={15} strokeWidth={1.75} className="text-current" />
-                  <span className="hidden md:block leading-none uppercase text-[9px] font-semibold tracking-[0.12em]">
+                  <span
+                    className={`${isActive ? 'block' : 'hidden'} md:block leading-none uppercase text-[7px] md:text-[8px] lg:text-[9px] font-semibold tracking-[0.12em]`}
+                  >
                     {link.label}
                   </span>
                 </span>
