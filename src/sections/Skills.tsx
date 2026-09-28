@@ -1,4 +1,4 @@
-// src\sections\Skills.tsx
+'use client';
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
@@ -29,12 +29,8 @@ export default function Skills() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full mb-14 lg:mb-18"
+          className="w-full mb-12 lg:mb-16"
         >
-          <div className="mb-8">
-            <LabeledRule label="01 · Skills" />
-          </div>
-
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <h2
               className="font-outfit font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"

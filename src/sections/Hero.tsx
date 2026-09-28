@@ -1,3 +1,5 @@
+'use client';
+
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { SectionBackground, CaseFile } from '../components/common';
@@ -51,7 +53,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative min-h-screen flex flex-col overflow-hidden bg-[#fffdf8] dark:bg-[#080808] pt-[70px]"
+      className="relative min-h-screen flex flex-col overflow-hidden bg-[#fffdf8] dark:bg-[#080808] pt-24 sm:pt-28 pb-10"
     >
       {/* Background grid and glow pools */}
       <SectionBackground glowPosition="both" />

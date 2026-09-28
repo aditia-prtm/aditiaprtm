@@ -1,3 +1,5 @@
+'use client';
+
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { LabeledRule, SectionBackground } from '../components/common';
@@ -25,7 +27,7 @@ export default function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-14 lg:py-20 overflow-hidden bg-[#fffdf8] dark:bg-[#080808]"
+      className="relative pt-24 sm:pt-28 pb-14 lg:pt-32 lg:pb-20 overflow-hidden bg-[#fffdf8] dark:bg-[#080808]"
     >
       {/* Background ambient lighting */}
       <SectionBackground glowPosition="both" />
@@ -36,11 +38,8 @@ export default function Contact() {
           initial={{ opacity: 0, y: 28 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-14 lg:mb-18"
+          className="mb-12 lg:mb-16"
         >
-          <div className="mb-8">
-            <LabeledRule label="04 · Contact" />
-          </div>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <h2
               className="font-outfit font-black leading-[0.9] tracking-[-0.02em] text-zinc-900 dark:text-[#f0ede6]"

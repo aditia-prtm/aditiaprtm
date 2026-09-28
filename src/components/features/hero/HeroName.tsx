@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { personalInfo } from '../../../data/portfolio';
 import { LOADING_OFFSET } from '../../../sections/Hero';

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
+@import 'lenis/dist/lenis.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ─────────────────────────────────────── */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #18181b;
+  --color-gold: #b8860b;
+}
+
+.dark {
+  --color-bg: #080808;
+  --color-text: #f0ede6;
+  --color-gold: #d4af37;
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-outfit), 'Outfit', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(184, 134, 11, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 134, 11, 0.8);
+}
+
+/* ─── Selection ──────────────────────────────────────────────────── */
+::selection {
+  background: rgba(184, 134, 11, 0.25);
+  color: inherit;
+}
+
+/* ─── Centralized Reusable Utility Classes ────────────────────────── */
+.gold-gradient-text,
+.skills-gold-text,
+.projects-gold-text,
+.experience-gold-text,
+.contact-gold-text,
+.name-gold {
+  background: linear-gradient(135deg, #9a7209 0%, #b8860b 50%, #8a6808 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gold-gradient-text,
+.dark .skills-gold-text,
+.dark .projects-gold-text,
+.dark .experience-gold-text,
+.dark .contact-gold-text,
+.dark .name-gold {
+  background: linear-gradient(135deg, #d4af37 0%, #f5e177 50%, #c9a227 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-grid-bg,
+.hero-grid-bg,
+.skills-grid-bg,
+.projects-grid-bg,
+.experience-grid-bg,
+.contact-grid-bg,
+.loading-grid-bg {
+  background-image:
+    linear-gradient(to right, #00000012 1px, transparent 1px),
+    linear-gradient(to bottom, #00000012 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.dark .section-grid-bg,
+.dark .hero-grid-bg,
+.dark .skills-grid-bg,
+.dark .projects-grid-bg,
+.dark .experience-grid-bg,
+.dark .contact-grid-bg,
+.dark .loading-grid-bg {
+  background-image: none;
+}
+
+.bg-grid {
+  background-size: 32px 32px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgba(0,0,0,0.06)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+.dark .bg-grid {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgba(255,255,255,0.06)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+/* Perspective utilities for 3D card tilt */
+.perspective-1000 {
+  perspective: 1000px;
+}

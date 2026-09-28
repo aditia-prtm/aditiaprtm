@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { Send, SquareCheck } from 'lucide-react';

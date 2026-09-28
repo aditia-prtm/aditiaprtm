@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, Check, ChevronRight, FlagTriangleRight, GraduationCap } from 'lucide-react';
 import { Experience } from '../../../types';

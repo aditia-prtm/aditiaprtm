@@ -1,16 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Outfit', 'system-ui', '-apple-system', 'sans-serif'],
-        mono: ["'JetBrains Mono'", 'JetBrains Mono', 'monospace'],
-        outfit: ['Outfit', 'sans-serif'],
+        sans: ['var(--font-outfit)', 'Outfit', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['var(--font-mono)', "'JetBrains Mono'", 'JetBrains Mono', 'monospace'],
+        outfit: ['var(--font-outfit)', 'Outfit', 'sans-serif'],
       },
       colors: {
         brand: {

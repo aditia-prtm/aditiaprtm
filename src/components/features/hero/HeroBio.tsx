@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Download, MapPin, Github, Linkedin } from 'lucide-react';
 import { personalInfo } from '../../../data/portfolio';

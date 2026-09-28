@@ -1,3 +1,5 @@
+'use client';
+
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ExternalLink, Github, ArrowUpRight, Lock } from 'lucide-react';
@@ -53,7 +55,7 @@ export default function ProjectCard({ project, onClick }: ProjectCardProps) {
             <div className="absolute inset-0 flex items-center justify-center">
               {project.image ? (
                 <img
-                  src={`projects-pict/${project.image}`}
+                  src={`/projects-pict/${project.image}`}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />

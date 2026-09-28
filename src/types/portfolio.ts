@@ -59,6 +59,19 @@ export interface Experience {
   completed?: boolean;
 }
 
+export interface Certification {
+  id: number;
+  title: string;
+  issuer: string;
+  issueDate: string;
+  image?: string;
+  credentialId?: string;
+  credentialUrl?: string;
+  category: string;
+  skills: string[];
+  gradient?: string;
+}
+
 export interface NavLink {
   label: string;
   href: string;

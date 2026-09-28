@@ -1,35 +1,47 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 
 /**
  * useDarkMode
  * Persists user theme preference to localStorage.
  * Applies "dark" class to <html> element.
- * Defaults to dark mode.
+ * Defaults consistently to light mode on initial render to prevent SSR hydration mismatch,
+ * then hydrates stored preference in useEffect.
  */
 export function useDarkMode() {
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    // 1. Check localStorage for explicit preference
-    const stored = localStorage.getItem('theme');
-    if (stored === 'light') return false;
-    if (stored === 'dark') return true;
-
-    // 2. Default to light mode
-    return false;
-  });
+  const [isDark, setIsDark] = useState<boolean>(false);
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    const root = document.documentElement;
-    if (isDark) {
-      root.classList.add('dark');
-      root.classList.remove('light');
+    setMounted(true);
+    const stored = localStorage.getItem('theme');
+    if (stored === 'dark') {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
     } else {
-      root.classList.remove('dark');
-      root.classList.add('light');
+      setIsDark(false);
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
     }
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
+  }, []);
 
-  const toggle = () => setIsDark(prev => !prev);
+  const toggle = () => {
+    setIsDark((prev) => {
+      const next = !prev;
+      if (next) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      }
+      return next;
+    });
+  };
 
-  return { isDark, toggle };
+  return { isDark, toggle, mounted };
 }

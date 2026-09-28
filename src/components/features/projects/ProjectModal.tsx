@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Lock, X } from 'lucide-react';
@@ -71,7 +73,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <div className="absolute inset-0 flex items-center justify-center">
               {project.image ? (
                 <img
-                  src={`projects-pict/${project.image}`}
+                  src={`/projects-pict/${project.image}`}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />

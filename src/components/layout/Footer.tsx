@@ -1,3 +1,6 @@
+'use client';
+
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowUp, Github, Linkedin, Instagram, Mail } from 'lucide-react';
 import { personalInfo } from '../../data/portfolio';
@@ -9,42 +12,35 @@ const socials = [
   { icon: Mail, label: 'E-Mail', href: personalInfo.social.email },
 ];
 
-/**
- * Footer
- * Minimalist, elegant footer for a portfolio website.
- */
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
-    <footer className="relative border-t border-zinc-200/80 dark:border-[#1a1a1a] bg-white/70 dark:bg-[#080808]/80 backdrop-blur-sm transition-colors duration-400">
+    <footer className="relative border-t border-zinc-200/80 dark:border-[#1a1a1a] bg-white/70 dark:bg-[#080808]/80 backdrop-blur-sm transition-colors duration-400 font-outfit">
       <div className="max-w-[1300px] mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Brand & Copyright */}
         <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
-          <a
-            href="#hero"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
-            }}
-            className="flex items-center gap-2.5 group"
-          >
+          <Link href="/" className="flex items-center gap-2.5 group">
             <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
-              <img src="/favicon.png" alt={personalInfo.name} className="w-5 h-5 rounded object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+              <img
+                src="/favicon.png"
+                alt={personalInfo.name}
+                className="w-5 h-5 rounded object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+              />
             </div>
             <span className="font-outfit text-sm font-semibold tracking-wide text-zinc-900 dark:text-[#f0ede6] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37] transition-colors">
               {personalInfo.name}
             </span>
-          </a>
+          </Link>
 
           <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">·</span>
 
           <p className="font-outfit text-xs text-zinc-500 dark:text-[#777] tracking-wider">
-            © {year} All rights reserved.
+            © 2026 All rights reserved.
           </p>
         </div>
 

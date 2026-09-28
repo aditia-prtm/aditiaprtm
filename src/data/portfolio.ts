@@ -20,7 +20,7 @@ import {
 } from '@icons-pack/react-simple-icons';
 import { VscVscode } from 'react-icons/vsc';
 import { FaJava } from 'react-icons/fa6';
-import { PersonalInfo, TechStackItem, Project, Experience, NavLink, TechStackCategory } from '../types';
+import { PersonalInfo, TechStackItem, Project, Experience, Certification, NavLink, TechStackCategory } from '../types';
 
 // ─── Portfolio Data ───────────────────────────────────────────────
 export const personalInfo: PersonalInfo = {
@@ -196,11 +196,93 @@ export const educations: Experience[] = [
   },
 ];
 
+// ─── Certifications ───────────────────────────────────────────────
+export const certifications: Certification[] = [
+  {
+    id: 1,
+    title: 'Top 7 National Olympiad in Informatics - Province Level (OSN-P)',
+    issuer: 'Pusat Prestasi Nasional & Kemdikbud',
+    issueDate: '2024',
+    category: 'Competition',
+    image: '7th-osnp.jpg',
+    skills: ['Competitive Programming', 'C++', 'Data Structures'],
+    credentialUrl: 'https://simt.kemendikdasmen.go.id/resume?id=lIoKpKDE8b33aaPITIg0hw&name=m-aditia-putra-pratama',
+    gradient: 'from-[#8a6808] via-[#b8860b] to-[#d4af37]',
+  },
+  {
+    id: 2,
+    title: '2nd Place Winner Competitive Programming - SRIFOTON',
+    issuer: 'HMIF Universitas Sriwijaya',
+    issueDate: '2025',
+    category: 'Competition',
+    image: 'srifoton25.jpg',
+    skills: ['Algorithms', 'Problem Solving', 'C++'],
+    credentialUrl: 'https://srifoton.hmifunsri.com',
+    gradient: 'from-[#b8860b] via-[#d4af37] to-[#f5e177]',
+  },
+  {
+    id: 3,
+    title: '3rd Place Winner Code League - Informatics Engineering UNSRI',
+    issuer: 'HMIF Universitas Sriwijaya',
+    issueDate: '2025',
+    category: 'Competition',
+    image: 'code-league.jpg',
+    skills: ['Algorithms', 'Problem Solving', 'Java'],
+    credentialUrl: 'https://hmif.unsri.ac.id',
+    gradient: 'from-[#1e3a8a] via-[#3b82f6] to-[#60a5fa]',
+  },
+  {
+    id: 4,
+    title: 'Finalist National Olympiad in Informatics - Province Level (OSN-P) ',
+    issuer: 'Pusat Prestasi Nasional & Kemdikbud',
+    issueDate: '2023',
+    category: 'Competition',
+    image: 'finalist-osnp.jpg',
+    skills: ['Programming Fundamentals', 'Computational Thinking', 'Number Theory'],
+    credentialUrl: 'https://simt.kemendikdasmen.go.id/resume?id=lIoKpKDE8b33aaPITIg0hw&name=m-aditia-putra-pratama',
+    gradient: 'from-[#065f46] via-[#10b981] to-[#34d399]',
+  },
+  {
+    id: 5,
+    title: 'Problem Solving (Intermediate)',
+    issuer: 'HackerRank',
+    issueDate: '2025',
+    category: 'Certification',
+    image: 'hackerrank1.jpg',
+    skills: ['Problem Solving', 'Algorithm', 'Data Structures', 'C++', 'Java', 'Python'],
+    credentialUrl: 'https://www.hackerrank.com/certificates/a06076617a80',
+    gradient: 'from-[#4c1d95] via-[#7c3aed] to-[#a78bfa]',
+  },
+  {
+    id: 6,
+    title: 'Frontend Developer (React)',
+    issuer: 'HackerRank',
+    issueDate: '2026',
+    category: 'Certification',
+    image: 'frontend.jpg',
+    skills: ['React.js', 'JavaScript', 'CSS', 'HTML'],
+    credentialUrl: 'https://www.hackerrank.com/certificates/77965f22d9b1',
+    gradient: 'from-[#4c1d95] via-[#7c3aed] to-[#a78bfa]',
+  },
+  {
+    id: 7,
+    title: 'Participant of Competitive Programming - SRIFOTON',
+    issuer: 'HMIF Universitas Sriwijaya',
+    issueDate: '2024',
+    category: 'Competition',
+    image: 'srifoton24.jpg',
+    skills: ['Problem Solving', 'Algorithm & Data Structures', 'C++'],
+    credentialUrl: 'https://srifoton.hmifunsri.com',
+    gradient: 'from-[#4c1d95] via-[#7c3aed] to-[#a78bfa]',
+  },
+];
+
 // ─── Nav Links ────────────────────────────────────────────────────
 export const navLinks: NavLink[] = [
-  { label: 'Home', href: '#hero', icon: 'Home' },
-  { label: 'Skills', href: '#skills', icon: 'Code2' },
-  { label: 'Projects', href: '#projects', icon: 'Folder' },
-  { label: 'Experience', href: '#experience', icon: 'Briefcase' },
-  { label: 'Contact', href: '#contact', icon: 'Send' },
+  { label: 'Home', href: '/', icon: 'Home' },
+  { label: 'Projects', href: '/projects', icon: 'Folder' },
+  { label: 'Experience', href: '/experience', icon: 'Briefcase' },
+  { label: 'Certifications', href: '/certifications', icon: 'Award' },
+  { label: 'Contact', href: '/contact', icon: 'Send' },
 ];
+
