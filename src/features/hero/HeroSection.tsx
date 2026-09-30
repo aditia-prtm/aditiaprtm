@@ -65,7 +65,7 @@ export default function Hero() {
           <HeroBio isInView={isInView} isFirstRender={isFirstRender} />
 
           {/* Right panel: year stamp, dossier case file, and quote */}
-          <div className="flex flex-col gap-6 mt-2 lg:mt-12">
+          <div className="hidden lg:flex flex-col gap-6 mt-2 lg:mt-12">
             {/* Case file */}
             <CaseFile isInView={isInView} isFirstRender={isFirstRender} />
 
