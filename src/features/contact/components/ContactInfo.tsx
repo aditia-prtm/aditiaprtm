@@ -18,7 +18,7 @@ export default function ContactInfo({ isInView }: ContactInfoProps) {
   ];
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="hidden lg:flex flex-col gap-6">
       {/* Contact file */}
       <div className="rounded-2xl overflow-hidden border border-zinc-300 bg-white/85 shadow-[0_18px_45px_rgba(24,24,27,0.07)] backdrop-blur-sm dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:shadow-none dark:backdrop-blur-none">
         <FileHeader label="CONTACT.FILE" />
