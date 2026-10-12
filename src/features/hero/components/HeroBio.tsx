@@ -82,7 +82,7 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         {/* CTA Resume */}
         <motion.a
           href={personalInfo.resume}
-          target="_blank"
+          target="_self"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}

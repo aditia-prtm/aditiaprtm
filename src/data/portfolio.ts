@@ -37,7 +37,7 @@ export const personalInfo: PersonalInfo = {
   location: 'Ogan Komering Ilir, Indonesia',
   availability: 'Open for Freelance',
   email: 'mhdaditiapratama268@gmail.com',
-  resume: 'https://drive.google.com/file/d/1J842grmhWYJZO-Dvr_2c-lr3bEbLRg1m/view?usp=sharing',
+  resume: '/cv',
   social: {
     github: 'https://github.com/aditia-prtm',
     linkedin: 'https://linkedin.com/in/m-aditia-putra-pratama-a3b0bb376/',
