@@ -109,7 +109,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'Redesign Concept - PT OKI Pulp and Paper Mills',
+    title: 'Redesign Concept - Company Profile',
     subtitle: 'Redesign Concept - PT OKI Pulp and Paper Mills',
     description: 'Redesign concept for PT OKI Pulp and Paper Mills website. Not a part of OKI Pulp and Paper Mills or any affiliated companies.',
     longDescription:

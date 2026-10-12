@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Download, MapPin, Github, Linkedin } from 'lucide-react';
+import { Download, MapPin, Github, Folder } from 'lucide-react';
 import { personalInfo } from '@/data/portfolio';
 import { useTypingEffect } from '@/hooks/useTypingEffect';
 import BlinkingCursor from '@/components/common/BlinkingCursor';
@@ -79,25 +79,26 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
         transition={{ delay: d(2.4), duration: 0.7 }}
         className="flex flex-wrap gap-3 mb-10"
       >
-        {/* CTA Resume */}
+        {/* CTA Projects */}
         <motion.a
-          href={personalInfo.resume}
+          href="/projects"
           target="_self"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           className="
             inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl
-            border border-zinc-400/50 bg-white text-zinc-800
+            border border-zinc-400/50  bg-white text-zinc-800
             hover:border-zinc-400 hover:bg-zinc-50
+
             dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#f0ede6]
             dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
             transition-all duration-300
           "
         >
-          <Download size={13} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
+          <Folder size={13} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
           <span className="font-outfit font-semibold tracking-wide text-sm">
-            Resume
+            Projects
           </span>
         </motion.a>
 
@@ -123,26 +124,25 @@ export default function HeroBio({ isInView, isFirstRender }: HeroBioProps) {
           </span>
         </motion.a>
 
-        {/* CTA LinkedIn */}
+        {/* CTA Resume */}
         <motion.a
-          href={personalInfo.social.linkedin}
-          target="_blank"
+          href={personalInfo.resume}
+          target="_self"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           className="
             inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl
-            border border-zinc-400/50  bg-white text-zinc-800
+            border border-zinc-400/50 bg-white text-zinc-800
             hover:border-zinc-400 hover:bg-zinc-50
-
             dark:border-[#1f1f1f] dark:bg-[#0e0e0e] dark:text-[#f0ede6]
             dark:hover:border-[#3a3a3a] dark:hover:bg-[#222]
             transition-all duration-300
           "
         >
-          <Linkedin size={13} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
+          <Download size={13} strokeWidth={2.2} className="text-zinc-800 dark:text-[#f0ede6]" />
           <span className="font-outfit font-semibold tracking-wide text-sm">
-            LinkedIn
+            Resume
           </span>
         </motion.a>
       </motion.div>
