@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowUp, Github, Linkedin, Instagram, Mail } from 'lucide-react';
+import { Github, Linkedin, Instagram, Mail } from 'lucide-react';
 import { personalInfo } from '@/data/portfolio';
 
 const socials = [
@@ -13,15 +13,10 @@ const socials = [
 ];
 
 export default function Footer() {
-  const scrollToTop = () => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
 
   return (
     <footer className="relative border-t border-zinc-200/80 dark:border-[#1a1a1a] bg-white/70 dark:bg-[#080808]/80 backdrop-blur-sm transition-colors duration-400 font-outfit">
-      <div className="max-w-[1300px] mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-[1300px] mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-2">
         {/* Brand & Copyright */}
         <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left">
           <Link href="/" className="flex items-center gap-2.5 group">
@@ -33,21 +28,15 @@ export default function Footer() {
               />
             </div>
             <span className="font-outfit text-sm font-semibold tracking-wide text-zinc-900 dark:text-[#f0ede6] group-hover:text-[#b8860b] dark:group-hover:text-[#d4af37] transition-colors">
-              {personalInfo.name}
+              {personalInfo.name}.
             </span>
           </Link>
-
-          <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">·</span>
-
-          <p className="font-outfit text-xs text-zinc-500 dark:text-[#777] tracking-wider">
-            © 2026 All rights reserved.
-          </p>
         </div>
 
-        {/* Socials & Back to Top */}
-        <div className="flex items-center gap-4 sm:gap-6">
+        {/* Socials */}
+        <div className="flex items-center">
           {/* Social icons */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center">
             {socials.map(({ icon: Icon, label, href }) => (
               <motion.a
                 key={label}
@@ -63,20 +52,6 @@ export default function Footer() {
               </motion.a>
             ))}
           </div>
-
-          <span className="w-px h-4 bg-zinc-200 dark:bg-[#222]" />
-
-          {/* Back to top */}
-          <motion.button
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={scrollToTop}
-            aria-label="Back to top"
-            className="group flex items-center gap-1.5 font-outfit text-xs font-medium tracking-wider text-zinc-500 hover:text-[#b8860b] dark:text-[#777] dark:hover:text-[#d4af37] transition-colors"
-          >
-            <span>Back to top</span>
-            <ArrowUp size={13} className="group-hover:-translate-y-0.5 transition-transform duration-200" />
-          </motion.button>
         </div>
       </div>
     </footer>

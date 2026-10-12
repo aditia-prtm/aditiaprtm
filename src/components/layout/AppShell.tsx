@@ -7,6 +7,7 @@ import { initLenis, destroyLenis } from '@/lib/lenis';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import LoadingScreen from './LoadingScreen';
+import BackToTop from './BackToTop';
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -58,6 +59,9 @@ export default function AppShell({ children }: AppShellProps) {
 
         {/* Footer */}
         <Footer />
+
+        {/* Floating Back to Top Button */}
+        <BackToTop />
       </div>
     </>
   );
